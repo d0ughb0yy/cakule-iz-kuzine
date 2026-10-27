@@ -79,14 +79,14 @@ How to swap an image (four steps) is in `docs/development.md` → "Replacing an 
 
 | # | Item | Where | Current placeholder | Status |
 | --- | --- | --- | --- | --- |
-| 7.1 | Production URL | `astro.config.mjs` → `site`; `src/config.ts` → `url` | `https://cakule-iz-kuzine.netlify.app` | **required** |
-| 7.2 | Connect the custom domain in Netlify | Netlify dashboard | — | **required** |
+| 7.1 | Production URL | `astro.config.mjs` → `site`; `src/config.ts` → `url` | `https://cakule-iz-kuzine.vercel.app` | **required** |
+| 7.2 | Connect the custom domain in Vercel | Vercel dashboard | — | **required** |
 | 7.3 | Rebuild after changing the URL | `npm run build` | — | **required** |
 | 7.4 | Check canonical + hreflang after deploy | View source on all four pages | They derive from `site.url` | recommended |
 | 7.5 | Submit the sitemap or request indexing | Google Search Console | No sitemap is generated; submit the four URLs manually or add `@astrojs/sitemap` | optional |
 | 7.6 | Add an OG image if social previews matter | `src/layouts/BaseLayout.astro` → `ogImage` | Uses the hero Unsplash image | optional |
 
-Netlify settings: build command `npm run build`, publish directory `dist`, Node 22 from `.nvmrc` (or `NODE_VERSION=22` as a fallback). No functions, forms, redirects, or `netlify.toml` are required.
+Vercel settings: framework Astro, build command `npm run build`, output directory `dist`, Node 24.x (from `package.json` `engines`). No functions, rewrites, or `vercel.json` are required.
 
 ## 8. Legal and trust (Croatia / EU)
 

@@ -292,16 +292,16 @@ The gallery is the one place where interaction complexity is justified.
 - `hreflang`: `hr`, `en`, `x-default` on every page.
 - Open Graph + Twitter card with title, description, image, locale and alternate locale.
 - JSON-LD `ProfessionalService`: name, description, URL, image, `areaServed` (Istria, Croatia), price range, `sameAs` booking profile.
-- `robots.txt` allows everything; `404.html` is generated for Netlify.
+- `robots.txt` allows everything; `404.html` is generated for static hosting.
 - No sitemap is generated. If search visibility matters, submit the four URLs manually or add `@astrojs/sitemap`.
 
-## 11. Netlify constraints
+## 11. Hosting constraints (Vercel)
 
 - `output: 'static'`; the build writes plain HTML, CSS, JS, and fonts to `dist/`.
-- Build command: `npm run build`; publish directory: `dist`.
-- Node: `>=22.23.4` declared in `package.json` → `engines`. Netlify's build image honours this; otherwise set `NODE_VERSION=22`.
-- `trailingSlash: 'always'` + `build.format: 'directory'` → `/galerija/index.html`, `/en/gallery/index.html`. Netlify serves the trailing-slash URLs directly.
-- No Netlify Functions, Forms, redirects, edge handlers, or `netlify.toml`. The project deploys as a pure static site.
+- Build command: `npm run build`; output directory: `dist`.
+- Node: `24.x` declared in `package.json` → `engines`; Vercel reads this directly (its default is currently 24).
+- `trailingSlash: 'always'` + `build.format: 'directory'` → `/galerija/index.html`, `/en/gallery/index.html`. Vercel serves the trailing-slash URLs directly.
+- No server functions, rewrites, or `vercel.json`. The project deploys as a pure static site; `404.html` at the output root is used automatically.
 - After attaching a custom domain, update **both** `astro.config.mjs` → `site` and `src/config.ts` → `url`, then redeploy so canonical/hreflang/OG URLs are correct.
 
 ## 12. Performance notes
@@ -326,7 +326,7 @@ src/
 public/         favicon.svg, robots.txt, future local images
 docs/           design specification + development guide
 CONTENT.md      launch checklist of every placeholder
-docs/development.md   local run, Netlify deploy, editing, palette switching
+docs/development.md   local run, Vercel deploy, editing, palette switching
 ```
 
 ## 14. Verification record (27 Oct 2026)

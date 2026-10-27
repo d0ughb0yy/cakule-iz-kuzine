@@ -6,7 +6,7 @@ export const site = {
   // Replace with the real profile URL.
   bookingUrl: 'https://www.takeachef.com/',
   // Used for canonical URLs, sitemap and social cards. Update if the domain changes.
-  url: 'https://cakule-iz-kuzine.netlify.app',
+  url: 'https://cakule-iz-kuzine.vercel.app',
   serviceArea: 'Istria, Croatia',
   year: 2026,
   // Leave empty to hide the Instagram link in the footer.

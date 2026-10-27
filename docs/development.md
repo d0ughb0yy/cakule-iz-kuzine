@@ -11,7 +11,7 @@ Technical notes for maintaining and deploying the site. For the business descrip
 
 ## Run it locally
 
-Requires **Node.js 22.23.4 or newer** (`.nvmrc` pins Node 22).
+Requires **Node.js 24.x** (`.nvmrc` and `package.json` `engines` both pin it).
 
 ```bash
 npm install
@@ -53,17 +53,17 @@ palette: '3', // '1' | '2' | '3' | '4'
 
 The four sets in `src/styles/palettes.css` are mapped to the same semantic roles, so every component follows automatically. The favicon is hardcoded to Palette 3; update `public/favicon.svg` if you switch permanently. See the design doc for each palette's role mapping and contrast notes.
 
-## Deploy to Netlify
+## Deploy to Vercel
 
-The site is a plain static build — no Netlify Functions, Forms, redirects, or server runtime. No `netlify.toml` is required.
+The site is a plain static build — no server runtime, functions, or server-side rendering. No `vercel.json` is required.
 
 1. Push the repository to GitHub.
-2. In Netlify: **Add new site → Import an existing project**.
-3. Build command: `npm run build`
-4. Publish directory: `dist`
-5. Node version: Netlify reads `.nvmrc` (currently `22`). If you prefer, set `NODE_VERSION=22` as an environment variable instead — Netlify does not reliably read the `engines` field in `package.json`.
-6. Deploy. Every branch and pull request gets a deploy preview.
-7. Rename the Netlify site to `cakule-iz-kuzine` (Site configuration → Change site name) so it serves `https://cakule-iz-kuzine.netlify.app`, which is what the canonical URLs already point to.
+2. In Vercel: **Add New → Project → Import** the Git repository.
+3. Framework preset: Astro (or "Other"). Build command: `npm run build`
+4. Output directory: `dist`
+5. Node version: `engines` in `package.json` pins `24.x`, which matches Vercel's current default. If the project was created with a different Node version, set it under Settings → General → Node.js Version.
+6. Deploy. Every branch and pull request gets a preview deployment.
+7. The production URL is `https://cakule-iz-kuzine.vercel.app`, which is already the value in `astro.config.mjs` (`site:`) and `src/config.ts` (`url:`).
 
 After connecting a custom domain, update the URL in `astro.config.mjs` (`site:`) and `src/config.ts` (`url`), then redeploy.
 

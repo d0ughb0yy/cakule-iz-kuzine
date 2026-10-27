@@ -40,4 +40,4 @@ The home page answers the practical questions up front: how it works, what is in
 
 The copy, photos, prices, reviews, and chef name are being finalised; `CONTENT.md` is the checklist of what to replace before going live. Design and palette rationale lives in `docs/superpowers/specs/2026-10-27-private-chef-site-design.md`.
 
-For anything technical (running the site locally, deploying to Netlify, editing text and images, switching palettes), see `docs/development.md`.
+For anything technical (running the site locally, deploying to Vercel, editing text and images, switching palettes), see `docs/development.md`.
