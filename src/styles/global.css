@@ -1822,11 +1822,15 @@ p {
 
   .lightbox__bar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .lightbox__stage {
-    height: clamp(15rem, 56vh, 30rem);
+    height: clamp(11rem, 44vh, 22rem);
+  }
+
+  .lightbox__controls {
+    gap: 1.25rem;
   }
 
   .footer__grid {
