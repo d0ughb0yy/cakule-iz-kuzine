@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Čakula iz Kužine">
+  <rect width="64" height="64" rx="13" fill="#225F02" />
+  <text x="31" y="48" text-anchor="middle" font-family="Georgia, 'Iowan Old Style', 'Times New Roman', serif" font-style="italic" font-size="40" fill="#FAF7F0">Č</text>
+  <rect x="47" y="47" width="7" height="7" fill="#CFCE5D" transform="rotate(45 50.5 50.5)" />
+</svg>

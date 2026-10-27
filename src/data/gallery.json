@@ -1,0 +1,116 @@
+{
+  "items": [
+    {
+      "image": "gallery-restaurant",
+      "caption": {
+        "hr": "Slijed iz degustacijskog jelovnika",
+        "en": "A course from the tasting menu"
+      }
+    },
+    {
+      "image": "gallery-dinner-party",
+      "caption": {
+        "hr": "Predjelo posluženo na dasci",
+        "en": "A starter served on a board"
+      }
+    },
+    {
+      "image": "gallery-salmon",
+      "caption": {
+        "hr": "File lososa s povrćem",
+        "en": "Salmon fillet with vegetables"
+      }
+    },
+    {
+      "image": "gallery-oysters",
+      "caption": {
+        "hr": "Škampi s limunom",
+        "en": "Prawns with lemon"
+      }
+    },
+    {
+      "image": "gallery-bread",
+      "caption": {
+        "hr": "Kruh od kiselog tijesta",
+        "en": "Sourdough bread"
+      }
+    },
+    {
+      "image": "gallery-olive-oil",
+      "caption": {
+        "hr": "Maslinovo ulje malih proizvođača",
+        "en": "Olive oil from small producers"
+      }
+    },
+    {
+      "image": "gallery-plating",
+      "caption": {
+        "hr": "Priprema svježeg bilja",
+        "en": "Preparing fresh herbs"
+      }
+    },
+    {
+      "image": "gallery-cake",
+      "caption": {
+        "hr": "Kolač s malinama",
+        "en": "Raspberry layer cake"
+      }
+    },
+    {
+      "image": "gallery-dessert",
+      "caption": {
+        "hr": "Desert s karamelom",
+        "en": "Caramel dessert"
+      }
+    },
+    {
+      "image": "gallery-charcuterie",
+      "caption": {
+        "hr": "Daska s pršutom, smokvama i sirom",
+        "en": "A board of prosciutto, figs, and cheese"
+      }
+    },
+    {
+      "image": "gallery-table2",
+      "caption": {
+        "hr": "Večera u toplom svjetlu",
+        "en": "Dinner in warm light"
+      }
+    },
+    {
+      "image": "gallery-table-wine",
+      "caption": {
+        "hr": "Salata s povrćem s tržnice",
+        "en": "Market vegetable salad"
+      }
+    },
+    {
+      "image": "gallery-terrace",
+      "caption": {
+        "hr": "Stol s pogledom na more",
+        "en": "A table with a sea view"
+      }
+    },
+    {
+      "image": "gallery-prep",
+      "caption": {
+        "hr": "Priprema namirnica",
+        "en": "Preparing ingredients"
+      }
+    },
+    {
+      "image": "gallery-fire",
+      "caption": {
+        "hr": "Pečeno meso s povrćem",
+        "en": "Roast meat with vegetables"
+      }
+    },
+    {
+      "image": "gallery-salad",
+      "caption": {
+        "hr": "Sezonska salata",
+        "en": "Seasonal salad"
+      }
+    }
+  ]
+}

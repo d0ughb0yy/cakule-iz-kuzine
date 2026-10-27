@@ -1,0 +1,67 @@
+---
+import { routes, site } from '../config';
+import { getContent } from '../lib/content';
+import Icon from './Icon.astro';
+
+interface Props {
+  lang: 'hr' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = getContent(lang);
+const year = site.year;
+const [nameFirst, ...nameRestParts] = site.name.split(' ');
+const nameRest = nameRestParts.join(' ');
+---
+
+<footer class="site-footer on-dark">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href={routes.home[lang]} aria-label={site.name}>
+          {nameFirst} <span class="brand__rest">{nameRest}</span>
+        </a>
+        <p>{t.footer.tagline}</p>
+      </div>
+
+      <div>
+        <h2 class="footer__title">{t.footer.navTitle}</h2>
+        <nav class="footer__links" aria-label={t.footer.navTitle}>
+          <a href={routes.home[lang]}>{t.nav.home}</a>
+          <a href={routes.gallery[lang]}>{t.nav.gallery}</a>
+        </nav>
+      </div>
+
+      <div class="footer__contact">
+        <h2 class="footer__title">{t.footer.bookingTitle}</h2>
+        <p>{t.footer.bookingText}</p>
+        <a
+          class="text-link text-link--light"
+          href={site.bookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t.footer.bookingLink}
+          <Icon name="arrow-right" />
+        </a>
+      </div>
+
+      <div>
+        <h2 class="footer__title">{t.footer.areaTitle}</h2>
+        <p>{t.footer.areaText}</p>
+        {
+          site.instagramUrl && (
+            <a href={site.instagramUrl} target="_blank" rel="noopener noreferrer">
+              Instagram
+            </a>
+          )
+        }
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; {year} {site.name}. {t.footer.rights}</p>
+      <p>{t.footer.photoCredit}</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,37 @@
+---
+import { site } from '../config';
+import Icon from './Icon.astro';
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  lead: string;
+  button: string;
+  note?: string;
+}
+
+const { eyebrow, title, lead, button, note } = Astro.props;
+---
+
+<section class="cta on-dark" data-reveal>
+  <div class="wrap cta__inner">
+    <div>
+      <p class="eyebrow">{eyebrow}</p>
+      <h2>{title}</h2>
+      <p class="lead">{lead}</p>
+    </div>
+
+    <div class="cta__action">
+      <a
+        class="btn btn--light"
+        href={site.bookingUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {button}
+        <Icon name="arrow-right" />
+      </a>
+      {note && <p class="cta__note">{note}</p>}
+    </div>
+  </div>
+</section>

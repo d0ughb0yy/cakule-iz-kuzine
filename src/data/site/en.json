@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "title": "Čakula iz Kužine: private chef in Istria",
+    "description": "A private chef for up to six guests. I turn local ingredients in season into fine dining in your home or villa in Istria."
+  },
+  "nav": {
+    "home": "Home",
+    "gallery": "Gallery",
+    "book": "Book",
+    "menu": "Menu",
+    "language": "Language",
+    "skip": "Skip to content"
+  },
+  "hero": {
+    "eyebrow": "Private chef · Istria",
+    "title": "What's <em>in season</em> is on your table.",
+    "lead": "I come to your home or villa and cook for up to six guests. I turn local ingredients into dinner with restaurant-level precision, from the first plate to a kitchen left clean.",
+    "primaryCta": "Check availability",
+    "secondaryCta": "View the gallery",
+    "trust": ["Up to 6 guests", "I cook at your place", "Everything included"],
+    "image": "hero",
+    "badge": "From the market and the fishmonger."
+  },
+  "intro": {
+    "eyebrow": "How I cook",
+    "title": "Local, in season.",
+    "paragraphs": [
+      "My kitchen starts at the market. I shop at local markets, from fishermen and fishmongers, and I try to keep the meat local or Croatian. What is best that morning shapes the menu, not the other way round.",
+      "I prepare those ingredients with modern techniques. I want to bring fine dining into your home. That means precise preparation, calm service, and a kitchen I leave clean at the end."
+    ],
+    "signature": "Chef [Name]",
+    "link": "What the evening looks like",
+    "image": "intro"
+  },
+  "how": {
+    "eyebrow": "How the evening runs",
+    "title": "You choose the date. I cook.",
+    "lead": "The arrangement is simple. You choose the date and the guests, and everything else is my job.",
+    "image": "how",
+    "steps": [
+      {
+        "title": "Choose a date and a place",
+        "text": "Tell me when and where: a home, a villa, a terrace. I bring my own knives and basic equipment."
+      },
+      {
+        "title": "We plan the menu",
+        "text": "We talk about tastes, allergies, and the occasion. I suggest a menu, and you confirm it."
+      },
+      {
+        "title": "I cook, you enjoy",
+        "text": "I arrive early, prepare, and serve, and I leave the kitchen clean at the end."
+      }
+    ]
+  },
+  "included": {
+    "eyebrow": "Included",
+    "title": "Everything dinner needs. Nothing in your way.",
+    "lead": "One price, one arrangement. No hidden costs, and the tidying up stays with me.",
+    "items": [
+      "Shopping at the local market",
+      "Preparation and cooking in your kitchen",
+      "Service course by course",
+      "Allergies and dietary needs accommodated",
+      "Dishes washed, kitchen tidied",
+      "A discreet presence during dinner"
+    ]
+  },
+  "menus": {
+    "eyebrow": "Menus",
+    "title": "Every menu starts with a conversation.",
+    "lead": "I shape every menu around the season, the market, and your wishes. These are three directions to start the conversation.",
+    "items": [
+      {
+        "name": "From the Market",
+        "description": "Four courses from whatever was best that morning.",
+        "image": "menu-market",
+        "dishes": [
+          "Mussels buzara",
+          "Scampi risotto",
+          "Grilled fish, chard, olive oil",
+          "Fritule with fig caramel"
+        ],
+        "price": "from €75 per person"
+      },
+      {
+        "name": "Adriatic",
+        "description": "A seafood menu for long evenings.",
+        "image": "menu-adriatic",
+        "dishes": [
+          "Tuna tartare, capers, lemon",
+          "Shellfish soup",
+          "Octopus under the bell",
+          "Rožata with lavender"
+        ],
+        "price": "from €75 per person"
+      },
+      {
+        "name": "Garden",
+        "description": "Seasonal vegetables in the leading role.",
+        "image": "menu-garden",
+        "dishes": [
+          "Seasonal vegetable risotto",
+          "Mushroom and potato peka",
+          "Roasted pepper salad",
+          "Fig and almond cake"
+        ],
+        "price": "from €75 per person"
+      }
+    ],
+    "priceNote": "Prices are indicative and depend on the menu and location. You'll receive a precise quote on Take a Chef.",
+    "cta": "Book your dinner"
+  },
+  "galleryTeaser": {
+    "eyebrow": "Gallery",
+    "title": "See what comes out of the kitchen.",
+    "lead": "A few moments at the table, from market to dessert.",
+    "cta": "Full gallery",
+    "images": ["gallery-restaurant", "gallery-salmon", "gallery-table2", "gallery-terrace"]
+  },
+  "testimonials": {
+    "eyebrow": "What guests say",
+    "title": "Guests who stayed longer.",
+    "items": [
+      {
+        "quote": "I wanted a dinner with the spirit of Istria but none of the restaurant formality. That is exactly what I got, and the kitchen was cleaner than before the dinner.",
+        "name": "Sarah",
+        "location": "London"
+      },
+      {
+        "quote": "The menu grew out of whatever was best at the market that morning. You can't fake that kind of freshness.",
+        "name": "Ana & Marko",
+        "location": "Rovinj"
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "title": "Good to know before you book.",
+    "lead": "If something isn't answered here, ask me on Take a Chef. I reply quickly.",
+    "items": [
+      {
+        "q": "How many guests do you cook for?",
+        "a": "Up to six guests. For larger groups, get in touch and we'll find a solution."
+      },
+      {
+        "q": "Do you cook outside Istria?",
+        "a": "I cook across Istria and, by arrangement, further afield. Travel costs depend on the location and are agreed in advance."
+      },
+      {
+        "q": "What do you need in the kitchen?",
+        "a": "An ordinary home kitchen with a stove and an oven is enough. If something specific is needed, I'll let you know in advance."
+      },
+      {
+        "q": "How do you handle allergies and dietary needs?",
+        "a": "I adapt the menu for allergies, intolerances, and dietary needs. Please tell me before we confirm the menu."
+      },
+      {
+        "q": "How long does dinner last?",
+        "a": "Usually three to four hours, depending on the number of courses and the pace of the evening."
+      },
+      {
+        "q": "How do I book?",
+        "a": "You book through my Take a Chef profile. You choose a date and send an enquiry there, and we arrange the details afterwards."
+      },
+      {
+        "q": "Do you leave the kitchen clean?",
+        "a": "Yes. The dishes are washed and the kitchen is tidied."
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Booking",
+    "title": "Your dinner starts with one enquiry.",
+    "lead": "Check availability, choose a date, and send me a few details. I'll come back with a menu proposal.",
+    "button": "Check availability on Take a Chef",
+    "note": "Bookings go through my Take a Chef profile."
+  },
+  "footer": {
+    "tagline": "A private chef for small dinners in Istria.",
+    "navTitle": "Pages",
+    "bookingTitle": "Bookings",
+    "bookingText": "All bookings go through Take a Chef.",
+    "bookingLink": "My profile",
+    "areaTitle": "Area",
+    "areaText": "Istria. I cook at your place.",
+    "rights": "All rights reserved.",
+    "photoCredit": "Temporary photography: Unsplash"
+  },
+  "galleryPage": {
+    "metaTitle": "Gallery: Čakula iz Kužine",
+    "metaDescription": "Photographs of dishes, preparation, and tables from private dinners in Istria.",
+    "eyebrow": "Gallery",
+    "title": "From the table, from the kitchen, from the market.",
+    "lead": "A few moments from private dinners: details on the plate, the preparation, and tables people linger around.",
+    "countLabel": "photographs",
+    "ctaTitle": "Would you like a table like this?",
+    "ctaLead": "Check availability and send me a few details about your evening.",
+    "ctaButton": "Check availability",
+    "backHome": "Back to home"
+  },
+  "lightbox": {
+    "open": "Open photo",
+    "close": "Close",
+    "prev": "Previous photo",
+    "next": "Next photo",
+    "of": "of"
+  }
+}

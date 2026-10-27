@@ -1,0 +1,74 @@
+/*
+  Palette system
+  --------------
+  The site ships with Palette 3 active. Change `palette` in src/config.ts
+  (or the data-palette attribute on <html>) to switch the whole site.
+
+  These four sets come from the brief. Role names are semantic, so each
+  palette is remapped to the same jobs: brand, accent, support, secondary.
+*/
+
+:root {
+  color-scheme: light;
+
+  /* Shared neutrals — these sit under every palette. */
+  --ivory: #faf7f0;
+  --paper: #ffffff;
+  --ink: #22261f;
+  --ink-soft: #4f584c;
+  --line: #dfe4df;
+  --line-soft: #ebeee8;
+  --on-brand: #fbf8ef;
+
+  /* Derived tokens */
+  --brand-deep: color-mix(in srgb, var(--brand) 82%, #081005);
+  --brand-tint: color-mix(in srgb, var(--brand) 7%, var(--ivory));
+  --support-soft: color-mix(in srgb, var(--support) 18%, var(--ivory));
+  --accent-soft: color-mix(in srgb, var(--accent) 28%, var(--ivory));
+}
+
+/* Palette 3 — active. Deep green, olive, chartreuse, blue-grey, teal. */
+:root,
+[data-palette='3'] {
+  --brand: #225f02;
+  /* Olive darkened from #528d06 so small text and button hover labels stay AA. */
+  --brand-hover: #457a05;
+  --accent: #cfce5d;
+  --support: #9cb5c1;
+  --secondary: #4b9ca2;
+  --muted: #5c726c;
+  --focus: #4b9ca2;
+}
+
+/* Palette 1 — burnt orange, amber, pale blue, teal, cool grey. */
+[data-palette='1'] {
+  --brand: #cc5703;
+  --brand-hover: #a84602;
+  --accent: #fca70a;
+  --support: #c3d3e3;
+  --secondary: #008b94;
+  --muted: #6c787b;
+  --focus: #008b94;
+}
+
+/* Palette 2 — deep red, rose, mint, pale blue, sky teal. */
+[data-palette='2'] {
+  --brand: #ac3539;
+  --brand-hover: #8c2a2e;
+  --accent: #e8a5ad;
+  --support: #d0ecf7;
+  --secondary: #2f8fa6;
+  --muted: #6d7a7e;
+  --focus: #2f8fa6;
+}
+
+/* Palette 4 — dusty rose, warm gold, light grey, blue-grey, strong blue. */
+[data-palette='4'] {
+  --brand: #1b78af;
+  --brand-hover: #145f8b;
+  --accent: #ebc678;
+  --support: #b4c6d0;
+  --secondary: #b46a65;
+  --muted: #6d7b82;
+  --focus: #1b78af;
+}

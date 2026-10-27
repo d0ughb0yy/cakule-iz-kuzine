@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="hr"
+  current="home"
+  title="Stranica nije pronađena: Čakula iz Kužine"
+  description="Ova stranica ne postoji. Vratite se na početnu ili pogledajte galeriju."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow">404</p>
+      <h1>Ova stranica nije za stolom.</h1>
+      <p class="lead">
+        Možda je večera već poslužena. Vratite se na početnu ili pogledajte galeriju.
+      </p>
+      <p class="lead">
+        This page isn't at the table. Head back home or take a look at the gallery.
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn" href="/">Početna</a>
+        <a class="btn btn--ghost" href="/galerija/">Galerija</a>
+        <a class="btn btn--ghost" href="/en/" hreflang="en" lang="en">English</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

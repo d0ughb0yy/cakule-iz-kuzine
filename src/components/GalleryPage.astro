@@ -1,0 +1,35 @@
+---
+import GalleryGrid from './GalleryGrid.astro';
+import CtaBand from './CtaBand.astro';
+import { getContent, getGallery, type Lang } from '../lib/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = getContent(lang);
+const items = getGallery(lang);
+---
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">{t.galleryPage.eyebrow}</p>
+    <h1>{t.galleryPage.title}</h1>
+    <p class="lead">{t.galleryPage.lead}</p>
+    <p class="page-hero__meta">{items.length} {t.galleryPage.countLabel}</p>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <div class="wrap">
+    <GalleryGrid items={items} labels={t.lightbox} />
+  </div>
+</section>
+
+<CtaBand
+  eyebrow={t.cta.eyebrow}
+  title={t.galleryPage.ctaTitle}
+  lead={t.galleryPage.ctaLead}
+  button={t.galleryPage.ctaButton}
+/>

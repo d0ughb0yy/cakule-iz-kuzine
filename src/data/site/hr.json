@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "title": "Čakula iz Kužine: privatni kuhar u Istri",
+    "description": "Privatni kuhar za do šest gostiju. Lokalne namirnice u sezoni pretvaram u fine dining u vašem domu ili vili u Istri."
+  },
+  "nav": {
+    "home": "Početna",
+    "gallery": "Galerija",
+    "book": "Rezervirajte",
+    "menu": "Meni",
+    "language": "Jezik",
+    "skip": "Preskoči na sadržaj"
+  },
+  "hero": {
+    "eyebrow": "Privatni kuhar · Istra",
+    "title": "Ono što je <em>u sezoni</em>, na vašem je stolu.",
+    "lead": "Dolazim u vaš dom ili vilu i kuham za do šest gostiju. Lokalne namirnice pretvaram u večeru s restoranskom preciznošću, od prvog tanjura do pospremljene kuhinje.",
+    "primaryCta": "Provjerite dostupnost",
+    "secondaryCta": "Pogledajte galeriju",
+    "trust": ["Do 6 gostiju", "Kuham kod vas", "Sve uključeno"],
+    "image": "hero",
+    "badge": "S tržnice i iz ribarnice."
+  },
+  "intro": {
+    "eyebrow": "Kako kuham",
+    "title": "Lokalno, u sezoni.",
+    "paragraphs": [
+      "Moja kuhinja počinje na tržnici. Namirnice biram na lokalnim tržnicama, kod ribara i u ribarnicama, a trudim se da meso uvijek bude lokalno ili hrvatsko. Ono što je tog jutra najbolje određuje jelovnik, a ne obrnuto.",
+      "Te namirnice pripremam tehnikama moderne kuhinje. Fine dining želim unijeti u vaš dom. To znači preciznu pripremu, mirno posluživanje i kuhinju koju na kraju ostavljam čistom."
+    ],
+    "signature": "Chef [Ime]",
+    "link": "Kako izgleda večer",
+    "image": "intro"
+  },
+  "how": {
+    "eyebrow": "Tijek večere",
+    "title": "Vi birate datum. Ja kuham.",
+    "lead": "Dogovor je jednostavan. Vi birate datum i goste, a sve ostalo je moj posao.",
+    "image": "how",
+    "steps": [
+      {
+        "title": "Odaberite datum i mjesto",
+        "text": "Javite mi kada i gdje: dom, vila ili terasa. Dolazim s vlastitim noževima i osnovnom opremom."
+      },
+      {
+        "title": "Složimo jelovnik",
+        "text": "Razgovaramo o ukusima, alergijama i povodu. Predlažem jelovnik, a vi ga potvrđujete."
+      },
+      {
+        "title": "Ja kuham, vi uživate",
+        "text": "Dolazim ranije, pripremam i poslužujem, a na kraju ostavljam kuhinju čistom."
+      }
+    ]
+  },
+  "included": {
+    "eyebrow": "Uključeno",
+    "title": "Sve što večera treba. Ništa što vam smeta.",
+    "lead": "Jedna cijena, jedan dogovor. Bez skrivenih troškova, a pospremanje ostaje meni.",
+    "items": [
+      "Kupovina na lokalnoj tržnici",
+      "Priprema i kuhanje u vašoj kuhinji",
+      "Posluživanje po jelovniku",
+      "Prilagodba alergijama i posebnoj prehrani",
+      "Suđe oprano, kuhinja pospremljena",
+      "Diskretna prisutnost tijekom večere"
+    ]
+  },
+  "menus": {
+    "eyebrow": "Jelovnici",
+    "title": "Svaki jelovnik počinje dogovorom.",
+    "lead": "Svaki jelovnik prilagođavam sezoni, tržnici i vašim željama. Ovo su tri smjera za početak razgovora.",
+    "items": [
+      {
+        "name": "S tržnice",
+        "description": "Četiri jela od onoga što je tog jutra bilo najbolje.",
+        "image": "menu-market",
+        "dishes": [
+          "Dagnje na buzaru",
+          "Rižot od škampa",
+          "Grilana riba, blitva i maslinovo ulje",
+          "Fritule s karamelom i smokvama"
+        ],
+        "price": "od 75 € po osobi"
+      },
+      {
+        "name": "Jadran",
+        "description": "Morski jelovnik za duge večeri.",
+        "image": "menu-adriatic",
+        "dishes": [
+          "Tartar od tune, kapari i limun",
+          "Juha od raka",
+          "Hobotnica ispod peke",
+          "Rožata s lavandom"
+        ],
+        "price": "od 75 € po osobi"
+      },
+      {
+        "name": "Vrt",
+        "description": "Sezonsko povrće u glavnoj ulozi.",
+        "image": "menu-garden",
+        "dishes": [
+          "Rižot od sezonskog povrća",
+          "Gljive i krumpir ispod peke",
+          "Salata od pečenih paprika",
+          "Kolač od smokava i badema"
+        ],
+        "price": "od 75 € po osobi"
+      }
+    ],
+    "priceNote": "Cijene su okvirne i ovise o jelovniku i lokaciji. Točnu ponudu dobivate na Take a Chefu.",
+    "cta": "Rezervirajte večeru"
+  },
+  "galleryTeaser": {
+    "eyebrow": "Galerija",
+    "title": "Pogledajte što nastaje u kuhinji.",
+    "lead": "Nekoliko trenutaka za stolom, od tržnice do deserta.",
+    "cta": "Cijela galerija",
+    "images": ["gallery-restaurant", "gallery-salmon", "gallery-table2", "gallery-terrace"]
+  },
+  "testimonials": {
+    "eyebrow": "Što kažu gosti",
+    "title": "Gosti koji su ostali duže.",
+    "items": [
+      {
+        "quote": "Htjela sam večeru s duhom Istre, ali bez restoranske formalnosti. Dobila sam upravo to, i kuhinju čišću nego prije dolaska.",
+        "name": "Sarah",
+        "location": "London"
+      },
+      {
+        "quote": "Jelovnik se rodio iz onoga što je tog jutra bilo najbolje na tržnici. Takvu svježinu ne možete odglumiti.",
+        "name": "Ana i Marko",
+        "location": "Rovinj"
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Pitanja",
+    "title": "Dobro je znati prije rezervacije.",
+    "lead": "Ako nešto nije odgovoreno, pitajte me na Take a Chefu. Odgovaram brzo.",
+    "items": [
+      {
+        "q": "Za koliko gostiju kuhate?",
+        "a": "Za do šest gostiju. Za veće skupine javite mi se pa ćemo naći rješenje."
+      },
+      {
+        "q": "Kuhate li i izvan Istre?",
+        "a": "Kuham u cijeloj Istri, a po dogovoru i šire. Putni trošak ovisi o lokaciji i dogovaramo ga unaprijed."
+      },
+      {
+        "q": "Što vam treba u kuhinji?",
+        "a": "Dovoljna je uobičajena kućna kuhinja sa štednjakom i pećnicom. Ako nešto posebno treba, javit ću vam se unaprijed."
+      },
+      {
+        "q": "Kako rješavate alergije i posebnu prehranu?",
+        "a": "Jelovnik prilagođavam alergijama, intolerancijama i posebnoj prehrani. Recite mi to prije nego potvrdimo jelovnik."
+      },
+      {
+        "q": "Koliko traje večera?",
+        "a": "Obično tri do četiri sata, ovisno o broju jela i ritmu večeri."
+      },
+      {
+        "q": "Kako se rezervira?",
+        "a": "Rezervirate preko mog profila na Take a Chefu. Tamo birate datum, šaljete upit, a detalje dogovaramo nakon toga."
+      },
+      {
+        "q": "Ostavljate li kuhinju čistom?",
+        "a": "Da. Suđe je oprano, a kuhinja pospremljena."
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Rezervacija",
+    "title": "Vaša večera počinje jednim upitom.",
+    "lead": "Provjerite dostupnost, odaberite datum i pošaljite mi nekoliko detalja. Javit ću se s prijedlogom jelovnika.",
+    "button": "Provjerite dostupnost na Take a Chefu",
+    "note": "Rezervacije idu preko mog profila na Take a Chefu."
+  },
+  "footer": {
+    "tagline": "Privatni kuhar za male večere u Istri.",
+    "navTitle": "Stranice",
+    "bookingTitle": "Rezervacije",
+    "bookingText": "Sve rezervacije idu preko Take a Chefa.",
+    "bookingLink": "Moj profil",
+    "areaTitle": "Područje",
+    "areaText": "Istra. Kuham kod vas.",
+    "rights": "Sva prava pridržana.",
+    "photoCredit": "Privremene fotografije: Unsplash"
+  },
+  "galleryPage": {
+    "metaTitle": "Galerija: Čakula iz Kužine",
+    "metaDescription": "Fotografije jela, pripreme i stolova s privatnih večera u Istri.",
+    "eyebrow": "Galerija",
+    "title": "Sa stola, iz kuhinje, s tržnice.",
+    "lead": "Nekoliko trenutaka iz privatnih večera: detalji s tanjura, priprema i stolovi oko kojih se ostaje duže.",
+    "countLabel": "fotografija",
+    "ctaTitle": "Želite ovakav stol?",
+    "ctaLead": "Provjerite dostupnost i pošaljite mi nekoliko detalja o svojoj večeri.",
+    "ctaButton": "Provjerite dostupnost",
+    "backHome": "Natrag na početnu"
+  },
+  "lightbox": {
+    "open": "Otvori fotografiju",
+    "close": "Zatvori",
+    "prev": "Prethodna fotografija",
+    "next": "Sljedeća fotografija",
+    "of": "od"
+  }
+}

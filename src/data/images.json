@@ -1,0 +1,222 @@
+{
+  "hero": {
+    "src": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?auto=format&fit=crop&w=1200&h=1500&q=80",
+    "full": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?auto=format&fit=crop&w=1600&h=2000&q=85",
+    "width": 1200,
+    "height": 1500,
+    "alt": {
+      "hr": "File lososa s povrćem i umakom na bijelom tanjuru",
+      "en": "Salmon fillet with vegetables and sauce on a white plate"
+    }
+  },
+  "intro": {
+    "src": "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1000&h=1250&q=80",
+    "full": "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1400&h=1750&q=85",
+    "width": 1000,
+    "height": 1250,
+    "alt": {
+      "hr": "Ruke kuhara kako pripremaju svježe bilje",
+      "en": "A chef's hands preparing fresh herbs"
+    }
+  },
+  "how": {
+    "src": "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1000&h=1250&q=80",
+    "full": "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1400&h=1750&q=85",
+    "width": 1000,
+    "height": 1250,
+    "alt": {
+      "hr": "Šareno sezonsko povrće na tržnici",
+      "en": "Colorful seasonal produce at a market"
+    }
+  },
+  "menu-market": {
+    "src": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=1000&h=750&q=80",
+    "full": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=1600&h=1200&q=85",
+    "width": 1000,
+    "height": 750,
+    "alt": {
+      "hr": "Grilana riba s povrćem",
+      "en": "Grilled fish with vegetables"
+    }
+  },
+  "menu-adriatic": {
+    "src": "https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&fit=crop&w=1000&h=750&q=80",
+    "full": "https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&fit=crop&w=1600&h=1200&q=85",
+    "width": 1000,
+    "height": 750,
+    "alt": {
+      "hr": "Škampi s limunom na tanjuru",
+      "en": "Prawns with lemon on a plate"
+    }
+  },
+  "menu-garden": {
+    "src": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1000&h=750&q=80",
+    "full": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1600&h=1200&q=85",
+    "width": 1000,
+    "height": 750,
+    "alt": {
+      "hr": "Šarena salata od sezonskog povrća",
+      "en": "A colorful seasonal vegetable salad"
+    }
+  },
+  "gallery-restaurant": {
+    "src": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&h=1125&q=80",
+    "full": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&h=2000&q=85",
+    "width": 900,
+    "height": 1125,
+    "alt": {
+      "hr": "Fino posluženo jelo na stolu uz čaše vina",
+      "en": "A finely plated dish on a table with wine glasses"
+    }
+  },
+  "gallery-dinner-party": {
+    "src": "https://images.unsplash.com/photo-1529543544282-ea669407fca3?auto=format&fit=crop&w=900&h=900&q=80",
+    "full": "https://images.unsplash.com/photo-1529543544282-ea669407fca3?auto=format&fit=crop&w=1600&h=1600&q=85",
+    "width": 900,
+    "height": 900,
+    "alt": {
+      "hr": "Predjelo s povrćem na drvenoj dasci",
+      "en": "A vegetable starter on a wooden board"
+    }
+  },
+  "gallery-salmon": {
+    "src": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1200&h=800&q=80",
+    "full": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1800&h=1200&q=85",
+    "width": 1200,
+    "height": 800,
+    "alt": {
+      "hr": "File lososa s zelenim povrćem na tamnom tanjuru",
+      "en": "Salmon fillet with green vegetables on a dark plate"
+    }
+  },
+  "gallery-oysters": {
+    "src": "https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&fit=crop&w=900&h=900&q=80",
+    "full": "https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&fit=crop&w=1600&h=1600&q=85",
+    "width": 900,
+    "height": 900,
+    "alt": {
+      "hr": "Škampi na tanjuru s kriškom limuna",
+      "en": "Prawns on a plate with a slice of lemon"
+    }
+  },
+  "gallery-bread": {
+    "src": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&h=1125&q=80",
+    "full": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1600&h=2000&q=85",
+    "width": 900,
+    "height": 1125,
+    "alt": {
+      "hr": "Dva kruha posuta brašnom na tamnoj podlozi",
+      "en": "Two loaves of bread dusted with flour on a dark surface"
+    }
+  },
+  "gallery-olive-oil": {
+    "src": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=900&h=900&q=80",
+    "full": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=1600&h=1600&q=85",
+    "width": 900,
+    "height": 900,
+    "alt": {
+      "hr": "Boca maslinovog ulja s maslinama",
+      "en": "A bottle of olive oil with olives"
+    }
+  },
+  "gallery-plating": {
+    "src": "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&h=1125&q=80",
+    "full": "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1600&h=2000&q=85",
+    "width": 900,
+    "height": 1125,
+    "alt": {
+      "hr": "Ruke kuhara kako režu svježe bilje",
+      "en": "A chef's hands chopping fresh herbs"
+    }
+  },
+  "gallery-cake": {
+    "src": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&h=900&q=80",
+    "full": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=1600&h=1600&q=85",
+    "width": 900,
+    "height": 900,
+    "alt": {
+      "hr": "Slojevita torta s malinama",
+      "en": "A layered cake with raspberries"
+    }
+  },
+  "gallery-dessert": {
+    "src": "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&h=1125&q=80",
+    "full": "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1600&h=2000&q=85",
+    "width": 900,
+    "height": 1125,
+    "alt": {
+      "hr": "Sladoled preliven karamelom",
+      "en": "Ice cream drizzled with caramel"
+    }
+  },
+  "gallery-charcuterie": {
+    "src": "https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?auto=format&fit=crop&w=1200&h=800&q=80",
+    "full": "https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?auto=format&fit=crop&w=1800&h=1200&q=85",
+    "width": 1200,
+    "height": 800,
+    "alt": {
+      "hr": "Daska s pršutom, smokvama, sirom i grožđem",
+      "en": "A board with prosciutto, figs, cheese, and grapes"
+    }
+  },
+  "gallery-table2": {
+    "src": "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&w=900&h=1125&q=80",
+    "full": "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&w=1600&h=2000&q=85",
+    "width": 900,
+    "height": 1125,
+    "alt": {
+      "hr": "Žena večera za stolom u toplom svjetlu",
+      "en": "A woman dining at a table in warm light"
+    }
+  },
+  "gallery-table-wine": {
+    "src": "https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?auto=format&fit=crop&w=900&h=900&q=80",
+    "full": "https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?auto=format&fit=crop&w=1600&h=1600&q=85",
+    "width": 900,
+    "height": 900,
+    "alt": {
+      "hr": "Ruke iznad zdjele salate s povrćem",
+      "en": "Hands over a bowl of vegetable salad"
+    }
+  },
+  "gallery-terrace": {
+    "src": "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1200&h=800&q=80",
+    "full": "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1800&h=1200&q=85",
+    "width": 1200,
+    "height": 800,
+    "alt": {
+      "hr": "Postavljeni stolovi na terasi s pogledom na more",
+      "en": "Set tables on a terrace overlooking the sea"
+    }
+  },
+  "gallery-prep": {
+    "src": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=900&h=900&q=80",
+    "full": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1600&h=1600&q=85",
+    "width": 900,
+    "height": 900,
+    "alt": {
+      "hr": "Zdjele s pripremljenim povrćem i namirnicama",
+      "en": "Bowls of prepared vegetables and ingredients"
+    }
+  },
+  "gallery-fire": {
+    "src": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1200&h=800&q=80",
+    "full": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1800&h=1200&q=85",
+    "width": 1200,
+    "height": 800,
+    "alt": {
+      "hr": "Pečena piletina s povrćem na pladnju",
+      "en": "Roast chicken with vegetables on a platter"
+    }
+  },
+  "gallery-salad": {
+    "src": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&h=900&q=80",
+    "full": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1600&h=1600&q=85",
+    "width": 900,
+    "height": 900,
+    "alt": {
+      "hr": "Šarena zdjela sezonske salate",
+      "en": "A colorful bowl of seasonal salad"
+    }
+  }
+}

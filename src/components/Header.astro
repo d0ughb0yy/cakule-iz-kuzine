@@ -1,0 +1,133 @@
+---
+import { routes, site } from '../config';
+import { getContent, otherLang } from '../lib/content';
+import Icon from './Icon.astro';
+
+interface Props {
+  lang: 'hr' | 'en';
+  current: 'home' | 'gallery';
+}
+
+const { lang, current } = Astro.props;
+const t = getContent(lang);
+const altLang = otherLang(lang);
+const altHref = routes[current][altLang];
+const [nameFirst, ...nameRestParts] = site.name.split(' ');
+const nameRest = nameRestParts.join(' ');
+---
+
+<header class="site-header">
+  <div class="wrap header__inner">
+    <a class="brand" href={routes.home[lang]} aria-label={site.name}>
+      {nameFirst} <span class="brand__rest">{nameRest}</span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+    >
+      {t.nav.menu}
+      <span class="nav-toggle__icon" aria-hidden="true">
+        <Icon name="menu" size={18} />
+        <Icon name="close" size={18} />
+      </span>
+    </button>
+
+    <div class="header__panel" id="site-nav">
+      <nav aria-label={t.nav.menu}>
+        <ul class="nav-list">
+          <li>
+            <a
+              class="nav-link"
+              href={routes.home[lang]}
+              aria-current={current === 'home' ? 'page' : undefined}
+            >
+              {t.nav.home}
+            </a>
+          </li>
+          <li>
+            <a
+              class="nav-link"
+              href={routes.gallery[lang]}
+              aria-current={current === 'gallery' ? 'page' : undefined}
+            >
+              {t.nav.gallery}
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <div class="lang" aria-label={t.nav.language}>
+          {altLang === 'hr' ? (
+            <a href={altHref} hreflang="hr" lang="hr">HR</a>
+          ) : (
+            <span class="lang__current" aria-current="true">HR</span>
+          )}
+          <span class="lang__sep" aria-hidden="true"></span>
+          {altLang === 'en' ? (
+            <a href={altHref} hreflang="en" lang="en">EN</a>
+          ) : (
+            <span class="lang__current" aria-current="true">EN</span>
+          )}
+        </div>
+
+        <a
+          class="btn btn--sm header__cta"
+          href={site.bookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t.nav.book}
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  (() => {
+    const toggle = document.querySelector('.nav-toggle');
+    const panel = document.getElementById('site-nav');
+
+    if (!toggle || !panel) return;
+
+    const setOpen = (open) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      panel.dataset.open = String(open);
+    };
+
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') !== 'true';
+      setOpen(open);
+      if (open) panel.querySelector('a')?.focus();
+    });
+
+    panel.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setOpen(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+
+    document.addEventListener('click', (event) => {
+      if (
+        toggle.getAttribute('aria-expanded') === 'true' &&
+        !panel.contains(event.target) &&
+        !toggle.contains(event.target)
+      ) {
+        setOpen(false);
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 860) setOpen(false);
+    });
+  })();
+</script>

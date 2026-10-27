@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GalleryPage from '../components/GalleryPage.astro';
+import { getContent } from '../lib/content';
+
+const lang = 'hr' as const;
+const t = getContent(lang);
+---
+
+<BaseLayout
+  lang={lang}
+  current="gallery"
+  title={t.galleryPage.metaTitle}
+  description={t.galleryPage.metaDescription}
+  ogImage="gallery-restaurant"
+>
+  <GalleryPage lang={lang} />
+</BaseLayout>

@@ -1,0 +1,236 @@
+---
+import Icon from './Icon.astro';
+
+interface GalleryItem {
+  index: number;
+  src: string;
+  full: string;
+  width: number;
+  height: number;
+  alt: string;
+  caption: string;
+}
+
+interface Props {
+  items: GalleryItem[];
+  labels: {
+    open: string;
+    close: string;
+    prev: string;
+    next: string;
+    of: string;
+  };
+}
+
+const { items, labels } = Astro.props;
+---
+
+<ul class="gallery" role="list">
+  {
+    items.map((item, index) => (
+      <li class="gallery__item">
+        <button
+          class="gallery__button"
+          type="button"
+          data-index={index}
+          data-src={item.full}
+          data-alt={item.alt}
+          data-caption={item.caption}
+          aria-label={`${labels.open}: ${item.caption}`}
+        >
+          <img
+            src={item.src}
+            width={item.width}
+            height={item.height}
+            alt={item.alt}
+            loading={index < 2 ? 'eager' : 'lazy'}
+            decoding="async"
+          />
+        </button>
+        <p class="gallery__caption">{item.caption}</p>
+      </li>
+    ))
+  }
+</ul>
+
+<dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-caption">
+  <div class="lightbox__inner">
+    <button class="lightbox__btn lightbox__close" type="button" data-close aria-label={labels.close}>
+      <Icon name="close" size={18} />
+    </button>
+
+    <figure class="lightbox__figure">
+      <div class="lightbox__stage">
+        <img class="lightbox__img" src="" alt="" />
+      </div>
+
+      <figcaption class="lightbox__bar">
+        <div class="lightbox__meta">
+          <p class="lightbox__caption" id="lightbox-caption" aria-live="polite"></p>
+          <p class="lightbox__count">
+            <span data-current>1</span> {labels.of} <span data-total>{items.length}</span>
+          </p>
+        </div>
+
+        <div class="lightbox__controls">
+          <button class="lightbox__btn" type="button" data-prev aria-label={labels.prev}>
+            <Icon name="chevron-left" size={18} />
+          </button>
+          <button class="lightbox__btn" type="button" data-next aria-label={labels.next}>
+            <Icon name="chevron-right" size={18} />
+          </button>
+        </div>
+      </figcaption>
+    </figure>
+  </div>
+</dialog>
+
+<script is:inline>
+  (() => {
+    const dialog = document.getElementById('lightbox');
+    if (!dialog) return;
+
+    const buttons = Array.from(document.querySelectorAll('.gallery__button'));
+    if (!buttons.length) return;
+
+    const figure = dialog.querySelector('.lightbox__figure');
+    const image = dialog.querySelector('.lightbox__img');
+    const meta = dialog.querySelector('.lightbox__meta');
+    const caption = dialog.querySelector('.lightbox__caption');
+    const currentLabel = dialog.querySelector('[data-current]');
+    const closeButton = dialog.querySelector('[data-close]');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const wait = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
+
+    const items = buttons.map((button) => ({
+      src: button.dataset.src,
+      alt: button.dataset.alt,
+      caption: button.dataset.caption,
+    }));
+
+    let pending = 0;
+    let token = 0;
+    let closeTimer;
+
+    const updateMeta = (item, index) => {
+      caption.textContent = item.caption;
+      currentLabel.textContent = String(index + 1);
+    };
+
+    const show = (index, direction = 0, immediate = false) => {
+      const target = (index + items.length) % items.length;
+      const item = items[target];
+      const myToken = ++token;
+      pending = target;
+
+      if (immediate || reduceMotion.matches) {
+        image.classList.remove('is-out', 'is-in');
+        image.style.setProperty('--shift', '0px');
+        meta.classList.remove('is-changing');
+        image.src = item.src;
+        image.alt = item.alt;
+        updateMeta(item, target);
+        return;
+      }
+
+      image.classList.remove('is-in');
+
+      const preload = new Image();
+      preload.src = item.src;
+
+      preload
+        .decode()
+        .catch(() => {})
+        .then(async () => {
+          if (myToken !== token) return;
+
+          image.classList.add('is-out');
+          meta.classList.add('is-changing');
+          image.style.setProperty('--shift', `${direction * -10}px`);
+
+          await wait(150);
+          if (myToken !== token) return;
+
+          image.src = item.src;
+          image.alt = item.alt;
+          updateMeta(item, target);
+
+          image.style.setProperty('--shift', `${direction * 10}px`);
+          image.classList.remove('is-out');
+          image.classList.add('is-in');
+
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              if (myToken !== token) return;
+              image.style.setProperty('--shift', '0px');
+              image.classList.remove('is-in');
+              meta.classList.remove('is-changing');
+            });
+          });
+        });
+    };
+
+    const open = (index) => {
+      window.clearTimeout(closeTimer);
+      dialog.classList.remove('is-closing');
+      show(index, 0, true);
+      dialog.showModal();
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+
+      requestAnimationFrame(() => dialog.classList.add('is-open'));
+      closeButton.focus({ preventScroll: true });
+    };
+
+    const close = () => {
+      if (!dialog.open || dialog.classList.contains('is-closing')) return;
+
+      token++;
+      dialog.classList.remove('is-open');
+      dialog.classList.add('is-closing');
+
+      closeTimer = window.setTimeout(
+        () => dialog.close(),
+        reduceMotion.matches ? 0 : 240
+      );
+    };
+
+    buttons.forEach((button, index) => {
+      button.addEventListener('click', () => open(index));
+    });
+
+    closeButton.addEventListener('click', close);
+    dialog.querySelector('[data-prev]').addEventListener('click', () => show(pending - 1, -1));
+    dialog.querySelector('[data-next]').addEventListener('click', () => show(pending + 1, 1));
+
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog || !figure.contains(event.target)) close();
+    });
+
+    dialog.addEventListener('cancel', (event) => {
+      event.preventDefault();
+      close();
+    });
+
+    dialog.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        show(pending - 1, -1);
+      }
+
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        show(pending + 1, 1);
+      }
+    });
+
+    dialog.addEventListener('close', () => {
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+      dialog.classList.remove('is-open', 'is-closing');
+      token++;
+      image.classList.remove('is-out', 'is-in');
+      meta.classList.remove('is-changing');
+    });
+  })();
+</script>
