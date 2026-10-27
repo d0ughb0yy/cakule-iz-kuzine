@@ -71,7 +71,7 @@ Publishing invented reviews is a legal and trust risk. Either use real, permitte
 | 6.5 | Update gallery captions | `src/data/gallery.json` | Generic dish descriptions | recommended |
 | 6.6 | Keep the hero and intro free of identifiable strangers | `images.json` → `hero`, `intro` | Intro is a hands-only photo on purpose | recommended |
 
-How to swap an image (four steps) is in `README.md` → "Replacing an Unsplash image with a real photo". Keep the aspect ratio close to the slot it fills: hero and intro are 4:5, menu cards 4:3, gallery images vary.
+How to swap an image (four steps) is in `docs/development.md` → "Replacing an Unsplash image with a real photo". Keep the aspect ratio close to the slot it fills: hero and intro are 4:5, menu cards 4:3, gallery images vary.
 
 **Photo quality bar:** natural light, real tables, real hands, no heavy filters. The design leans on whitespace and typography; overly styled stock imagery undercuts it.
 

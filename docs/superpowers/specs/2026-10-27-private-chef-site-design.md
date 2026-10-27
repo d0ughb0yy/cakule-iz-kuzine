@@ -324,9 +324,9 @@ src/
   pages/        index, galerija, en/index, en/gallery, 404
   styles/       palettes.css, global.css
 public/         favicon.svg, robots.txt, future local images
-docs/           this specification
+docs/           design specification + development guide
 CONTENT.md      launch checklist of every placeholder
-README.md       setup, deploy, editing, palette switching
+docs/development.md   local run, Netlify deploy, editing, palette switching
 ```
 
 ## 14. Verification record (27 Oct 2026)
