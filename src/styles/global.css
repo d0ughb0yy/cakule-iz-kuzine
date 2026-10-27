@@ -1481,10 +1481,6 @@ p {
   opacity: 0;
 }
 
-.lightbox.is-tracking .lightbox__img {
-  transition: none;
-}
-
 .lightbox__bar {
   display: flex;
   width: 100%;

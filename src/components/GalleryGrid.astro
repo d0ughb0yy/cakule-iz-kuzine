@@ -203,70 +203,27 @@ const { items, labels } = Astro.props;
     dialog.querySelector('[data-prev]').addEventListener('click', () => show(pending - 1, -1));
     dialog.querySelector('[data-next]').addEventListener('click', () => show(pending + 1, 1));
 
-    // Touch swipe navigation (single finger, horizontal drags only)
+    // Touch swipe navigation: swiping horizontally triggers the same
+    // prev/next animation as the arrow buttons.
     const startTouch = { x: 0, y: 0, t: 0 };
-    let tracking = false;
-    let axis = '';
-    let dragDx = 0;
-
-    const resetDrag = () => {
-      tracking = false;
-      axis = '';
-      dragDx = 0;
-      dialog.classList.remove('is-tracking');
-    };
 
     dialog.addEventListener('touchstart', (event) => {
-      if (event.touches.length !== 1) {
-        resetDrag();
-        return;
-      }
-
+      if (event.touches.length !== 1) return;
       if (event.target.closest('button')) return;
 
       startTouch.x = event.touches[0].clientX;
       startTouch.y = event.touches[0].clientY;
       startTouch.t = Date.now();
-      dragDx = 0;
-      axis = '';
-      tracking = true;
     });
 
-    dialog.addEventListener('touchmove', (event) => {
-      if (!tracking) return;
-
-      if (event.touches.length !== 1) {
-        resetDrag();
-        return;
-      }
-
-      const dx = event.touches[0].clientX - startTouch.x;
-      const dy = event.touches[0].clientY - startTouch.y;
-
-      if (!axis) {
-        if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
-        axis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
-        if (axis !== 'x') {
-          tracking = false;
-          return;
-        }
-        dialog.classList.add('is-tracking');
-      }
-
-      event.preventDefault();
-      dragDx = dx;
-      image.style.setProperty('--shift', `${dx}px`);
-    }, { passive: false });
-
     dialog.addEventListener('touchend', (event) => {
-      if (!tracking) return;
+      if (event.changedTouches.length !== 1) return;
 
-      const wasHorizontal = axis === 'x';
-      const dx = dragDx;
+      const dx = event.changedTouches[0].clientX - startTouch.x;
+      const dy = event.changedTouches[0].clientY - startTouch.y;
       const duration = Date.now() - startTouch.t;
-      resetDrag();
 
-      if (!wasHorizontal || !dx) return;
+      if (Math.abs(dx) < 8 || Math.abs(dx) <= Math.abs(dy)) return;
 
       const width = dialog.clientWidth || window.innerWidth;
       const flick = Math.abs(dx) / (duration || 1) * 1000 > 480;
@@ -274,13 +231,8 @@ const { items, labels } = Astro.props;
       if (Math.abs(dx) > width * 0.25 || flick) {
         const direction = dx < 0 ? 1 : -1;
         show(pending + direction, direction);
-        return;
       }
-
-      image.style.setProperty('--shift', '0px');
     });
-
-    dialog.addEventListener('touchcancel', resetDrag);
 
     dialog.addEventListener('click', (event) => {
       if (event.target === dialog || !figure.contains(event.target)) close();
