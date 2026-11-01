@@ -11,7 +11,7 @@ Legend: **required** = do not launch without it · **recommended** = affects tru
 | # | Item | Where | Current placeholder | Status |
 | --- | --- | --- | --- | --- |
 | 1.1 | Brand / site name | `src/config.ts` → `site.name` | `Čakula iz Kužine` | **required** |
-| 1.2 | Chef's name | `src/data/site/hr.json` → `intro.signature`; `src/data/site/en.json` → `intro.signature` | `Chef [Ime]` / `Chef [Name]` | **required** |
+| 1.2 | Chef's name | `src/data/site/hr.json` → `intro.signature`; `src/data/site/en.json` → `intro.signature` | `Chef Tin` | **required** |
 | 1.3 | Instagram (leave empty to hide) | `src/config.ts` → `instagramUrl` | empty | optional |
 | 1.4 | Favicon | `public/favicon.svg` | Palette 3 monogram | optional |
 

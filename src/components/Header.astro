@@ -14,6 +14,7 @@ const altLang = otherLang(lang);
 const altHref = routes[current][altLang];
 const [nameFirst, ...nameRestParts] = site.name.split(' ');
 const nameRest = nameRestParts.join(' ');
+
 ---
 
 <header class="site-header">
@@ -22,18 +23,41 @@ const nameRest = nameRestParts.join(' ');
       {nameFirst} <span class="brand__rest">{nameRest}</span>
     </a>
 
-    <button
-      class="nav-toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="site-nav"
-    >
-      {t.nav.menu}
-      <span class="nav-toggle__icon" aria-hidden="true">
-        <Icon name="menu" size={18} />
-        <Icon name="close" size={18} />
-      </span>
-    </button>
+    <div class="header__actions">
+      <!-- Desktop language switcher (inline with flags) -->
+      <div class="lang lang--desktop" aria-label={t.nav.language}>
+        <a href={routes.home['hr']} hreflang="hr" lang="hr" class={`lang__item ${lang === 'hr' ? 'is-active' : ''}`} data-lang="hr">
+          HR
+        </a>
+        <span class="lang__sep" aria-hidden="true"></span>
+        <a href={routes.home['en']} hreflang="en" lang="en" class={`lang__item ${lang === 'en' ? 'is-active' : ''}`} data-lang="en">
+          EN
+        </a>
+      </div>
+
+      <!-- Mobile: icon buttons -->
+      <div class="header__mobile-actions">
+        <div class="lang lang--mobile" aria-label={t.nav.language}>
+          <a href={routes.home['hr']} hreflang="hr" lang="hr" class={`lang__item ${lang === 'hr' ? 'is-active' : ''}`} data-lang="hr">HR</a>
+          <span class="lang__sep" aria-hidden="true"></span>
+          <a href={routes.home['en']} hreflang="en" lang="en" class={`lang__item ${lang === 'en' ? 'is-active' : ''}`} data-lang="en">EN</a>
+        </div>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span class="nav-toggle__icon" aria-hidden="true">
+            <Icon name="menu" size={24} />
+            <Icon name="close" size={24} />
+          </span>
+        </button>
+      </div>
+    </div>
+
+
 
     <div class="header__panel" id="site-nav">
       <nav aria-label={t.nav.menu}>
@@ -60,27 +84,13 @@ const nameRest = nameRestParts.join(' ');
       </nav>
 
       <div class="header__actions">
-        <div class="lang" aria-label={t.nav.language}>
-          {altLang === 'hr' ? (
-            <a href={altHref} hreflang="hr" lang="hr">HR</a>
-          ) : (
-            <span class="lang__current" aria-current="true">HR</span>
-          )}
-          <span class="lang__sep" aria-hidden="true"></span>
-          {altLang === 'en' ? (
-            <a href={altHref} hreflang="en" lang="en">EN</a>
-          ) : (
-            <span class="lang__current" aria-current="true">EN</span>
-          )}
-        </div>
-
         <a
           class="btn btn--sm header__cta"
           href={site.bookingUrl}
           target="_blank"
           rel="noopener noreferrer"
         >
-          {t.nav.book}
+          Take A Chef Profile
         </a>
       </div>
     </div>
@@ -92,42 +102,44 @@ const nameRest = nameRestParts.join(' ');
     const toggle = document.querySelector('.nav-toggle');
     const panel = document.getElementById('site-nav');
 
-    if (!toggle || !panel) return;
+    // Navigation drawer
+    if (toggle && panel) {
+      const setOpen = (open) => {
+        toggle.setAttribute('aria-expanded', String(open));
+        panel.dataset.open = String(open);
+      };
 
-    const setOpen = (open) => {
-      toggle.setAttribute('aria-expanded', String(open));
-      panel.dataset.open = String(open);
-    };
+      toggle.addEventListener('click', () => {
+        const open = toggle.getAttribute('aria-expanded') !== 'true';
+        setOpen(open);
+        if (open) panel.querySelector('a')?.focus();
+      });
 
-    toggle.addEventListener('click', () => {
-      const open = toggle.getAttribute('aria-expanded') !== 'true';
-      setOpen(open);
-      if (open) panel.querySelector('a')?.focus();
-    });
+      panel.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => setOpen(false));
+      });
 
-    panel.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => setOpen(false));
-    });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+          setOpen(false);
+          toggle.focus();
+        }
+      });
 
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
-        setOpen(false);
-        toggle.focus();
-      }
-    });
+      document.addEventListener('click', (event) => {
+        if (
+          toggle.getAttribute('aria-expanded') === 'true' &&
+          !panel.contains(event.target) &&
+          !toggle.contains(event.target)
+        ) {
+          setOpen(false);
+        }
+      });
 
-    document.addEventListener('click', (event) => {
-      if (
-        toggle.getAttribute('aria-expanded') === 'true' &&
-        !panel.contains(event.target) &&
-        !toggle.contains(event.target)
-      ) {
-        setOpen(false);
-      }
-    });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 860) setOpen(false);
+      });
+    }
 
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 860) setOpen(false);
-    });
   })();
 </script>

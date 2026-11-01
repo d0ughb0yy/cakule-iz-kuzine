@@ -88,4 +88,18 @@ docs/                Development guide and design spec
 - Booking is intentionally external. There is no form, database, or CMS to maintain.
 - The gallery lightbox is keyboard accessible (`Esc`, arrow keys) and closes on outside click.
 - Scroll reveals and lightbox transitions are disabled automatically under `prefers-reduced-motion`.
+## Recent navbar changes (updated docs for agents)
+
+- Desktop language switcher (`.lang--desktop`) now uses pill styling (`border-radius: 999px`, `background: var(--line-soft)`, `border: 1px solid var(--line)`) identical to mobile (`.lang--mobile`), with active `.is-active` filled highlight (`var(--brand)`).
+- Mobile language links (`.lang--mobile`) stay as pill (`flex: 1`, `text-align: center`) with `.is-active` filled.
+- `Header.astro`: `.lang--mobile` restored beside `.nav-toggle` (side-by-side); `.nav-toggle` uses `display: flex` with centered icon (no `inset: 0` on SVG); `line-height: 1` on `.nav-toggle`.
+- Book button (`.header__cta`) changed to "Take A Chef Profile" (same URL `site.bookingUrl`).
+- Mobile dropdown gap (`.header__panel`) kept at original `gap: 2.75rem`; `.nav-link` padding reduced (`0.65rem 0`) for cleaner mobile view.
+- `.header__inner` uses `justify-content: space-between` (logo left, actions right); `.header__mobile-actions` uses `display: flex; align-items: center;`.
+- `.header__cta` (`btn--sm`) slightly reduced (`font-size: 0.62rem`, `min-height: 2.5rem`).
+- Lightbox backdrop (`.lightbox`) uses neutral grey (`rgba(30, 30, 30, 0.9)`) instead of green.
+- Leftover report docs (`UNSLOP_*`, `IMPLEMENTATION_*`) removed from workspace root.
+- `.nav-link` mobile padding: `0.92rem`; button: `font-size: 0.92rem` (slight shrink).
+- `.header__panel` gap: `2.75rem` (original restored); `.header__actions` mobile `margin-top`: `1.4rem` (restored for mobile dropdown spacing).
+
 - Reviews, prices, the chef's name, and the Take a Chef URL in the prototype are placeholders. See `CONTENT.md`.
