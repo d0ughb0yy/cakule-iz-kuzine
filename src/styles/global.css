@@ -522,12 +522,13 @@ p {
 }
 
 .lang--desktop a:hover,
-.lang--desktop a:focus {
-  background: var(--brand);
-  color: var(--on-brand);
+.lang--desktop a:focus-visible {
+  color: var(--ink);
 }
 
-.lang--desktop a.is-active {
+.lang--desktop a.is-active,
+.lang--desktop a.is-active:hover,
+.lang--desktop a.is-active:focus-visible {
   background: var(--brand);
   color: var(--on-brand);
 }
@@ -581,12 +582,13 @@ p {
   }
 
   .lang--mobile a:hover,
-  .lang--mobile a:focus {
-    background: var(--brand);
-    color: var(--on-brand);
+  .lang--mobile a:focus-visible {
+    color: var(--ink);
   }
 
-  .lang--mobile a.is-active {
+  .lang--mobile a.is-active,
+  .lang--mobile a.is-active:hover,
+  .lang--mobile a.is-active:focus-visible {
     background: var(--brand);
     color: var(--on-brand);
   }
