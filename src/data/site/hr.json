@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Čakula iz Kužine: privatni kuhar u Istri",
+    "title": "Čakule iz Kužine: Privatni kuhar u Istri",
     "description": "Privatni kuhar u Istri za do šest gostiju. Kuham sezonske namirnice s lokalne tržnice u vašem domu ili vili."
   },
   "nav": {
@@ -12,20 +12,20 @@
     "skip": "Preskoči na sadržaj"
   },
   "hero": {
-    "eyebrow": "Privatni kuhar · Istra",
-    "title": "Ono što je <em>u sezoni</em>, na vašem je stolu.",
-    "lead": "Kuham u vašem domu ili vili za do šest gostiju. Ujutro odem na tržnicu, kuham od onoga što je najbolje i poslužujem jelo po jelo. Kuhinju ostavljam čistu.",
+    "eyebrow": "Tin Lučić · Privatni kuhar · Istra",
+    "title": "Svježe i <em>u sezoni</em>, do vašeg stola.",
+    "lead": "Dolazim i kuham u vašem domu ili vili za do šest gostiju. Sezona određuje meni, te pripremam samo ono što je najsvježije toga dana.",
     "primaryCta": "Provjerite dostupnost",
     "secondaryCta": "Pogledajte galeriju",
-    "trust": ["Do 6 gostiju", "Kuham kod vas", "Cijena dogovorena unaprijed"],
+    "trust": ["Max. 6 gostiju", "Kuham u vašem domu", "Cijena dogovorena unaprijed"],
     "image": "hero",
-    "badge": "S tržnice i iz ribarnice."
+    "badge": "Najsvježije namirnice toga dana"
   },
   "intro": {
-    "eyebrow": "Kako kuham",
-    "title": "Lokalno, u sezoni.",
+    "eyebrow": "Moja Pravila Kuhanja",
+    "title": "Lokalno i u sezoni.",
     "paragraphs": [
-      "Moja kuhinja počinje na tržnici. Kupujem kod lokalnih uzgajivača i u ribarnici, a meso biram hrvatsko kad mogu. Ono što je tog jutra najbolje odlučuje jelovnik.",
+      "Moje planiranje obroka počinje na tržnici. Kupujem kod lokalnih uzgajivača i od lokalnih ribara, a meso biram hrvatsko kad mogu.",
       "Kuham s pažnjom kako bih unio restoransko kuhanje u vaš dom. Tanjuri su precizni, a posluživanje prati vaš ritam."
     ],
     "signature": "Chef Tin",
@@ -35,7 +35,7 @@
   "how": {
     "eyebrow": "Tijek večere",
     "title": "Vi birate datum. Ja kuham.",
-    "lead": "Recite mi datum i broj gostiju. Dogovorimo jelovnik, a ja kuham.",
+    "lead": "Recite mi datum i broj gostiju. Dogovorimo jelovnik, ja kuham, dok vi uživate.",
     "image": "how",
     "steps": [
       {

@@ -12,20 +12,20 @@
     "skip": "Skip to content"
   },
   "hero": {
-    "eyebrow": "Private chef · Istria",
-    "title": "What's <em>in season</em> is on your table.",
-    "lead": "I cook in your home or villa for up to six guests. I shop the market that morning and cook from what is best, then serve it course by course. I clean the kitchen before I leave.",
+    "eyebrow": "Tin Lučić · Private chef · Istria",
+    "title": "Fresh and <em>in season</em>, to your table.",
+    "lead": "I arrive and cook in your home or villa for up to six guests. The season dictates the menu, I prepare what is the freshest that day.",
     "primaryCta": "Check availability",
     "secondaryCta": "View the gallery",
-    "trust": ["Up to 6 guests", "I cook at your place", "Price agreed in advance"],
+    "trust": ["Max. 6 guests", "I cook in your home", "Price agreed in advance"],
     "image": "hero",
-    "badge": "From the market and the fishmonger."
+    "badge": "Freshest ingredients that day"
   },
   "intro": {
-    "eyebrow": "How I cook",
+    "eyebrow": "My Cooking Principles",
     "title": "Local, in season.",
     "paragraphs": [
-      "My cooking starts at the market. I buy from local growers and from the fishmonger, and I choose Croatian meat when I can. The best of that morning decides the menu.",
+      "My meal planning starts at the market. I buy from local growers and from the fishmonger, and I choose Croatian meat when I can. The best of that morning decides the menu.",
       "I cook with care to bring restaurant-level preparation into your home. The plates are precise and the service follows your pace."
     ],
     "signature": "Chef Tin",
