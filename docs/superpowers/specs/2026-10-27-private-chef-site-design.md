@@ -43,7 +43,7 @@ Home section order is deliberate:
 2. **Approach** — who the chef is, how they shop and cook; signature and a link to the process.
 3. **How it works** — three steps, removing uncertainty.
 4. **Included** — the "one price, no surprises" objection handled directly.
-5. **Menus** — three directions, indicative "from" price only.
+5. **Menus** — three directions in a paper-menu slideshow; no prices, no menu photography.
 6. **Gallery teaser** — visual proof and a path to the gallery.
 7. **Testimonials** — social proof (placeholder until real quotes exist).
 8. **FAQ** — travel, kitchen, allergies, duration, booking, cleanup.
@@ -84,6 +84,7 @@ Three rules carried through every section:
 | Role | Face | Settings |
 | --- | --- | --- |
 | Display / headings | **Fraunces Variable** | 400, optical sizing on, tight tracking (−0.018em to −0.032em), italic for emphasised words |
+| Menu dish names | **Fraunces Variable** | 400, `clamp(1.05rem, 1.3vw, 1.18rem)`, 1.5 line-height |
 | Body / UI | **Inter Variable** | 400–600, 1.0625rem base, 1.65 line-height |
 | Small caps / labels | Inter | 0.66–0.75rem, 0.11–0.18em tracking, uppercase |
 
@@ -104,7 +105,7 @@ Italic accents inside headlines (`<em>`) use the brand colour. Headlines use `--
 - Gutter: `clamp(1.25rem, 4vw, 3rem)`
 - Section rhythm: `clamp(4.5rem, 9vw, 8.5rem)` block padding
 - Header: 78px desktop, 66px below 860px; sticky with blur and a hairline border
-- Grid patterns: 2-column editorial splits (hero, intro, how, included, FAQ), 3-up menu cards, 4-up gallery teaser, 3-column masonry gallery
+- Grid patterns: 2-column editorial splits (hero, intro, how, included, FAQ), stacked paper-menu sheets, 4-up gallery teaser, 3-column masonry gallery
 - Breakpoints: 1000 / 960 / 920 / 860 (nav collapse) / 760 / 680 / 540
 
 The dark bands (`how`, final CTA) use `--brand-deep` with a radial accent glow. The footer is a further step darker. This creates a light–dark–light rhythm without introducing new colours.
@@ -220,7 +221,7 @@ The favicon is drawn in Palette 3 colours. If a switch becomes permanent, update
 - Placeholder photography is **hotlinked from Unsplash** with `auto=format&fit=crop` and explicit crop sizes. Nothing is downloaded or committed.
 - Every image has `width` and `height`, so the browser reserves space and the layout does not shift.
 - Hero is `fetchpriority="high"`; the first two gallery images are eager; everything else is lazy with `decoding="async"`.
-- Cropping: hero and intro 4:5, menu cards 4:3, gallery images keep varied ratios (masonry), lightbox uses `contain` so nothing is cropped.
+- Cropping: hero and intro 4:5, gallery images keep varied ratios (masonry), lightbox uses `contain` so nothing is cropped. The menus use no images.
 - Image treatment: 2px radius, no filters, no duotone. The offset hairline frame behind the hero and the chartreuse square behind the intro photo are the only graphic devices.
 - The intro image is deliberately hands-only (chopping herbs) so a stock face is never mistaken for the chef.
 
@@ -252,7 +253,8 @@ Motion is decorative and short. Nothing moves content the visitor is reading.
 | Lightbox open | Backdrop fades 250ms; dialog fades 220ms; frame rises 10px and scales 0.995 → 1 over 300ms |
 | Lightbox close | `is-open` removed, 240ms reverse, then `dialog.close()` |
 | Photo change | Preload + `decode()`, fade out 150ms with −10px slide, swap, fade in 180ms from +10px; caption/counter crossfade together |
-| Image hover | Gallery/teaser scale 1.03–1.04 over 700–800ms; menu cards lift 4px |
+| Image hover | Gallery/teaser scale 1.03–1.04 over 700–800ms |
+| Menu change | Active sheet fades in from an 18px horizontal shift over 350ms; the stage height stays fixed |
 | Link/button hover | 200–250ms colour/border/transform transitions |
 
 Rapid arrow presses are guarded by a token counter: only the latest requested image is rendered, so overlapping animations cannot leave the wrong photo or caption on screen.
@@ -349,11 +351,24 @@ Headless Chromium checks against the built `dist/`:
 
 ## 15. Known limitations and deliberate decisions
 
-- **Placeholders remain:** brand name, chef name, Take a Chef URL, prices, reviews, photos, domain, Instagram. See `CONTENT.md`.
+- **Placeholders remain:** brand name, chef name, Take a Chef URL, reviews, photos, domain, Instagram. See `CONTENT.md`. Pricing is handled by Take a Chef and is not shown on the site.
 - **Unsplash hotlinks** are temporary. They are not optimised for the site's exact breakpoints and will be replaced by local photos.
 - **No CMS:** editing JSON is the intended workflow; the copy is structured for it.
 - **No sitemap or analytics:** intentionally omitted to keep the build and privacy surface minimal.
 - **Palette 3 is the only fully AA-audited palette.** Switching to 1, 2, or 4 requires the small contrast edits noted in §5.5.
 - **Lightbox is not deep-linkable** and does not preload the whole gallery; it preloads the next image on demand.
 - **Reviews are placeholders.** They must be replaced with real, permitted quotes or removed before launch.
-- **The site is not a git repository.** No commits were made; version control is the owner's choice.
+
+## 16. Menu and booking update (2 November 2026)
+
+The menu section was rebuilt after the initial specification:
+
+- **No menu images.** Menus are text-only, presented as a printed paper menu with a serif title, course labels, and one or two dishes per course.
+- **Slideshow navigation.** Three tabs, prev/next arrows, clickable dots, arrow-key/`Home`/`End` support, and horizontal swipe. The old `01 od 03` counter was replaced by the dots.
+- **One or two options per course.** A course with one option renders as a set tasting course; a course with two renders the dishes side by side with the `or` / `ili` separator.
+- **Fixed height.** All sheets share one grid cell; inactive sheets are `visibility: hidden`, so the tallest menu sets the height and the controls never move.
+- **Typography.** Fraunces at 400 for menu titles and dish names; Inter for descriptions and labels; course labels and notes at 0.72rem. Fraunces weights above 400 read as bold.
+- **Data model.** `menus.items[].dishes` (slash-separated strings) became `menus.items[].courses[].options`.
+- **Booking.** Every CTA points at `https://www.takeachef.com/en-hr/chef/tin-lu-i`.
+
+Maintenance details live in `docs/development.md` → "Editing the menus".

@@ -69,39 +69,104 @@
   "menus": {
     "eyebrow": "Menus",
     "title": "Every menu starts with a conversation.",
-    "lead": "Each menu follows the season and the market. These three are starting points; we adjust them together.",
+    "lead": "The menus change depending on the season. These three are the current ones; we adjust them together.",
+    "choiceNote": "Choose one dish per course.",
+    "tastingNote": "A set tasting menu, no choices.",
+    "or": "or",
+    "prev": "Previous menu",
+    "next": "Next menu",
+    "of": "of",
+    "tabsLabel": "Choose a menu",
     "items": [
       {
-        "name": "From the Market",
-        "description": "A four-course menu based on what's freshest that morning.",
-        "image": "menu-market",
-        "dishes": [
-          "Mussels buzara",
-          "Scampi risotto",
-          "Grilled fish, chard, olive oil",
-          "Fritule with fig caramel"
+        "name": "Meat Lovers",
+        "description": "For the meat lovers, the best and local.",
+        "courses": [
+          {
+            "name": "Starter",
+            "options": [
+              "Goat cheese mousse, Vegetables 3-ways",
+              "Prosciutto seasonal salad"
+            ]
+          },
+          {
+            "name": "First course",
+            "options": [
+              "Mushroom risotto, Crispy bacon",
+              "Ravioli with beef ragu, Marinated carrots"
+            ]
+          },
+          {
+            "name": "Main course",
+            "options": [
+              "Chicken roulade, Roasted potatoes, Chimichurri",
+              "Ribeye steak, Potato purée, Roasted cauliflower, Mushroom velouté"
+            ]
+          },
+          {
+            "name": "Dessert",
+            "options": [
+              "Cheesecake, Chocolate crumble, White chocolate crisps",
+              "Chocolate Ganache, Chocolate chantilly, Hazelnut crumble"
+            ]
+          }
         ]
       },
       {
-        "name": "Adriatic",
-        "description": "A seafood menu for long evenings.",
-        "image": "menu-adriatic",
-        "dishes": [
-          "Tuna tartare, capers, lemon",
-          "Shellfish soup",
-          "Octopus under the bell",
-          "Rožata with lavender"
+        "name": "Fresh and Local",
+        "description": "Chefs choice of local delights.",
+        "courses": [
+          {
+            "name": "Starter",
+            "options": [
+              "Fish of the day ceviche, Rice chips",
+              "Goat cheese mousse, Vegetables 3-ways"
+          
+          ]
+          },
+          {
+            "name": "First course",
+            "options": [
+              "Creamy butternut squash soup",
+              "Mushroom risotto, Crispy bacon"
+            ]
+          },
+          {
+            "name": "Main course",
+            "options": [
+              "Squid ragu, Charred leeks, Polenta",
+              "Ravioli with beef ragu, Marinated carrots"
+            ]
+          },
+          {
+            "name": "Dessert",
+            "options": [
+              "Cheesecake, Chocolate crumble, White chocolate crisps",
+              "Chocolate Ganache, Chocolate chantilly, Hazelnut crumble"
+            ]
+          }
         ]
       },
       {
-        "name": "Garden",
-        "description": "Seasonal vegetables in the leading role.",
-        "image": "menu-garden",
-        "dishes": [
-          "Seasonal vegetable risotto",
-          "Mushroom and potato peka",
-          "Roasted pepper salad",
-          "Fig and almond cake"
+        "name": "Fresh from the Adriatic",
+        "description": "Local seafood, freshly caught",
+        "courses": [
+          {
+            "name": "Starter",
+            "options": ["Fish of the day ceviche, Rice chips"]
+          },
+          {
+            "name": "First course",
+            "options": ["Squid ragu, Charred leeks, Polenta"]
+          },
+          {
+            "name": "Main course",
+            "options": ["Pan seared fish of the day, Sauteed seasonal vegetables, Celeriac root puree, Rosemary beurre blanc"]
+          },
+          {
+            "name": "Dessert",
+            "options": ["Cheesecake, Chocolate crumble, White chocolate crisps"]
+          }
         ]
       }
     ],

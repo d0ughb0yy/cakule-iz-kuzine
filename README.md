@@ -15,9 +15,9 @@ Privatni kuhar u Istri. Kuham za male večere, do šest gostiju, u vašem domu i
 
 ## Sample menus
 
-Three menus on the site are starting points for a conversation, each priced "from":
+Three menus on the site are starting points for a conversation:
 
-- **From the Market**: four courses from whatever was best that morning.
+- **Meat Lovers**: four courses, with two choices per course.
 - **Adriatic**: a seafood menu for long evenings.
 - **Garden**: seasonal vegetables in the leading role.
 
@@ -25,7 +25,7 @@ Every menu adapts to allergies, intolerances, and dietary needs.
 
 ## Booking
 
-All reservations go through the chef's profile on [Take a Chef](https://www.takeachef.com/). There is no booking form on the site by design; every call-to-action leads to the profile.
+All reservations go through the chef's profile on [Take a Chef](https://www.takeachef.com/en-hr/chef/tin-lu-i). There is no booking form on the site by design; every call-to-action leads to the profile.
 
 ## The website
 
@@ -34,10 +34,10 @@ A small, bilingual portfolio site:
 - **Croatian**: home page and gallery at `/` and `/galerija/`
 - **English**: home page and gallery at `/en/` and `/en/gallery/`
 
-The home page answers the practical questions up front: how it works, what is included, what the chef needs in your kitchen, and how a reservation happens. The gallery shows the food and the tables.
+The home page answers the practical questions up front: how it works, what is included, what the chef needs in your kitchen, and how a reservation happens. The three menus are presented as a paper-menu slideshow — tabs, arrows, dots, keyboard, and swipe — with one or two dishes per course and no menu photography. The gallery shows the food and the tables.
 
 ## Project notes
 
-The copy, photos, prices, reviews, and chef name are being finalised; `CONTENT.md` is the checklist of what to replace before going live. Design and palette rationale lives in `docs/superpowers/specs/2026-10-27-private-chef-site-design.md`.
+The copy, photos, reviews, and chef name are being finalised; `CONTENT.md` is the checklist of what to replace before going live. Prices are quoted by Take a Chef rather than shown on the site. Design and palette rationale lives in `docs/superpowers/specs/2026-10-27-private-chef-site-design.md`.
 
 For anything technical (running the site locally, deploying to Vercel, editing text and images, switching palettes), see `docs/development.md`.

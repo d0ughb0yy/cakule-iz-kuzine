@@ -3,8 +3,7 @@
  */
 export const site = {
   name: 'Čakula iz Kužine',
-  // Replace with the real profile URL.
-  bookingUrl: 'https://www.takeachef.com/',
+  bookingUrl: 'https://www.takeachef.com/en-hr/chef/tin-lu-i',
   // Used for canonical URLs, sitemap and social cards. Update if the domain changes.
   url: 'https://cakule-iz-kuzine.vercel.app',
   serviceArea: 'Istria, Croatia',

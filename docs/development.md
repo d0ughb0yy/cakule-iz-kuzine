@@ -34,6 +34,42 @@ npm run preview   # preview the production build
 
 `CONTENT.md` lists every placeholder that must be replaced before launch. `docs/superpowers/specs/2026-10-27-private-chef-site-design.md` holds the full design rationale and palette documentation.
 
+### Editing the menus
+
+Menus live in `src/data/site/hr.json` and `en.json` under `menus.items`. Each menu has a `name`, a `description`, and `courses`. Each course has a `name` and an `options` array:
+
+- **One option** renders as a set tasting course.
+- **Two options** render side by side with the `menus.or` separator.
+
+The homepage picks `choiceNote` or `tastingNote` automatically: a menu with at least one two-option course gets the choice note, otherwise it gets the tasting note. The surrounding `menus` object also supplies the bilingual labels `or`, `prev`, `next`, `tabsLabel`, and `of` (the last is only used in the screen-reader status). Add or remove menus freely — the tabs, arrows, and dots follow the array length. Keep `hr.json` and `en.json` structurally identical.
+
+There are no menu images. The old `menu-market`, `menu-adriatic`, and `menu-garden` entries in `src/data/images.json` are unused.
+
+#### Menu slideshow behaviour
+
+`src/components/HomePage.astro` renders one `.menu-sheet` per menu inside `.menu-slides`. Navigation is handled by one inline script:
+
+- Tabs (`.menu-tab`) and clickable dots (`.menu-dot`) jump to a menu.
+- Prev/next arrows wrap around.
+- Arrow keys, `Home`, and `End` move between tabs; `aria-selected` and roving `tabindex` follow.
+- Horizontal swipe on the `.menu-stage` moves to the next or previous menu.
+- An `aria-live` region announces the active menu and its position.
+
+#### Fixed menu height
+
+All `.menu-sheet` panels occupy the **same CSS grid cell** (`grid-area: 1 / 1`). Inactive panels stay in layout with `visibility: hidden` and `pointer-events: none`; the active panel gets `.is-active`. The tallest menu therefore sets the stage height, and the arrows and dots never move when switching menus.
+
+Do not switch inactive panels to `hidden`, `display: none`, or remove them from the DOM — that collapses the grid to the active panel and the controls jump. The sheet is a flex column with `margin-top: auto` on `.menu-sheet__foot`, so the booking link stays pinned to the bottom of shorter menus.
+
+#### Menu typography
+
+- Menu title and dish names: **Fraunces**, weight 400.
+- Dish names: `clamp(1.05rem, 1.3vw, 1.18rem)`, line-height 1.5.
+- Descriptions and body copy: **Inter**.
+- Course labels and the choice/tasting note: 0.72rem, uppercase, 0.12em tracking; labels use `--ink-soft` for contrast.
+
+Fraunces was kept at 400; heavier weights read as bold because of the face's stroke contrast.
+
 ### Replacing an Unsplash image with a real photo
 
 1. Put the optimized photo in `public/images/`, e.g. `public/images/plated-fish.jpg`.
@@ -102,4 +138,4 @@ docs/                Development guide and design spec
 - `.nav-link` mobile padding: `0.92rem`; button: `font-size: 0.92rem` (slight shrink).
 - `.header__panel` gap: `2.75rem` (original restored); `.header__actions` mobile `margin-top`: `1.4rem` (restored for mobile dropdown spacing).
 
-- Reviews, prices, the chef's name, and the Take a Chef URL in the prototype are placeholders. See `CONTENT.md`.
+- Reviews, photos, and the chef's name in the prototype are placeholders. See `CONTENT.md`; pricing is quoted by Take a Chef and is not shown on the site.

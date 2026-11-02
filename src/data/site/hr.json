@@ -69,39 +69,103 @@
   "menus": {
     "eyebrow": "Jelovnici",
     "title": "Svaki jelovnik počinje dogovorom.",
-    "lead": "Svaki jelovnik prati sezonu i tržnicu. Ova tri su početni prijedlozi, a zajedno ih prilagođavamo.",
+    "lead": "Jelovnici se mjenjaju ovisno o sezoni. Ova tri su trenutni prijedlozi, a zajedno ih prilagođavamo.",
+    "choiceNote": "Odaberite jedno jelo po slijedu.",
+    "tastingNote": "Degustacijski jelovnik, bez odabira.",
+    "or": "ili",
+    "prev": "Prethodni jelovnik",
+    "next": "Sljedeći jelovnik",
+    "of": "od",
+    "tabsLabel": "Odaberite jelovnik",
     "items": [
       {
-        "name": "S tržnice",
-        "description": "Četvorodnevni jelovnik baziran na najsvježijim namirnicama tog jutra.",
-        "image": "menu-market",
-        "dishes": [
-          "Dagnje na buzaru",
-          "Rižot od škampa",
-          "Grilana riba, blitva i maslinovo ulje",
-          "Fritule s karamelom i smokvama"
+        "name": "Ljubitelji Mesa",
+        "description": "Za ljubitelje mesa najbolje i lokalno.",
+        "courses": [
+          {
+            "name": "Predjelo",
+            "options": [
+              "Mousse od kozjeg sira, Povrće na 3 načina",
+              "Sezonska salata s pršutom"
+            ]
+          },
+          {
+            "name": "Prvo jelo",
+            "options": [
+              "Rižot od gljiva, Hrskava panceta",
+              "Ravioli sa raguom od govedine, Marinirane mrkve"
+            ]
+          },
+          {
+            "name": "Glavno jelo",
+            "options": [
+              "Pileća rolada, Pečeni krumpir, Chimicurri umak",
+              "Ribeye odrezak, Pire od krumpira, Pečena cvjetača i Veloute umak od gljiva"
+            ]
+          },
+          {
+            "name": "Desert",
+            "options": [
+              "Cheesecake, Čokoladni crumble, Čips od bijele čokolade",
+              "Čokoladni ganache, Čokoladna chantilly krema, Crumble od lješnjaka"
+            ]
+          }
         ]
       },
       {
-        "name": "Jadran",
-        "description": "Morski jelovnik za duge večeri.",
-        "image": "menu-adriatic",
-        "dishes": [
-          "Tartar od tune, kapari i limun",
-          "Juha od raka",
-          "Hobotnica ispod peke",
-          "Rožata s lavandom"
+        "name": "Svježe i Lokalno",
+        "description": "Chefov izbor lokalnih delicija.",
+        "courses": [
+          {
+            "name": "Starter",
+            "options": [
+              "Ceviche od svježe ribe", 
+              "Mousse od kozjeg sira, Povrće na 3 načina"
+            ]
+          },
+          {
+            "name": "Predjelo",
+            "options": [
+              "Kremasta juha od tikve",
+              "Rižot od gljiva, Hrskava panceta"
+            ]
+          },
+          {
+            "name": "Glavno jelo",
+            "options": [
+              "Ragu od lignji, Zapečeni poriluk, Palenta",
+              "Ravioli sa raguom od govedine, Marinirane mrkve"
+            ]
+          },
+          {
+            "name": "Desert",
+            "options": [
+              "Cheesecake, Čokoladni crumble, Čips od bijele čokolade",
+              "Čokoladni ganache, Čokoladna chantilly krema, Crumble od lješnjaka"
+            ]
+          }
         ]
       },
       {
-        "name": "Vrt",
-        "description": "Sezonsko povrće u glavnoj ulozi.",
-        "image": "menu-garden",
-        "dishes": [
-          "Rižot od sezonskog povrća",
-          "Gljive i krumpir ispod peke",
-          "Salata od pečenih paprika",
-          "Kolač od smokava i badema"
+        "name": "Plodovi Jadrana",
+        "description": "Morski plodovi, lokalnog ulova.",
+        "courses": [
+          {
+            "name": "Starter",
+            "options": ["Ceviche od svježe ribe"]
+          },
+          {
+            "name": "Predjelo",
+            "options": ["Ragu od lignji, Zapečeni poriluk, Palenta"]
+          },
+          {
+            "name": "Glavno jelo",
+            "options": ["Zapečena riba dana, Pirjano sezonsko povrće, Pire od korijena celera, Beurre blanc umak sa ružmarinom"]
+          },
+          {
+            "name": "Desert",
+            "options": ["Cheesecake, Čokoladni crumble, Čips od bijele čokolade"]
+          }
         ]
       }
     ],

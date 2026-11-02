@@ -21,11 +21,11 @@ The brand name is used in the header, footer, page titles, 404, and structured d
 
 | # | Item | Where | Current placeholder | Status |
 | --- | --- | --- | --- | --- |
-| 2.1 | Take a Chef profile URL | `src/config.ts` → `bookingUrl` | `https://www.takeachef.com/` | **required** |
+| 2.1 | Take a Chef profile URL | `src/config.ts` → `bookingUrl` | `https://www.takeachef.com/en-hr/chef/tin-lu-i` | **required** |
 | 2.2 | Confirm the profile accepts bookings for up to 6 guests | Take a Chef dashboard | — | **required** |
 | 2.3 | Confirm service area matches the site | Take a Chef dashboard | Istria, Croatia | **required** |
 
-Every CTA on both pages — header, hero, menu cards, gallery CTA band, footer — reads `bookingUrl`. There is no contact form or on-site booking engine by design. If the profile URL is wrong, every button is wrong.
+Every CTA on both pages — header, hero, menu slideshow, gallery CTA band, footer — reads `bookingUrl`. There is no contact form or on-site booking engine by design. If the profile URL is wrong, every button is wrong.
 
 ## 3. Copy
 
@@ -34,7 +34,7 @@ Every CTA on both pages — header, hero, menu cards, gallery CTA band, footer �
 | 3.1 | Croatian copy review | `src/data/site/hr.json` | Written as a first draft; have the chef read it aloud and adjust to their voice. | **required** |
 | 3.2 | English copy review | `src/data/site/en.json` | Mirrors the Croatian structure key for key. If you add or remove a menu/item in one file, do the same in the other. | **required** |
 | 3.3 | Service area wording | `src/config.ts` → `serviceArea`; both site JSON files (`hero.eyebrow`, `faq`, `footer`) | Currently Istria / Istra. Decide whether nearby areas (Kvarner, Trieste, Ljubljana) should be mentioned. | recommended |
-| 3.4 | Menu names and dishes | `hr.json` / `en.json` → `menus.items` | Three sample menus: S tržnice / Jadran / Vrt. These should be dishes the chef actually cooks in season. | **required** |
+| 3.4 | Menu names, courses, and dishes | `hr.json` / `en.json` → `menus.items[].courses[].options` | Three sample menus: Ljubitelji Mesa / Jadran / Vrt. Each course holds one or two options: one option renders as a tasting course, two render as a choice. | **required** |
 | 3.5 | "Included" list | `hr.json` / `en.json` → `included.items` | Confirm each claim is true (travel, shopping, service, cleanup, discretion). | **required** |
 | 3.6 | FAQ answers | `hr.json` / `en.json` → `faq.items` | Travel radius, kitchen requirements, lead time, deposit, cancellation. Current answers are plausible defaults, not confirmed policy. | **required** |
 | 3.7 | Page titles and meta descriptions | `hr.json` / `en.json` → `meta`, `galleryPage.metaTitle`, `galleryPage.metaDescription` | Include the location and "private chef" for search. | recommended |
@@ -42,13 +42,7 @@ Every CTA on both pages — header, hero, menu cards, gallery CTA band, footer �
 
 ## 4. Prices
 
-| # | Item | Where | Current placeholder | Status |
-| --- | --- | --- | --- | --- |
-| 4.1 | Indicative "from" price | `hr.json` / `en.json` → each `menus.items[].price` | `od 75 € po osobi` / `from €75 per person` | **required** |
-| 4.2 | Price disclaimer | `hr.json` / `en.json` → `menus.priceNote` | "Prices are indicative and depend on the menu and location…" | **required** |
-| 4.3 | Confirm the copy does not promise a fixed price | Both JSON files | The wording says "from" on purpose; Take a Chef issues the real quote. | recommended |
-
-There are no other prices on the site. Do not add per-course pricing unless the chef wants to commit to it.
+The menu slideshow does not show prices by design. Take a Chef issues the real quote after the guest sends an enquiry. If an indicative "from" price is added later, keep the wording and the disclaimer explicit.
 
 ## 5. Reviews
 
@@ -70,8 +64,9 @@ Publishing invented reviews is a legal and trust risk. Either use real, permitte
 | 6.4 | Rewrite alt text in both languages | `src/data/images.json` → `alt.hr`, `alt.en` | Descriptive, but describes stock photos | **required** |
 | 6.5 | Update gallery captions | `src/data/gallery.json` | Generic dish descriptions | recommended |
 | 6.6 | Keep the hero and intro free of identifiable strangers | `images.json` → `hero`, `intro` | Intro is a hands-only photo on purpose | recommended |
+| 6.7 | Remove the unused menu images | `images.json` → `menu-market`, `menu-adriatic`, `menu-garden` | The menu section is text-only, so these entries are no longer rendered | optional |
 
-How to swap an image (four steps) is in `docs/development.md` → "Replacing an Unsplash image with a real photo". Keep the aspect ratio close to the slot it fills: hero and intro are 4:5, menu cards 4:3, gallery images vary.
+How to swap an image (four steps) is in `docs/development.md` → "Replacing an Unsplash image with a real photo". Keep the aspect ratio close to the slot it fills: hero and intro are 4:5, gallery images vary.
 
 **Photo quality bar:** natural light, real tables, real hands, no heavy filters. The design leans on whitespace and typography; overly styled stock imagery undercuts it.
 
@@ -107,8 +102,8 @@ The current build loads no third-party scripts, fonts from Google, or analytics.
 - [ ] Every CTA opens the real Take a Chef profile in a new tab.
 - [ ] Language switch keeps you on the equivalent page (home ↔ home, gallery ↔ gallery).
 - [ ] Gallery: all photos load while scrolling; lightbox opens, arrows stay still between portrait and landscape photos, outside click and `Esc` close it.
-- [ ] Mobile: menu opens and closes; hero and menu cards are readable at 390px.
-- [ ] Prices say "from" and the disclaimer is visible.
+- [ ] Mobile: navigation opens and closes; hero and menu slideshow are readable at 390px; menu tabs, dots, arrows, and swipe work.
+- [ ] Prices are either omitted or clearly marked as "from" (Take a Chef issues the real quote).
 - [ ] Reviews are real and permitted, or the section is removed.
 - [ ] Footer year, service area, and Instagram link are correct.
 - [ ] Check the site with `prefers-reduced-motion` enabled — animations should disappear, not break.
