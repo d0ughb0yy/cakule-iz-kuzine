@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Čakula iz Kužine: private chef in Istria",
+    "title": "Čakule iz Kužine: private chef in Istria",
     "description": "Private chef in Istria for up to six guests. I cook seasonal food from local markets in your home or villa."
   },
   "nav": {
@@ -9,34 +9,31 @@
     "book": "Book",
     "menu": "Menu",
     "language": "Language",
+    "navigation": "Navigation",
     "skip": "Skip to content"
   },
   "hero": {
-    "eyebrow": "Tin Lučić · Private chef · Istria",
-    "title": "Fresh and <em>in season</em>, to your table.",
-    "lead": "I arrive and cook in your home or villa for up to six guests. The season dictates the menu, I prepare what is the freshest that day.",
+    "name": ["Čakule", "iz Kužine"],
+    "role": "Tin Lučić, chef",
+    "lead": "A private chef in Istria. I cook in your home or villa, for up to six guests. The season sets the menu.",
     "primaryCta": "Check availability",
-    "secondaryCta": "View the gallery",
-    "trust": ["Max. 6 guests", "I cook in your home", "Price agreed in advance"],
-    "image": "hero",
-    "badge": "Freshest ingredients that day"
+    "secondaryCta": "See the menus",
+    "image": "istria-market",
+    "imageCaption": "Pula market hall, Istria."
   },
   "intro": {
-    "eyebrow": "My Cooking Principles",
     "title": "Local, in season.",
     "paragraphs": [
-      "My meal planning starts at the market. I buy from local growers and from the fishmonger, and I choose Croatian meat when I can. The best of that morning decides the menu.",
+      "My meal planning starts at the market. I buy from local growers and from the fishmonger, and I choose Croatian meat when I can.",
       "I cook with care to bring restaurant-level preparation into your home. The plates are precise and the service follows your pace."
     ],
-    "signature": "Chef Tin",
     "link": "What the evening looks like",
-    "image": "intro"
+    "image": "istria-motovun",
+    "imageCaption": "Motovun, Istria."
   },
   "how": {
-    "eyebrow": "How the evening runs",
     "title": "You choose the date. I cook.",
     "lead": "Tell me the date and the number of guests. We agree a menu, and I do the rest.",
-    "image": "how",
     "steps": [
       {
         "title": "Choose a date and a place",
@@ -53,119 +50,139 @@
     ]
   },
   "included": {
-    "eyebrow": "Included",
     "title": "What the price covers",
     "lead": "One price for the evening: food, service, cleaning, and drinks on request.",
-    "items": [
-      "Shopping at the local market",
-      "Cooking and serving in your kitchen",
-      "Service course by course",
-      "Menus adjusted for allergies and dietary needs",
-      "Washing up and cleaning the kitchen",
-      "Quiet service during dinner",
-      "Drinks on request"
+    "note": "The price is agreed by the number of guests and the menu you choose.",
+    "colItem": "Included",
+    "colMeaning": "What it means",
+    "rows": [
+      {
+        "item": "Shopping at the local market",
+        "detail": "I choose the ingredients that morning."
+      },
+      {
+        "item": "Cooking and serving in your kitchen",
+        "detail": "I arrive with knives and basic equipment."
+      },
+      {
+        "item": "Service course by course",
+        "detail": "Dinner follows your pace."
+      },
+      {
+        "item": "A menu adjusted for allergies and dietary needs",
+        "detail": "We agree it before the evening."
+      },
+      {
+        "item": "Washing up and cleaning the kitchen",
+        "detail": "The kitchen is left clean."
+      },
+      {
+        "item": "Quiet service during dinner",
+        "detail": "Without interrupting the conversation."
+      },
+      {
+        "item": "Drinks on request",
+        "detail": "We agree them in advance."
+      }
     ]
   },
   "menus": {
-    "eyebrow": "Menus",
     "title": "Every menu starts with a conversation.",
-    "lead": "The menus change depending on the season. These three are the current ones; we adjust them together.",
+    "lead": "The menus change with the season. These three are the current proposals; we adjust them together.",
+    "selectLabel": "Choose a menu",
     "choiceNote": "Choose one dish per course.",
     "tastingNote": "A set tasting menu, no choices.",
     "or": "or",
-    "prev": "Previous menu",
-    "next": "Next menu",
-    "of": "of",
-    "tabsLabel": "Choose a menu",
     "items": [
       {
-        "name": "Meat Lovers",
-        "description": "For the meat lovers, the best and local.",
+        "name": "Meat lovers",
+        "description": "For meat lovers, the best and the most local.",
         "courses": [
           {
             "name": "Starter",
             "options": [
-              "Goat cheese mousse, Vegetables 3-ways",
+              "Goat cheese mousse, vegetables three ways",
               "Prosciutto seasonal salad"
             ]
           },
           {
             "name": "First course",
             "options": [
-              "Mushroom risotto, Crispy bacon",
-              "Ravioli with beef ragu, Marinated carrots"
+              "Mushroom risotto, crispy bacon",
+              "Ravioli with beef ragu, marinated carrots"
             ]
           },
           {
             "name": "Main course",
             "options": [
-              "Chicken roulade, Roasted potatoes, Chimichurri",
-              "Ribeye steak, Potato purée, Roasted cauliflower, Mushroom velouté"
+              "Chicken roulade, roasted potatoes, chimichurri",
+              "Ribeye steak, potato purée, roasted cauliflower, mushroom velouté"
             ]
           },
           {
             "name": "Dessert",
             "options": [
-              "Cheesecake, Chocolate crumble, White chocolate crisps",
-              "Chocolate Ganache, Chocolate chantilly, Hazelnut crumble"
+              "Cheesecake, chocolate crumble, white chocolate crisps",
+              "Chocolate ganache, chocolate chantilly, hazelnut crumble"
             ]
           }
         ]
       },
       {
-        "name": "Fresh and Local",
-        "description": "Chefs choice of local delights.",
+        "name": "Fresh and local",
+        "description": "The chef's choice of local delights.",
         "courses": [
           {
             "name": "Starter",
             "options": [
-              "Fish of the day ceviche, Rice chips",
-              "Goat cheese mousse, Vegetables 3-ways"
-          
-          ]
+              "Fish of the day ceviche",
+              "Goat cheese mousse, vegetables three ways"
+            ]
           },
           {
             "name": "First course",
             "options": [
               "Creamy butternut squash soup",
-              "Mushroom risotto, Crispy bacon"
+              "Mushroom risotto, crispy bacon"
             ]
           },
           {
             "name": "Main course",
             "options": [
-              "Squid ragu, Charred leeks, Polenta",
-              "Ravioli with beef ragu, Marinated carrots"
+              "Squid ragu, charred leeks, polenta",
+              "Ravioli with beef ragu, marinated carrots"
             ]
           },
           {
             "name": "Dessert",
             "options": [
-              "Cheesecake, Chocolate crumble, White chocolate crisps",
-              "Chocolate Ganache, Chocolate chantilly, Hazelnut crumble"
+              "Cheesecake, chocolate crumble, white chocolate crisps",
+              "Chocolate ganache, chocolate chantilly, hazelnut crumble"
             ]
           }
         ]
       },
       {
         "name": "Fresh from the Adriatic",
-        "description": "Local seafood, freshly caught",
+        "description": "Local seafood, freshly caught.",
         "courses": [
           {
             "name": "Starter",
-            "options": ["Fish of the day ceviche, Rice chips"]
+            "options": ["Fish of the day ceviche"]
           },
           {
             "name": "First course",
-            "options": ["Squid ragu, Charred leeks, Polenta"]
+            "options": ["Squid ragu, charred leeks, polenta"]
           },
           {
             "name": "Main course",
-            "options": ["Pan seared fish of the day, Sauteed seasonal vegetables, Celeriac root puree, Rosemary beurre blanc"]
+            "options": [
+              "Pan-seared fish of the day, sauteed seasonal vegetables, celeriac purée, rosemary beurre blanc"
+            ]
           },
           {
             "name": "Dessert",
-            "options": ["Cheesecake, Chocolate crumble, White chocolate crisps"]
+            "options": ["Cheesecake, chocolate crumble, white chocolate crisps"]
           }
         ]
       }
@@ -173,30 +190,18 @@
     "cta": "Book your dinner"
   },
   "galleryTeaser": {
-    "eyebrow": "Gallery",
-    "title": "See what comes out of the kitchen.",
-    "lead": "Photographs from recent dinners.",
+    "title": "Table, plate, place.",
+    "lead": "Photographs of the table, the plates, and Istria.",
+    "note": "Photographs of food and preparation are temporary. The Istrian photographs are real.",
     "cta": "Full gallery",
-    "images": ["gallery-restaurant", "gallery-salmon", "gallery-table2", "gallery-terrace"]
+    "images": ["gallery-charcuterie", "gallery-salmon", "gallery-olive-oil", "istria-vineyard"]
   },
-  "testimonials": {
-    "eyebrow": "What guests say",
-    "title": "Guests who stayed longer.",
-    "items": [
-      {
-        "quote": "I wanted a dinner with the spirit of Istria but none of the restaurant formality. That is exactly what I got, and the kitchen was cleaner than before the dinner.",
-        "name": "Sarah",
-        "location": "London"
-      },
-      {
-        "quote": "The menu reflects what's freshest at the market that morning. You can't fake that kind of quality.",
-        "name": "Ana & Marko",
-        "location": "Rovinj"
-      }
-    ]
+  "statement": {
+    "label": "From the kitchen",
+    "text": "The season sets the menu. What is best at the market that morning is what will be on the plate that evening.",
+    "attribution": "Tin Lučić, chef"
   },
   "faq": {
-    "eyebrow": "Questions",
     "title": "Good to know before you book.",
     "lead": "For unanswered questions, ask me on Take a Chef. I respond within 24 hours.",
     "items": [
@@ -213,7 +218,7 @@
         "a": "An ordinary home kitchen with a stove and an oven is enough. If something specific is needed, I'll let you know in advance."
       },
       {
-        "q": "How do you handle allergies and dietary needs?",
+        "q": "Allergies and dietary needs?",
         "a": "Tell me about allergies and dietary needs before we set the menu. I adjust the menu for both."
       },
       {
@@ -231,34 +236,29 @@
     ]
   },
   "cta": {
-    "eyebrow": "Booking",
     "title": "Your dinner starts with one enquiry.",
     "lead": "Check availability, choose a date, and send me a few details. I'll reply with a menu proposal.",
-    "button": "Check availability on Take a Chef",
+    "button": "Check availability",
     "note": "Bookings go through my Take a Chef profile."
   },
   "footer": {
-    "tagline": "A private chef for small dinners in Istria.",
-    "navTitle": "Pages",
-    "bookingTitle": "Bookings",
-    "bookingText": "All bookings go through Take a Chef.",
-    "bookingLink": "My profile",
-    "areaTitle": "Area",
+    "places": "Istria · Pula · Motovun · Rovinj",
+    "navLabel": "Pages",
+    "bookingLink": "Take a Chef profile",
     "areaText": "Istria. I cook at your place.",
     "rights": "All rights reserved.",
-    "photoCredit": "Temporary photography: Unsplash"
+    "creditLabel": "Photographs of Istria:",
+    "creditFood": "Photographs of food and preparation: Unsplash, temporary."
   },
   "galleryPage": {
-    "metaTitle": "Gallery: Čakula iz Kužine",
-    "metaDescription": "Photographs of dishes, tables, and preparation from private dinners in Istria.",
-    "eyebrow": "Gallery",
+    "metaTitle": "Gallery: Čakule iz Kužine",
+    "metaDescription": "Photographs of tables, plates, and Istria from private dinners.",
     "title": "What dinner looks like.",
-    "lead": "Dishes, tables, and preparation from recent private dinners.",
+    "lead": "Photographs of the table, the plates, and Istria. Photographs of food and preparation are temporary.",
     "countLabel": "photographs",
-    "ctaTitle": "Would you like a table like this?",
+    "ctaTitle": "Would you like a table like this for your evening?",
     "ctaLead": "Check availability and send me a few details about your evening.",
-    "ctaButton": "Check availability",
-    "backHome": "Back to home"
+    "ctaButton": "Check availability"
   },
   "lightbox": {
     "open": "Open photo",

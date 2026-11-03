@@ -1,74 +1,114 @@
 /*
   Palette system
   --------------
-  The site ships with Palette 3 active. Change `palette` in src/config.ts
-  (or the data-palette attribute on <html>) to switch the whole site.
+  Palette 3 is active: deep green, olive, chartreuse on a bone ground.
+  The page uses three jobs only. ground, ink, accent. plus one inverted
+  field for the statement, the closing call and the footer.
 
-  These four sets come from the brief. Role names are semantic, so each
-  palette is remapped to the same jobs: brand, accent, support, secondary.
+  Change `palette` in src/config.ts (or data-palette on <html>) to switch.
+  Each set is remapped to the same jobs, so the layout does not change.
 */
 
 :root {
   color-scheme: light;
 
-  /* Shared neutrals — these sit under every palette. */
-  --ivory: #faf7f0;
-  --paper: #ffffff;
-  --ink: #22261f;
-  --ink-soft: #4f584c;
-  --line: #dfe4df;
-  --line-soft: #ebeee8;
-  --on-brand: #fbf8ef;
+  /* Shared neutrals */
+  --ground: #eff2e9;
+  --ground-deep: #e4e7da;
+  --paper: #fbfbf6;
+  --ink: #1b2418;
+  --ink-soft: #4c5747;
+  --on-field: #eff2e9;
+  --on-field-soft: #c9d1bf;
+
+  /* Table and form lines only. Never a section divider. */
+  --line: #cbd1c1;
+  --line-soft: #cbd1c1;
+
+  /* Accent and inverted field */
+  --accent: #2c5f16;
+  --accent-deep: #1e4210;
+  --accent-soft: #dfe6cf;
+  --chartreuse: #c9d94e;
+  --field: #1e2a18;
+  --muted: #4c5747;
 
   /* Derived tokens */
-  --brand-deep: color-mix(in srgb, var(--brand) 82%, #081005);
-  --brand-tint: color-mix(in srgb, var(--brand) 7%, var(--ivory));
-  --support-soft: color-mix(in srgb, var(--support) 18%, var(--ivory));
-  --accent-soft: color-mix(in srgb, var(--accent) 28%, var(--ivory));
+  --accent-tint: color-mix(in srgb, var(--accent) 10%, var(--ground));
+  --field-tint: color-mix(in srgb, var(--field) 88%, var(--accent));
 }
 
-/* Palette 3 — active. Deep green, olive, chartreuse, blue-grey, teal. */
+/* Palette 3. active. Deep green, olive, chartreuse. */
 :root,
 [data-palette='3'] {
-  --brand: #225f02;
-  /* Olive darkened from #528d06 so small text and button hover labels stay AA. */
-  --brand-hover: #457a05;
-  --accent: #cfce5d;
-  --support: #9cb5c1;
-  --secondary: #4b9ca2;
-  --muted: #5c726c;
-  --focus: #4b9ca2;
+  --ground: #eff2e9;
+  --ground-deep: #e4e7da;
+  --paper: #fbfbf6;
+  --ink: #1b2418;
+  --ink-soft: #4c5747;
+  --accent: #2c5f16;
+  --accent-deep: #1e4210;
+  --accent-soft: #dfe6cf;
+  --chartreuse: #c9d94e;
+  --field: #1e2a18;
+  --on-field: #eff2e9;
+  --on-field-soft: #c9d1bf;
+  --line: #cbd1c1;
 }
 
-/* Palette 1 — burnt orange, amber, pale blue, teal, cool grey. */
+/* Palette 1. deep green and warm stone. */
 [data-palette='1'] {
-  --brand: #cc5703;
-  --brand-hover: #a84602;
-  --accent: #fca70a;
-  --support: #c3d3e3;
-  --secondary: #008b94;
-  --muted: #6c787b;
-  --focus: #008b94;
+  --ground: #f1efe9;
+  --ground-deep: #e5e2d8;
+  --paper: #fbfaf5;
+  --ink: #1e241c;
+  --ink-soft: #525a4e;
+  --accent: #245c2a;
+  --accent-deep: #17401c;
+  --accent-soft: #dde6d7;
+  --chartreuse: #c6d46a;
+  --field: #1c261a;
+  --on-field: #f1efe9;
+  --on-field-soft: #cbd2c2;
+  --line: #cfccc1;
+  --line-soft: #cfccc1;
+  --muted: #525a4e;
 }
 
-/* Palette 2 — deep red, rose, mint, pale blue, sky teal. */
+/* Palette 2. olive and ink. */
 [data-palette='2'] {
-  --brand: #ac3539;
-  --brand-hover: #8c2a2e;
-  --accent: #e8a5ad;
-  --support: #d0ecf7;
-  --secondary: #2f8fa6;
-  --muted: #6d7a7e;
-  --focus: #2f8fa6;
+  --ground: #f2f1e8;
+  --ground-deep: #e7e5d8;
+  --paper: #fcfbf5;
+  --ink: #20251b;
+  --ink-soft: #565d4b;
+  --accent: #4a5d12;
+  --accent-deep: #33420b;
+  --accent-soft: #e3e6c8;
+  --chartreuse: #d2d95a;
+  --field: #23291b;
+  --on-field: #f2f1e8;
+  --on-field-soft: #d1d4bd;
+  --line: #d1d0c2;
+  --line-soft: #d1d0c2;
+  --muted: #565d4b;
 }
 
-/* Palette 4 — dusty rose, warm gold, light grey, blue-grey, strong blue. */
+/* Palette 4. deep teal and bone. */
 [data-palette='4'] {
-  --brand: #1b78af;
-  --brand-hover: #145f8b;
-  --accent: #ebc678;
-  --support: #b4c6d0;
-  --secondary: #b46a65;
-  --muted: #6d7b82;
-  --focus: #1b78af;
+  --ground: #eff1ed;
+  --ground-deep: #e1e6df;
+  --paper: #fafbf8;
+  --ink: #182420;
+  --ink-soft: #4b5852;
+  --accent: #1d5c4c;
+  --accent-deep: #113d32;
+  --accent-soft: #d7e6dd;
+  --chartreuse: #c4d98b;
+  --field: #17251f;
+  --on-field: #eff1ed;
+  --on-field-soft: #c5d0c8;
+  --line: #c9d1cb;
+  --line-soft: #c9d1cb;
+  --muted: #4b5852;
 }

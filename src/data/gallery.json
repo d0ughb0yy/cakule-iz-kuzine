@@ -3,113 +3,127 @@
     {
       "image": "gallery-restaurant",
       "caption": {
-        "hr": "Slijed iz degustacijskog jelovnika",
-        "en": "A course from the tasting menu"
+        "hr": "Tanjur s mesom i povrćem uz čašu vina",
+        "en": "A plate of meat and vegetables beside a glass of wine"
       }
     },
     {
       "image": "gallery-dinner-party",
       "caption": {
-        "hr": "Predjelo posluženo na dasci",
-        "en": "A starter served on a board"
+        "hr": "Predjelo od povrća na drvenoj dasci",
+        "en": "A vegetable starter on a wooden board"
       }
     },
     {
       "image": "gallery-salmon",
       "caption": {
-        "hr": "File lososa s povrćem",
-        "en": "Salmon fillet with vegetables"
+        "hr": "File lososa s zelenim povrćem",
+        "en": "Salmon fillet with green vegetables"
       }
     },
     {
       "image": "gallery-oysters",
       "caption": {
-        "hr": "Škampi s limunom",
-        "en": "Prawns with lemon"
+        "hr": "Škampi s kriškom limuna",
+        "en": "Prawns with a slice of lemon"
       }
     },
     {
       "image": "gallery-bread",
       "caption": {
-        "hr": "Kruh od kiselog tijesta",
-        "en": "Sourdough bread"
+        "hr": "Dva kruha posuta brašnom",
+        "en": "Two loaves dusted with flour"
       }
     },
     {
       "image": "gallery-olive-oil",
       "caption": {
-        "hr": "Maslinovo ulje malih proizvođača",
-        "en": "Olive oil from small producers"
+        "hr": "Boca maslinovog ulja s maslinama",
+        "en": "A bottle of olive oil with olives"
       }
     },
     {
       "image": "gallery-plating",
       "caption": {
-        "hr": "Priprema svježeg bilja",
-        "en": "Preparing fresh herbs"
+        "hr": "Ruke kuhara kako režu svježe bilje",
+        "en": "A chef's hands chopping fresh herbs"
       }
     },
     {
       "image": "gallery-cake",
       "caption": {
-        "hr": "Kolač s malinama",
-        "en": "Raspberry layer cake"
+        "hr": "Slojevita torta s malinama",
+        "en": "A layered cake with raspberries"
       }
     },
     {
       "image": "gallery-dessert",
       "caption": {
-        "hr": "Desert s karamelom",
-        "en": "Caramel dessert"
+        "hr": "Sladoled preliven karamelom",
+        "en": "Ice cream drizzled with caramel"
       }
     },
     {
       "image": "gallery-charcuterie",
       "caption": {
-        "hr": "Daska s pršutom, smokvama i sirom",
-        "en": "A board of prosciutto, figs, and cheese"
-      }
-    },
-    {
-      "image": "gallery-table2",
-      "caption": {
-        "hr": "Večera u toplom svjetlu",
-        "en": "Dinner in warm light"
+        "hr": "Daska s pršutom, smokvama, sirom i grožđem",
+        "en": "A board with prosciutto, figs, cheese, and grapes"
       }
     },
     {
       "image": "gallery-table-wine",
       "caption": {
-        "hr": "Salata s povrćem s tržnice",
-        "en": "Market vegetable salad"
+        "hr": "Ruke iznad zdjele salate",
+        "en": "Hands over a bowl of salad"
       }
     },
     {
       "image": "gallery-terrace",
       "caption": {
-        "hr": "Stol s pogledom na more",
-        "en": "A table with a sea view"
+        "hr": "Postavljeni stolovi na terasi",
+        "en": "Set tables on a terrace"
       }
     },
     {
       "image": "gallery-prep",
       "caption": {
-        "hr": "Priprema namirnica",
-        "en": "Preparing ingredients"
+        "hr": "Zdjele s pripremljenim povrćem",
+        "en": "Bowls of prepared vegetables"
       }
     },
     {
       "image": "gallery-fire",
       "caption": {
-        "hr": "Pečeno meso s povrćem",
-        "en": "Roast meat with vegetables"
+        "hr": "Pečena piletina s povrćem na pladnju",
+        "en": "Roast chicken with vegetables on a platter"
       }
     },
     {
       "image": "gallery-salad",
       "caption": {
-        "hr": "Sezonska salata",
-        "en": "Seasonal salad"
+        "hr": "Šarena zdjela sezonske salate",
+        "en": "A colourful bowl of seasonal salad"
+      }
+    },
+    {
+      "image": "istria-market",
+      "caption": {
+        "hr": "Tržnica u Puli",
+        "en": "Pula market hall"
+      }
+    },
+    {
+      "image": "istria-motovun",
+      "caption": {
+        "hr": "Motovun na brijegu",
+        "en": "Motovun on its hill"
+      }
+    },
+    {
+      "image": "istria-vineyard",
+      "caption": {
+        "hr": "Vinogradi u Istri",
+        "en": "Vineyards in Istria"
       }
     }
   ]

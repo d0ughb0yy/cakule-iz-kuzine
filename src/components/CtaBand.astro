@@ -3,25 +3,23 @@ import { site } from '../config';
 import Icon from './Icon.astro';
 
 interface Props {
-  eyebrow: string;
   title: string;
   lead: string;
   button: string;
   note?: string;
 }
 
-const { eyebrow, title, lead, button, note } = Astro.props;
+const { title, lead, button, note } = Astro.props;
 ---
 
-<section class="cta on-dark" data-reveal>
+<section class="cta" aria-labelledby="cta-title">
   <div class="wrap cta__inner">
     <div>
-      <p class="eyebrow">{eyebrow}</p>
-      <h2>{title}</h2>
-      <p class="lead">{lead}</p>
+      <h2 id="cta-title" data-reveal>{title}</h2>
+      <p class="cta__lead" data-reveal style="--reveal-delay: 80ms">{lead}</p>
     </div>
 
-    <div class="cta__action">
+    <div class="cta__action" data-reveal style="--reveal-delay: 140ms">
       <a
         class="btn btn--light"
         href={site.bookingUrl}

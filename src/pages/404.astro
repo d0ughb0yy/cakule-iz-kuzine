@@ -1,28 +1,90 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getImage } from '../lib/content';
+
+const motovun = getImage('istria-motovun');
+const market = getImage('istria-market');
+const vineyard = getImage('istria-vineyard');
+const board = getImage('gallery-charcuterie');
+const motovunAlt = motovun.alt.hr;
+const marketAlt = market.alt.hr;
+const vineyardAlt = vineyard.alt.hr;
+const boardAlt = board.alt.hr;
 ---
 
 <BaseLayout
   lang="hr"
   current="home"
-  title="Stranica nije pronađena: Čakula iz Kužine"
+  title="Stranica nije pronađena: Čakule iz Kužine"
   description="Ova stranica ne postoji. Vratite se na početnu ili pogledajte galeriju."
 >
-  <section class="page-hero">
-    <div class="wrap">
-      <p class="eyebrow">404</p>
-      <h1>Ova stranica ne postoji.</h1>
-      <p class="lead">
-        Vratite se na početnu ili pogledajte galeriju.
-      </p>
-      <p class="lead">
-        This page does not exist. Head back home or take a look at the gallery.
-      </p>
+  <section class="not-found">
+    <div class="wrap not-found__grid">
+      <div class="not-found__text">
+        <h1 data-reveal>Ova stranica ne postoji.</h1>
+        <p data-reveal style="--reveal-delay: 60ms">
+          Vratite se na početnu ili pogledajte galeriju.
+        </p>
+        <p data-reveal style="--reveal-delay: 100ms">
+          This page does not exist. Head back home or take a look at the gallery.
+        </p>
+        <p data-reveal style="--reveal-delay: 140ms">
+          Ako ste tražili jelovnik, nalazi se na početnoj stranici. Za rezervaciju večere
+          javite mi se preko Take a Chef profila, a na pitanja o meniju i alergijama
+          odgovaram unutar 24 sata.
+        </p>
 
-      <div class="hero__actions">
-        <a class="btn" href="/">Početna</a>
-        <a class="btn btn--ghost" href="/galerija/">Galerija</a>
-        <a class="btn btn--ghost" href="/en/" hreflang="en" lang="en">English</a>
+        <div class="not-found__actions" data-reveal style="--reveal-delay: 180ms">
+          <a class="btn" href="/">Početna</a>
+          <a class="link-arrow" href="/galerija/">Galerija</a>
+          <a class="link-arrow" href="/en/" hreflang="en" lang="en">English</a>
+        </div>
+      </div>
+
+      <div class="not-found__figures">
+        <figure class="not-found__figure" data-reveal style="--reveal-delay: 120ms">
+          <img
+            src={motovun.src}
+            width={motovun.width}
+            height={motovun.height}
+            alt={motovunAlt}
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+
+        <figure class="not-found__figure" data-reveal style="--reveal-delay: 180ms">
+          <img
+            src={market.src}
+            width={market.width}
+            height={market.height}
+            alt={marketAlt}
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
+        <figure class="not-found__figure" data-reveal style="--reveal-delay: 240ms">
+          <img
+            src={vineyard.src}
+            width={vineyard.width}
+            height={vineyard.height}
+            alt={vineyardAlt}
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
+        <figure class="not-found__figure" data-reveal style="--reveal-delay: 300ms">
+          <img
+            src={board.src}
+            width={board.width}
+            height={board.height}
+            alt={boardAlt}
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
       </div>
     </div>
   </section>

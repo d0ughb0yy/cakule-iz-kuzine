@@ -218,5 +218,35 @@
       "hr": "Šarena zdjela sezonske salate",
       "en": "A colourful bowl of seasonal salad"
     }
+  },
+  "istria-market": {
+    "src": "/images/pula-market-hall-istria.jpg",
+    "full": "/images/pula-market-hall-istria.jpg",
+    "width": 1280,
+    "height": 958,
+    "alt": {
+      "hr": "Pročelje tržnice u Puli s natpisom Tržnica",
+      "en": "The market hall in Pula with its Tržnica sign"
+    }
+  },
+  "istria-motovun": {
+    "src": "/images/motovun-istria.jpg",
+    "full": "/images/motovun-istria.jpg",
+    "width": 1920,
+    "height": 1248,
+    "alt": {
+      "hr": "Motovun na brijegu iznad istarskih vinograda",
+      "en": "Motovun on a hill above Istrian vineyards"
+    }
+  },
+  "istria-vineyard": {
+    "src": "/images/vineyards-of-istria.jpg",
+    "full": "/images/vineyards-of-istria.jpg",
+    "width": 1280,
+    "height": 633,
+    "alt": {
+      "hr": "Redovi vinove loze u istarskom krajoliku",
+      "en": "Rows of vines in the Istrian landscape"
+    }
   }
 }

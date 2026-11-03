@@ -1,7 +1,6 @@
 ---
 import { routes, site } from '../config';
-import { getContent, otherLang } from '../lib/content';
-import Icon from './Icon.astro';
+import { getContent } from '../lib/content';
 
 interface Props {
   lang: 'hr' | 'en';
@@ -10,136 +9,51 @@ interface Props {
 
 const { lang, current } = Astro.props;
 const t = getContent(lang);
-const altLang = otherLang(lang);
-const altHref = routes[current][altLang];
-const [nameFirst, ...nameRestParts] = site.name.split(' ');
-const nameRest = nameRestParts.join(' ');
-
+const menuHref = `${routes.home[lang]}#jelovnici`;
 ---
 
 <header class="site-header">
   <div class="wrap header__inner">
-    <a class="brand" href={routes.home[lang]} aria-label={site.name}>
-      {nameFirst} <span class="brand__rest">{nameRest}</span>
+    <a class="brand" href={routes.home[lang]} aria-label={site.name} data-reveal>
+      {site.name}
     </a>
 
-    <div class="header__actions">
-      <!-- Desktop language switcher (inline with flags) -->
-      <div class="lang lang--desktop" aria-label={t.nav.language}>
-        <a href={routes.home['hr']} hreflang="hr" lang="hr" class={`lang__item ${lang === 'hr' ? 'is-active' : ''}`} data-lang="hr">
+    <nav
+      class="header__nav"
+      aria-label={t.nav.navigation}
+      data-reveal
+      style="--reveal-delay: 60ms"
+    >
+      <a class="header__link" href={menuHref}>{t.nav.menu}</a>
+      <a
+        class="header__link"
+        href={routes.gallery[lang]}
+        aria-current={current === 'gallery' ? 'page' : undefined}
+      >
+        {t.nav.gallery}
+      </a>
+
+      <div class="lang" aria-label={t.nav.language}>
+        <a
+          class="lang__item"
+          href={routes[current]['hr']}
+          hreflang="hr"
+          lang="hr"
+          aria-current={lang === 'hr' ? 'page' : undefined}
+        >
           HR
         </a>
-        <span class="lang__sep" aria-hidden="true"></span>
-        <a href={routes.home['en']} hreflang="en" lang="en" class={`lang__item ${lang === 'en' ? 'is-active' : ''}`} data-lang="en">
+        <span class="lang__sep" aria-hidden="true">/</span>
+        <a
+          class="lang__item"
+          href={routes[current]['en']}
+          hreflang="en"
+          lang="en"
+          aria-current={lang === 'en' ? 'page' : undefined}
+        >
           EN
         </a>
       </div>
-
-      <!-- Mobile: icon buttons -->
-      <div class="header__mobile-actions">
-        <div class="lang lang--mobile" aria-label={t.nav.language}>
-          <a href={routes.home['hr']} hreflang="hr" lang="hr" class={`lang__item ${lang === 'hr' ? 'is-active' : ''}`} data-lang="hr">HR</a>
-          <span class="lang__sep" aria-hidden="true"></span>
-          <a href={routes.home['en']} hreflang="en" lang="en" class={`lang__item ${lang === 'en' ? 'is-active' : ''}`} data-lang="en">EN</a>
-        </div>
-
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="site-nav"
-        >
-          <span class="nav-toggle__icon" aria-hidden="true">
-            <Icon name="menu" size={24} />
-            <Icon name="close" size={24} />
-          </span>
-        </button>
-      </div>
-    </div>
-
-
-
-    <div class="header__panel" id="site-nav">
-      <nav aria-label={t.nav.menu}>
-        <ul class="nav-list">
-          <li>
-            <a
-              class="nav-link"
-              href={routes.home[lang]}
-              aria-current={current === 'home' ? 'page' : undefined}
-            >
-              {t.nav.home}
-            </a>
-          </li>
-          <li>
-            <a
-              class="nav-link"
-              href={routes.gallery[lang]}
-              aria-current={current === 'gallery' ? 'page' : undefined}
-            >
-              {t.nav.gallery}
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-      <div class="header__actions">
-        <a
-          class="btn btn--sm header__cta"
-          href={site.bookingUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Take A Chef Profile
-        </a>
-      </div>
-    </div>
+    </nav>
   </div>
 </header>
-
-<script is:inline>
-  (() => {
-    const toggle = document.querySelector('.nav-toggle');
-    const panel = document.getElementById('site-nav');
-
-    // Navigation drawer
-    if (toggle && panel) {
-      const setOpen = (open) => {
-        toggle.setAttribute('aria-expanded', String(open));
-        panel.dataset.open = String(open);
-      };
-
-      toggle.addEventListener('click', () => {
-        const open = toggle.getAttribute('aria-expanded') !== 'true';
-        setOpen(open);
-        if (open) panel.querySelector('a')?.focus();
-      });
-
-      panel.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => setOpen(false));
-      });
-
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
-          setOpen(false);
-          toggle.focus();
-        }
-      });
-
-      document.addEventListener('click', (event) => {
-        if (
-          toggle.getAttribute('aria-expanded') === 'true' &&
-          !panel.contains(event.target) &&
-          !toggle.contains(event.target)
-        ) {
-          setOpen(false);
-        }
-      });
-
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 860) setOpen(false);
-      });
-    }
-
-  })();
-</script>

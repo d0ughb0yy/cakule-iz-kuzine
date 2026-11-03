@@ -2,7 +2,7 @@
  * Single place for the details you'll swap before launch.
  */
 export const site = {
-  name: 'Čakula iz Kužine',
+  name: 'Čakule iz Kužine',
   bookingUrl: 'https://www.takeachef.com/en-hr/chef/tin-lu-i',
   // Used for canonical URLs, sitemap and social cards. Update if the domain changes.
   url: 'https://cakule-iz-kuzine.vercel.app',
