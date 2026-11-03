@@ -18,7 +18,7 @@
   --max: 1440px;
   --gutter: clamp(1.25rem, 3.5vw, 3rem);
   --section-y: clamp(4rem, 7vw, 7rem);
-  --monument: clamp(6rem, 19vw, 19rem);
+  --monument: clamp(5rem, 14vw, 13rem);
   --display: clamp(2.25rem, 4.4vw, 4rem);
   --heading: clamp(1.5rem, 2.3vw, 2.25rem);
   --lead: clamp(1.125rem, 1.35vw, 1.375rem);
@@ -178,8 +178,9 @@ figcaption {
 }
 
 .header__link {
-  font-size: var(--small);
+  font-size: 0.95rem;
   text-decoration: none;
+  color: var(--ink);
   padding-block: 0.75rem;
   transition: color 140ms var(--ease), text-decoration 120ms ease;
 }
@@ -318,13 +319,13 @@ figcaption {
 
 .hero__line--top {
   align-self: flex-start;
-  margin-bottom: 0;
+  padding-bottom: 0.6em;
 }
 
 .hero__line--bottom {
   align-self: flex-end;
   text-align: right;
-  margin-top: 0;
+  margin-top: 1.5em;
 }
 
 .hero__body {
@@ -339,7 +340,7 @@ figcaption {
 .hero__lead {
   font-size: var(--lead);
   line-height: 1.42;
-  max-width: 30ch;
+  max-width: 42ch;
 }
 
 .hero__actions {
@@ -447,7 +448,7 @@ figcaption {
 
 .how__head h2 {
   max-width: 15ch;
-  text-align: center;
+  text-align: left;
 }
 
 .how__lead {
@@ -519,6 +520,7 @@ figcaption {
 .included table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 22rem;
 }
 
 .included th {
@@ -551,6 +553,7 @@ figcaption {
 
 .menus {
   background: var(--accent-soft);
+  min-height: 28rem;
 }
 
 .menus__head {
@@ -622,8 +625,19 @@ figcaption {
 }
 
 .menu-panel {
+  min-height: 22rem;
   padding: clamp(1.5rem, 3vw, 2.75rem);
   background: var(--ground);
+  animation: menu-fade-in 220ms ease;
+}
+
+@keyframes menu-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-panel { animation: none; opacity: 1; transform: none; }
 }
 
 .menu-panel h3 {
@@ -869,7 +883,7 @@ figcaption {
 
 .faq__a {
   max-width: 44ch;
-  text-align: center;
+  text-align: left;
   padding-top: 7px;
 }
 
@@ -972,16 +986,8 @@ figcaption {
   font-size: var(--small);
   flex-shrink: 1;
   min-width: 0;
-  margin-inline: auto;
-}
-
-.veg-float {
-  animation: floatVeg 6s ease-in-out infinite;
-  display: block;
-}
-@keyframes floatVeg {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-12px) rotate(2deg); }
+  margin-inline: 0;
+  text-align: left;
 }
 
 /* --------------------------------------------------------------------------
@@ -1471,6 +1477,7 @@ figcaption {
 @media (max-width: 680px) {
   :root {
     --header-h: 92px;
+    --section-y: clamp(2.5rem, 5vw, 4rem);
   }
 
   .header__inner {
@@ -1509,6 +1516,22 @@ figcaption {
 
   .hero__line--bottom {
     text-align: right;
+    margin-top: 0;
+    padding-right: 0.35em;
+  }
+
+  .hero__line--top {
+    padding-left: 0.35em;
+  }
+
+  .hero__line--top {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .hero__line {
+    font-size: clamp(2.5rem, 13vw, 6rem);
+    line-height: 0.9;
   }
 
   .hero__body {
@@ -1538,6 +1561,21 @@ figcaption {
   }
 
   .section__lead,
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .step {
+    grid-column: auto;
+    max-width: 38rem;
+  }
+
+  .step:nth-child(2),
+  .step:nth-child(3) {
+    margin-top: 0;
+  }
+
   .how__lead,
   .menus__lead,
   .gallery-teaser__lead {
@@ -1554,9 +1592,32 @@ figcaption {
     border-bottom-width: 2px;
   }
 
+  .included > div {
+    overflow-x: auto;
+  }
+
   .course {
     grid-template-columns: 1fr;
     gap: 0.35rem;
+  }
+
+  .course__name {
+    text-align: center;
+  }
+
+  .course__options {
+    justify-content: center;
+    gap: 0.7rem;
+  }
+
+  .course__option {
+    text-align: center;
+  }
+
+  .course__options[data-count='2'] {
+    justify-content: center;
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
   }
 
   .gallery-teaser__grid {
@@ -1604,6 +1665,7 @@ figcaption {
     grid-template-columns: 1fr;
     gap: 1.25rem;
     margin-top: 2.5rem;
+    flex-wrap: wrap;
   }
 
   .footer__name {
@@ -1635,3 +1697,5 @@ figcaption {
     max-height: calc(100svh - 12rem);
   }
 }
+
+.menu-panel[hidden]{display:none!important}
