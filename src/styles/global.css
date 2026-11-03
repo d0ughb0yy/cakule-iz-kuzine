@@ -520,7 +520,7 @@ figcaption {
 .included table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 22rem;
+  min-width: 0;
 }
 
 .included th {
@@ -1593,7 +1593,7 @@ figcaption {
   }
 
   .included > div {
-    overflow-x: auto;
+    overflow-x: visible;
   }
 
   .course {
