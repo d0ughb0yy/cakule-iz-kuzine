@@ -14,16 +14,7 @@ const year = site.year;
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer__bottom">
-      <div class="footer__links" data-reveal style="--reveal-delay: 80ms">
-        <span>© {year} {site.name}</span>
-        <span>{t.footer.rights}</span>
-      </div>
-
-      <span class="footer__slogan" data-reveal style="--reveal-delay: 120ms">
-        {t.footer.areaText}
-      </span>
-
-      <nav class="footer__links" aria-label={t.footer.navLabel} data-reveal style="--reveal-delay: 160ms">
+      <nav class="footer__links" aria-label={t.footer.navLabel} data-reveal style="--reveal-delay: 80ms">
         <a href={routes.home[lang]}>{t.nav.home}</a>
         <a href={routes.gallery[lang]}>{t.nav.gallery}</a>
         <a href={`${routes.home[lang]}#jelovnici`}>{t.nav.menu}</a>
@@ -31,6 +22,15 @@ const year = site.year;
           {t.footer.bookingLink}
         </a>
       </nav>
+
+      <span class="footer__slogan" data-reveal style="--reveal-delay: 120ms">
+        {t.footer.areaText}
+      </span>
+
+      <div class="footer__copyright" data-reveal style="--reveal-delay: 160ms">
+        <span>© {year} {site.name}</span>
+        <span>{t.footer.rights}</span>
+      </div>
     </div>
   </div>
 </footer>

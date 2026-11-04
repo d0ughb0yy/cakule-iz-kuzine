@@ -383,21 +383,6 @@ figcaption {
   padding-block: var(--section-y);
 }
 
-.section__head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: clamp(2rem, 6vw, 6rem);
-  align-items: center;
-  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
-}
-
-.section__lead {
-  justify-self: end;
-  max-width: 38ch;
-  font-size: var(--lead);
-  line-height: 1.45;
-}
-
 /* --------------------------------------------------------------------------
    Intro. narrow column, placed photograph
    -------------------------------------------------------------------------- */
@@ -698,7 +683,7 @@ figcaption {
 
 .course__option {
   color: var(--ink);
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: clamp(1.05rem, 1.3vw, 1.18rem);
   font-weight: 400;
   line-height: 1.5;
@@ -938,17 +923,14 @@ figcaption {
 }
 
 .footer__bottom {
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   gap: 1.5rem 2rem;
-  justify-content: flex-start;
   align-items: center;
-  max-width: 100%;
 }
 
 .footer__bottom > * {
   min-width: 0;
-  flex-shrink: 1;
 }
 
 .site-footer [data-reveal] {
@@ -960,7 +942,6 @@ figcaption {
   display: flex;
   flex-wrap: wrap;
   gap: 0.65rem 1.5rem;
-  flex-shrink: 1;
   min-width: 0;
 }
 
@@ -984,10 +965,18 @@ figcaption {
 .footer__slogan {
   color: var(--on-field-soft);
   font-size: var(--small);
-  flex-shrink: 1;
+  justify-self: center;
   min-width: 0;
-  margin-inline: 0;
-  text-align: left;
+  text-align: center;
+}
+
+.footer__copyright {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.35rem 1rem;
+  font-size: var(--small);
+  text-align: right;
 }
 
 /* --------------------------------------------------------------------------
@@ -1071,22 +1060,27 @@ figcaption {
   grid-column: span 3;
 }
 
-.gallery__button {
+.gallery__button,
+.lightbox-trigger {
   display: block;
   width: 100%;
   padding: 0;
   border: 0;
   background: none;
+  color: inherit;
+  font: inherit;
   cursor: zoom-in;
   text-align: left;
 }
 
-.gallery__button img {
+.gallery__button img,
+.lightbox-trigger img {
   width: 100%;
   transition: opacity 200ms var(--ease);
 }
 
-.gallery__button:hover img {
+.gallery__button:hover img,
+.lightbox-trigger:hover img {
   opacity: 0.82;
 }
 
@@ -1123,6 +1117,14 @@ figcaption {
   opacity: 0;
 }
 
+/* A photo opened on its own has nothing to page through. */
+.lightbox.is-single .lightbox__nav,
+.lightbox.is-single .lightbox__count,
+.lightbox__nav[hidden],
+.lightbox__count[hidden] {
+  display: none;
+}
+
 .lightbox::backdrop {
   background: rgba(18, 24, 16, 0.94);
 }
@@ -1133,6 +1135,14 @@ figcaption {
   grid-template-rows: minmax(0, 1fr) auto;
   height: 100%;
   padding: clamp(1rem, 3vw, 2rem);
+}
+
+/* The figure fills the dialog so the stage can hold the photo in the middle
+   of the screen, with the caption bar sitting under it. */
+.lightbox__figure {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  height: 100%;
 }
 
 .lightbox__stage {
@@ -1376,10 +1386,6 @@ figcaption {
     grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
   }
 
-  .hero__name {
-    font-size: clamp(3.5rem, 11vw, 6rem);
-  }
-
   .intro__grid,
   .included__grid,
   .faq__grid,
@@ -1451,10 +1457,6 @@ figcaption {
     grid-column: 6 / span 7;
   }
 
-  .footer__bottom {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .gallery__item:nth-child(6n + 1),
   .gallery__item:nth-child(6n + 2),
   .gallery__item:nth-child(6n + 3),
@@ -1501,57 +1503,90 @@ figcaption {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     min-height: 0;
-    padding-top: 0.5rem;
+    padding-top: 0;
     padding-bottom: 0.5rem;
-    row-gap: 2rem;
+    row-gap: 1.25rem;
   }
 
-  .hero__name {
+  /* The wrapper stops generating a box so the two name lines become grid items
+     of .hero__inner and can sit over the picture. */
+  .hero__lines {
+    display: contents;
+  }
+
+  /* The picture runs edge to edge and carries the first screen. */
+  .hero__figure {
+    display: contents;
+  }
+
+  .hero__figure-frame {
+    position: relative;
     grid-column: 1;
-    grid-row: auto;
-    display: block;
-    font-size: clamp(3.25rem, 15vw, 5rem);
-    line-height: 0.9;
+    grid-row: 1;
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
   }
 
-  .hero__line--bottom {
-    text-align: right;
-    margin-top: 0;
-    padding-right: 0.35em;
+  /* Neutral scrim so the light name lines hold over the photograph. */
+  .hero__figure-frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(18, 26, 15, 0.62) 0%,
+      rgba(18, 26, 15, 0.12) 40%,
+      rgba(18, 26, 15, 0.16) 60%,
+      rgba(18, 26, 15, 0.62) 100%
+    );
+    pointer-events: none;
   }
 
-  .hero__line--top {
-    padding-left: 0.35em;
+  .hero__figure img {
+    height: clamp(300px, 50svh, 500px);
+    aspect-ratio: auto;
   }
 
-  .hero__line--top {
-    padding-bottom: 0;
-    margin-bottom: 0;
+  .hero__figure figcaption {
+    grid-column: 1;
+    grid-row: 2;
   }
 
   .hero__line {
-    font-size: clamp(2.5rem, 13vw, 6rem);
+    z-index: 2;
+    font-size: clamp(3rem, 17vw, 6rem);
     line-height: 0.9;
+    color: var(--on-field);
+    /* the name sits over the photo; nothing interactive is under it, so it can
+       take hit-testing itself instead of being skipped as pointer-events: none */
+    pointer-events: auto;
+  }
+
+  .hero__line--top {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: start;
+    padding: 0.75rem 0 0 0.35em;
+    margin: 0;
+  }
+
+  .hero__line--bottom {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+    justify-self: end;
+    padding: 0 0.35em 0.75rem 0;
+    margin: 0;
+    text-align: right;
   }
 
   .hero__body {
     grid-column: 1;
-    grid-row: auto;
+    grid-row: 3;
     max-width: none;
     padding-block: 0;
   }
 
-  .hero__figure {
-    grid-column: 1;
-    grid-row: auto;
-    max-width: none;
-  }
-
-  .hero__figure img {
-    aspect-ratio: 4 / 3;
-  }
-
-  .section__head,
   .how__head,
   .menus__head,
   .gallery-teaser__head {
@@ -1560,7 +1595,6 @@ figcaption {
     align-items: center;
   }
 
-  .section__lead,
   .steps {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -1664,12 +1698,18 @@ figcaption {
   .footer__bottom {
     grid-template-columns: 1fr;
     gap: 1.25rem;
-    margin-top: 2.5rem;
-    flex-wrap: wrap;
   }
 
-  .footer__name {
-    font-size: clamp(2rem, 11vw, 3.5rem);
+  .footer__links,
+  .footer__copyright {
+    justify-content: center;
+    justify-self: stretch;
+    text-align: center;
+  }
+
+  .footer__slogan {
+    justify-self: stretch;
+    text-align: center;
   }
 
   .gallery {
@@ -1695,6 +1735,21 @@ figcaption {
 
   .lightbox__img {
     max-height: calc(100svh - 12rem);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Narrow phones. the picture was eating the screen and the name shrank with
+   the viewport, so cap the photo and hold the monument type at a readable size
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 399px) {
+  .hero__figure img {
+    height: clamp(240px, 43svh, 380px);
+  }
+
+  .hero__line {
+    font-size: clamp(2.9rem, 19vw, 6rem);
   }
 }
 

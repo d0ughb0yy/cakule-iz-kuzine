@@ -1,7 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getImage } from '../lib/content';
+import { getContent, getImage } from '../lib/content';
 
+const t = getContent('hr');
 const motovun = getImage('istria-motovun');
 const market = getImage('istria-market');
 const vineyard = getImage('istria-vineyard');
@@ -43,47 +44,83 @@ const boardAlt = board.alt.hr;
 
       <div class="not-found__figures">
         <figure class="not-found__figure" data-reveal style="--reveal-delay: 120ms">
-          <img
-            src={motovun.src}
-            width={motovun.width}
-            height={motovun.height}
-            alt={motovunAlt}
-            loading="eager"
-            decoding="async"
-          />
+          <button
+            class="lightbox-trigger"
+            type="button"
+            data-lightbox={motovun.full}
+            data-lightbox-alt={motovunAlt}
+            data-lightbox-caption={motovunAlt}
+            aria-label={`${t.lightbox.open}: ${motovunAlt}`}
+          >
+            <img
+              src={motovun.src}
+              width={motovun.width}
+              height={motovun.height}
+              alt={motovunAlt}
+              loading="eager"
+              decoding="async"
+            />
+          </button>
         </figure>
 
         <figure class="not-found__figure" data-reveal style="--reveal-delay: 180ms">
-          <img
-            src={market.src}
-            width={market.width}
-            height={market.height}
-            alt={marketAlt}
-            loading="lazy"
-            decoding="async"
-          />
+          <button
+            class="lightbox-trigger"
+            type="button"
+            data-lightbox={market.full}
+            data-lightbox-alt={marketAlt}
+            data-lightbox-caption={marketAlt}
+            aria-label={`${t.lightbox.open}: ${marketAlt}`}
+          >
+            <img
+              src={market.src}
+              width={market.width}
+              height={market.height}
+              alt={marketAlt}
+              loading="lazy"
+              decoding="async"
+            />
+          </button>
         </figure>
 
         <figure class="not-found__figure" data-reveal style="--reveal-delay: 240ms">
-          <img
-            src={vineyard.src}
-            width={vineyard.width}
-            height={vineyard.height}
-            alt={vineyardAlt}
-            loading="lazy"
-            decoding="async"
-          />
+          <button
+            class="lightbox-trigger"
+            type="button"
+            data-lightbox={vineyard.full}
+            data-lightbox-alt={vineyardAlt}
+            data-lightbox-caption={vineyardAlt}
+            aria-label={`${t.lightbox.open}: ${vineyardAlt}`}
+          >
+            <img
+              src={vineyard.src}
+              width={vineyard.width}
+              height={vineyard.height}
+              alt={vineyardAlt}
+              loading="lazy"
+              decoding="async"
+            />
+          </button>
         </figure>
 
         <figure class="not-found__figure" data-reveal style="--reveal-delay: 300ms">
-          <img
-            src={board.src}
-            width={board.width}
-            height={board.height}
-            alt={boardAlt}
-            loading="lazy"
-            decoding="async"
-          />
+          <button
+            class="lightbox-trigger"
+            type="button"
+            data-lightbox={board.full}
+            data-lightbox-alt={boardAlt}
+            data-lightbox-caption={boardAlt}
+            aria-label={`${t.lightbox.open}: ${boardAlt}`}
+          >
+            <img
+              src={board.src}
+              width={board.width}
+              height={board.height}
+              alt={boardAlt}
+              loading="lazy"
+              decoding="async"
+            />
+          </button>
         </figure>
       </div>
     </div>

@@ -19,12 +19,12 @@ const teaserItems = t.galleryTeaser.images
   .filter((item): item is NonNullable<typeof item> => Boolean(item));
 ---
 
-<section class="hero" aria-labelledby="hero-title">
+<section class="hero" aria-labelledby="hero-name-top hero-name-bottom">
 
   <div class="wrap hero__inner">
-    <div class="hero__lines" id="hero-title" aria-label={site.name}>
-      <h1 class="hero__line hero__line--top">{t.hero.name[0]}</h1>
-      <h1 class="hero__line hero__line--bottom">{t.hero.name[1]}</h1>
+    <div class="hero__lines">
+      <h1 class="hero__line hero__line--top" id="hero-name-top">{t.hero.name[0]}</h1>
+      <h1 class="hero__line hero__line--bottom" id="hero-name-bottom">{t.hero.name[1]}</h1>
     </div>
 
     <div class="hero__body" data-reveal>
@@ -46,15 +46,24 @@ const teaserItems = t.galleryTeaser.images
 
     <figure class="hero__figure" data-reveal style="--reveal-delay: 120ms">
       <div class="hero__figure-frame">
-        <img
-          src={heroImage.src}
-          width={heroImage.width}
-          height={heroImage.height}
-          alt={heroImage.alt[lang]}
-          loading="eager"
-          decoding="async"
-          fetchpriority="high"
-        />
+        <button
+          class="lightbox-trigger"
+          type="button"
+          data-lightbox={heroImage.full}
+          data-lightbox-alt={heroImage.alt[lang]}
+          data-lightbox-caption={t.hero.imageCaption}
+          aria-label={`${t.lightbox.open}: ${t.hero.imageCaption}`}
+        >
+          <img
+            src={heroImage.src}
+            width={heroImage.width}
+            height={heroImage.height}
+            alt={heroImage.alt[lang]}
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </button>
       </div>
       <figcaption>{t.hero.imageCaption}</figcaption>
     </figure>
@@ -77,14 +86,23 @@ const teaserItems = t.galleryTeaser.images
     </div>
 
     <figure class="intro__figure" data-reveal style="--reveal-delay: 120ms">
-      <img
-        src={introImage.src}
-        width={introImage.width}
-        height={introImage.height}
-        alt={introImage.alt[lang]}
-        loading="lazy"
-        decoding="async"
-      />
+      <button
+        class="lightbox-trigger"
+        type="button"
+        data-lightbox={introImage.full}
+        data-lightbox-alt={introImage.alt[lang]}
+        data-lightbox-caption={t.intro.imageCaption}
+        aria-label={`${t.lightbox.open}: ${t.intro.imageCaption}`}
+      >
+        <img
+          src={introImage.src}
+          width={introImage.width}
+          height={introImage.height}
+          alt={introImage.alt[lang]}
+          loading="lazy"
+          decoding="async"
+        />
+      </button>
       <figcaption>{t.intro.imageCaption}</figcaption>
     </figure>
   </div>
@@ -240,14 +258,23 @@ const teaserItems = t.galleryTeaser.images
             data-reveal
             style={`--reveal-delay: ${index * 70}ms`}
           >
-            <img
-              src={item.src}
-              width={item.width}
-              height={item.height}
-              alt={item.alt}
-              loading={index === 0 ? 'eager' : 'lazy'}
-              decoding="async"
-            />
+            <button
+              class="lightbox-trigger"
+              type="button"
+              data-lightbox={item.full}
+              data-lightbox-alt={item.alt}
+              data-lightbox-caption={item.caption}
+              aria-label={`${t.lightbox.open}: ${item.caption}`}
+            >
+              <img
+                src={item.src}
+                width={item.width}
+                height={item.height}
+                alt={item.alt}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                decoding="async"
+              />
+            </button>
             <figcaption>{item.caption}</figcaption>
           </figure>
         ))

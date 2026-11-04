@@ -14,8 +14,6 @@
 
   /* Shared neutrals */
   --ground: #eff2e9;
-  --ground-deep: #e4e7da;
-  --paper: #fbfbf6;
   --ink: #1b2418;
   --ink-soft: #4c5747;
   --on-field: #eff2e9;
@@ -32,18 +30,12 @@
   --chartreuse: #c9d94e;
   --field: #1e2a18;
   --muted: #4c5747;
-
-  /* Derived tokens */
-  --accent-tint: color-mix(in srgb, var(--accent) 10%, var(--ground));
-  --field-tint: color-mix(in srgb, var(--field) 88%, var(--accent));
 }
 
 /* Palette 3. active. Deep green, olive, chartreuse. */
 :root,
 [data-palette='3'] {
   --ground: #eff2e9;
-  --ground-deep: #e4e7da;
-  --paper: #fbfbf6;
   --ink: #1b2418;
   --ink-soft: #4c5747;
   --accent: #2c5f16;
@@ -59,8 +51,6 @@
 /* Palette 1. deep green and warm stone. */
 [data-palette='1'] {
   --ground: #f1efe9;
-  --ground-deep: #e5e2d8;
-  --paper: #fbfaf5;
   --ink: #1e241c;
   --ink-soft: #525a4e;
   --accent: #245c2a;
@@ -78,8 +68,6 @@
 /* Palette 2. olive and ink. */
 [data-palette='2'] {
   --ground: #f2f1e8;
-  --ground-deep: #e7e5d8;
-  --paper: #fcfbf5;
   --ink: #20251b;
   --ink-soft: #565d4b;
   --accent: #4a5d12;
@@ -97,8 +85,6 @@
 /* Palette 4. deep teal and bone. */
 [data-palette='4'] {
   --ground: #eff1ed;
-  --ground-deep: #e1e6df;
-  --paper: #fafbf8;
   --ink: #182420;
   --ink-soft: #4b5852;
   --accent: #1d5c4c;

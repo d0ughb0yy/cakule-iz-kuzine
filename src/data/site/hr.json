@@ -6,7 +6,6 @@
   "nav": {
     "home": "Početna",
     "gallery": "Galerija",
-    "book": "Rezervirajte",
     "menu": "Jelovnik",
     "language": "Jezik",
     "navigation": "Navigacija",
@@ -14,7 +13,6 @@
   },
   "hero": {
     "name": ["Čakule", "iz Kužine"],
-    "role": "Tin Lučić, kuhar",
     "lead": "Privatni kuhar u Istri. Kuham u vašem domu ili vili, za do šest gostiju. Sezona određuje meni.",
     "primaryCta": "Provjerite dostupnost",
     "secondaryCta": "Pogledajte jelovnike",
@@ -242,13 +240,10 @@
     "note": "Rezervacije idu preko mog profila na Take a Chef platformi."
   },
   "footer": {
-    "places": "Istra · Pula · Motovun · Rovinj",
     "navLabel": "Stranice",
     "bookingLink": "Take a Chef profil",
     "areaText": "Istra. Kuham kod vas.",
-    "rights": "Sva prava pridržana.",
-    "creditLabel": "Fotografije Istre:",
-    "creditFood": "Fotografije jela i pripreme: Unsplash, privremeno."
+    "rights": "Sva prava pridržana."
   },
   "galleryPage": {
     "metaTitle": "Galerija: Čakule iz Kužine",

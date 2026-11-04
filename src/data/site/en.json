@@ -6,7 +6,6 @@
   "nav": {
     "home": "Home",
     "gallery": "Gallery",
-    "book": "Book",
     "menu": "Menu",
     "language": "Language",
     "navigation": "Navigation",
@@ -14,7 +13,6 @@
   },
   "hero": {
     "name": ["Čakule", "iz Kužine"],
-    "role": "Tin Lučić, chef",
     "lead": "A private chef in Istria. I cook in your home or villa, for up to six guests. The season sets the menu.",
     "primaryCta": "Check availability",
     "secondaryCta": "See the menus",
@@ -242,13 +240,10 @@
     "note": "Bookings go through my Take a Chef profile."
   },
   "footer": {
-    "places": "Istria · Pula · Motovun · Rovinj",
     "navLabel": "Pages",
     "bookingLink": "Take a Chef profile",
     "areaText": "Istria. I cook at your place.",
-    "rights": "All rights reserved.",
-    "creditLabel": "Photographs of Istria:",
-    "creditFood": "Photographs of food and preparation: Unsplash, temporary."
+    "rights": "All rights reserved."
   },
   "galleryPage": {
     "metaTitle": "Gallery: Čakule iz Kužine",

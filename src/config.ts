@@ -8,8 +8,6 @@ export const site = {
   url: 'https://cakule-iz-kuzine.vercel.app',
   serviceArea: 'Istria, Croatia',
   year: 2026,
-  // Leave empty to hide the Instagram link in the footer.
-  instagramUrl: '',
   // Palette 1–4. See src/styles/palettes.css and docs/superpowers/specs/2026-10-27-private-chef-site-design.md.
   palette: '3',
 };

@@ -1,10 +1,10 @@
-# Čakula iz Kužine
+# Čakule iz Kužine
 
 Privatni kuhar u Istri. Kuham za male večere, do šest gostiju, u vašem domu ili vili.
 
 ---
 
-Čakula iz Kužine is the name of a private chef business in Istria. The chef comes to you: to a home, a villa, or a terrace, cooks for up to six guests, and serves a dinner with the precision of a good restaurant and none of its formality.
+Čakule iz Kužine is the name of a private chef business in Istria. The chef comes to you: to a home, a villa, or a terrace, cooks for up to six guests, and serves a dinner with the precision of a good restaurant and none of its formality.
 
 ## How the chef cooks
 
@@ -17,9 +17,9 @@ Privatni kuhar u Istri. Kuham za male večere, do šest gostiju, u vašem domu i
 
 Three menus on the site are starting points for a conversation:
 
-- **Meat Lovers**: four courses, with two choices per course.
-- **Adriatic**: a seafood menu for long evenings.
-- **Garden**: seasonal vegetables in the leading role.
+- **Meat lovers**: four courses, with two choices per course.
+- **Fresh and local**: the chef's choice of local dishes.
+- **Fresh from the Adriatic**: seafood in the leading role.
 
 Every menu adapts to allergies, intolerances, and dietary needs.
 
@@ -34,10 +34,10 @@ A small, bilingual portfolio site:
 - **Croatian**: home page and gallery at `/` and `/galerija/`
 - **English**: home page and gallery at `/en/` and `/en/gallery/`
 
-The home page answers the practical questions up front: how it works, what is included, what the chef needs in your kitchen, and how a reservation happens. The three menus are presented as a paper-menu slideshow — tabs, arrows, dots, keyboard, and swipe — with one or two dishes per course and no menu photography. The gallery shows the food and the tables.
+The home page answers the practical questions up front: how it works, what is included, what the chef needs in your kitchen, and how a reservation happens. The three menus are presented as tabbed panels, with one or two dishes per course and no menu photography. The gallery shows the food and the tables.
 
 ## Project notes
 
-The copy, photos, reviews, and chef name are being finalised; `CONTENT.md` is the checklist of what to replace before going live. Prices are quoted by Take a Chef rather than shown on the site. Design and palette rationale lives in `docs/superpowers/specs/2026-10-27-private-chef-site-design.md`.
+The copy, photos, and chef name are being finalised; `CONTENT.md` is the checklist of what to replace before going live. Prices are quoted by Take a Chef rather than shown on the site. Design and palette rationale lives in `docs/superpowers/specs/2026-10-27-private-chef-site-design.md`.
 
 For anything technical (running the site locally, deploying to Vercel, editing text and images, switching palettes), see `docs/development.md`.

@@ -24,15 +24,25 @@ const heroImage = getImage('istria-motovun');
     </div>
 
     <figure class="page-hero__figure" data-reveal style="--reveal-delay: 120ms">
-      <img
-        src={heroImage.src}
-        width={heroImage.width}
-        height={heroImage.height}
-        alt={heroImage.alt[lang]}
-        loading="eager"
-        decoding="async"
-        fetchpriority="high"
-      />
+      <button
+        class="lightbox-trigger"
+        type="button"
+        data-lightbox={heroImage.full}
+        data-lightbox-alt={heroImage.alt[lang]}
+        data-lightbox-caption={heroImage.alt[lang]}
+        data-lightbox-group="gallery"
+        aria-label={`${t.lightbox.open}: ${heroImage.alt[lang]}`}
+      >
+        <img
+          src={heroImage.src}
+          width={heroImage.width}
+          height={heroImage.height}
+          alt={heroImage.alt[lang]}
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </button>
       <figcaption>{heroImage.alt[lang]}</figcaption>
     </figure>
   </div>

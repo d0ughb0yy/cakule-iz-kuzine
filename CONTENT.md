@@ -10,9 +10,8 @@ Legend: **required** = do not launch without it · **recommended** = affects tru
 
 | # | Item | Where | Current placeholder | Status |
 | --- | --- | --- | --- | --- |
-| 1.1 | Brand / site name | `src/config.ts` → `site.name` | `Čakula iz Kužine` | **required** |
-| 1.2 | Chef's name | `src/data/site/hr.json` → `intro.signature`; `src/data/site/en.json` → `intro.signature` | `Chef Tin` | **required** |
-| 1.3 | Instagram (leave empty to hide) | `src/config.ts` → `instagramUrl` | empty | optional |
+| 1.1 | Brand / site name | `src/config.ts` → `site.name` | `Čakule iz Kužine` | **required** |
+| 1.2 | Chef's name | `src/data/site/hr.json` → `statement.attribution`; `src/data/site/en.json` → `statement.attribution` | `Tin Lučić` | **required** |
 | 1.4 | Favicon | `public/favicon.svg` | Palette 3 monogram | optional |
 
 The brand name is used in the header, footer, page titles, 404, and structured data. Change it in `src/config.ts` only — the templates read from there.
@@ -25,7 +24,7 @@ The brand name is used in the header, footer, page titles, 404, and structured d
 | 2.2 | Confirm the profile accepts bookings for up to 6 guests | Take a Chef dashboard | — | **required** |
 | 2.3 | Confirm service area matches the site | Take a Chef dashboard | Istria, Croatia | **required** |
 
-Every CTA on both pages — header, hero, menu slideshow, gallery CTA band, footer — reads `bookingUrl`. There is no contact form or on-site booking engine by design. If the profile URL is wrong, every button is wrong.
+Every CTA on both pages — hero, menu panel, gallery CTA band, footer — reads `bookingUrl`. There is no contact form or on-site booking engine by design. If the profile URL is wrong, every button is wrong.
 
 ## 3. Copy
 
@@ -33,38 +32,31 @@ Every CTA on both pages — header, hero, menu slideshow, gallery CTA band, foot
 | --- | --- | --- | --- | --- |
 | 3.1 | Croatian copy review | `src/data/site/hr.json` | Written as a first draft; have the chef read it aloud and adjust to their voice. | **required** |
 | 3.2 | English copy review | `src/data/site/en.json` | Mirrors the Croatian structure key for key. If you add or remove a menu/item in one file, do the same in the other. | **required** |
-| 3.3 | Service area wording | `src/config.ts` → `serviceArea`; both site JSON files (`hero.eyebrow`, `faq`, `footer`) | Currently Istria / Istra. Decide whether nearby areas (Kvarner, Trieste, Ljubljana) should be mentioned. | recommended |
-| 3.4 | Menu names, courses, and dishes | `hr.json` / `en.json` → `menus.items[].courses[].options` | Three sample menus: Ljubitelji Mesa / Jadran / Vrt. Each course holds one or two options: one option renders as a tasting course, two render as a choice. | **required** |
-| 3.5 | "Included" list | `hr.json` / `en.json` → `included.items` | Confirm each claim is true (travel, shopping, service, cleanup, discretion). | **required** |
+| 3.3 | Service area wording | `src/config.ts` → `serviceArea`; both site JSON files (`hero.lead`, `faq`, `footer`) | Currently Istria / Istra. Decide whether nearby areas (Kvarner, Trieste, Ljubljana) should be mentioned. | recommended |
+| 3.4 | Menu names, courses, and dishes | `hr.json` / `en.json` → `menus.items[].courses[].options` | Three sample menus: Ljubitelji mesa / Svježe i lokalno / Plodovi Jadrana. Each course holds one or two options: one option renders as a tasting course, two render as a choice. | **required** |
+| 3.5 | "Included" list | `hr.json` / `en.json` → `included.rows` | Confirm each claim is true (travel, shopping, service, cleanup, discretion). | **required** |
 | 3.6 | FAQ answers | `hr.json` / `en.json` → `faq.items` | Travel radius, kitchen requirements, lead time, deposit, cancellation. Current answers are plausible defaults, not confirmed policy. | **required** |
 | 3.7 | Page titles and meta descriptions | `hr.json` / `en.json` → `meta`, `galleryPage.metaTitle`, `galleryPage.metaDescription` | Include the location and "private chef" for search. | recommended |
 | 3.8 | 404 page copy | `src/pages/404.astro` | Bilingual by design. | optional |
 
 ## 4. Prices
 
-The menu slideshow does not show prices by design. Take a Chef issues the real quote after the guest sends an enquiry. If an indicative "from" price is added later, keep the wording and the disclaimer explicit.
+The menu section does not show prices by design. Take a Chef issues the real quote after the guest sends an enquiry. If an indicative "from" price is added later, keep the wording and the disclaimer explicit.
 
 ## 5. Reviews
 
-| # | Item | Where | Current placeholder | Status |
-| --- | --- | --- | --- | --- |
-| 5.1 | Replace the two sample quotes | `hr.json` / `en.json` → `testimonials.items` | "Sarah, London" and "Ana & Marko, Rovinj" | **required** |
-| 5.2 | Get permission to publish names and locations | — | Use first name + city, or initials, if guests prefer | **required** |
-| 5.3 | If there are no real reviews yet, remove the section | `src/components/HomePage.astro` → the `<section>` containing `quote-grid`; also `testimonials` in both JSON files | — | alternative |
-
-Publishing invented reviews is a legal and trust risk. Either use real, permitted quotes or delete the section before launch.
+The current design has no reviews section, so there is nothing to replace or publish here.
 
 ## 6. Photography
 
 | # | Item | Where | Current placeholder | Status |
 | --- | --- | --- | --- | --- |
-| 6.1 | Replace all Unsplash photos with real work | `src/data/images.json` | 18 hotlinked Unsplash images | **required** |
-| 6.2 | Add local files | `public/images/` (create it) | — | **required** |
+| 6.1 | Replace all Unsplash photos with real work | `src/data/images.json` | Temporary hotlinked Unsplash images | **required** |
+| 6.2 | Add local files | `public/images/` | Already holds the three Istrian photos | **required** |
 | 6.3 | Set real dimensions | `src/data/images.json` → `width`, `height` | Unsplash dimensions | **required** |
 | 6.4 | Rewrite alt text in both languages | `src/data/images.json` → `alt.hr`, `alt.en` | Descriptive, but describes stock photos | **required** |
 | 6.5 | Update gallery captions | `src/data/gallery.json` | Generic dish descriptions | recommended |
 | 6.6 | Keep the hero and intro free of identifiable strangers | `images.json` → `hero`, `intro` | Intro is a hands-only photo on purpose | recommended |
-| 6.7 | Remove the unused menu images | `images.json` → `menu-market`, `menu-adriatic`, `menu-garden` | The menu section is text-only, so these entries are no longer rendered | optional |
 
 How to swap an image (four steps) is in `docs/development.md` → "Replacing an Unsplash image with a real photo". Keep the aspect ratio close to the slot it fills: hero and intro are 4:5, gallery images vary.
 
@@ -90,7 +82,6 @@ Vercel settings: framework Astro, build command `npm run build`, output director
 | 8.1 | Privacy notice if analytics, embedded maps, or a contact form are ever added | New page or footer link | optional |
 | 8.2 | Business/sole-trader details (name, address, VAT ID) if required for Croatian e-commerce/consumer law | Footer | recommended — confirm with an accountant |
 | 8.3 | Cookie banner only if non-essential cookies are introduced | — | not needed today: the site sets no cookies and loads no analytics |
-| 8.4 | Photo credits | `hr.json` / `en.json` → `footer.photoCredit` | Remove the "Temporary photography: Unsplash" line once real photos are in |
 
 The current build loads no third-party scripts, fonts from Google, or analytics. Fonts are bundled from `@fontsource`, so there is no third-party request beyond the Unsplash images — and those disappear when real local photos replace them.
 
@@ -102,8 +93,7 @@ The current build loads no third-party scripts, fonts from Google, or analytics.
 - [ ] Every CTA opens the real Take a Chef profile in a new tab.
 - [ ] Language switch keeps you on the equivalent page (home ↔ home, gallery ↔ gallery).
 - [ ] Gallery: all photos load while scrolling; lightbox opens, arrows stay still between portrait and landscape photos, outside click and `Esc` close it.
-- [ ] Mobile: navigation opens and closes; hero and menu slideshow are readable at 390px; menu tabs, dots, arrows, and swipe work.
+- [ ] Mobile: navigation opens and closes; hero and menu tabs are readable at 390px; tab switching works.
 - [ ] Prices are either omitted or clearly marked as "from" (Take a Chef issues the real quote).
-- [ ] Reviews are real and permitted, or the section is removed.
-- [ ] Footer year, service area, and Instagram link are correct.
+- [ ] Footer year and service area are correct.
 - [ ] Check the site with `prefers-reduced-motion` enabled — animations should disappear, not break.

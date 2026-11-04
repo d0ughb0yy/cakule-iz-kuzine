@@ -6,7 +6,6 @@ import { routes } from '../config';
 
 export type Lang = 'hr' | 'en';
 export type SiteContent = typeof hr;
-export type ImageKey = keyof typeof images;
 export type CurrentPage = keyof typeof routes;
 
 type ImageEntry = {
@@ -28,7 +27,7 @@ export function getImage(key: string): ImageEntry {
 }
 
 export function getGallery(lang: Lang) {
-  return gallery.items.map((item, index) => {
+  return gallery.items.map((item) => {
     const image = imageMap[item.image];
 
     if (!image) {
@@ -36,7 +35,6 @@ export function getGallery(lang: Lang) {
     }
 
     return {
-      index,
       imageKey: item.image,
       src: image.src,
       full: image.full,
@@ -46,12 +44,4 @@ export function getGallery(lang: Lang) {
       caption: item.caption[lang],
     };
   });
-}
-
-export function otherLang(lang: Lang): Lang {
-  return lang === 'hr' ? 'en' : 'hr';
-}
-
-export function routeFor(page: CurrentPage, lang: Lang): string {
-  return routes[page][lang];
 }
