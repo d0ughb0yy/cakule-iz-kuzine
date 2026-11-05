@@ -7,31 +7,38 @@
     "home": "Početna",
     "gallery": "Galerija",
     "menu": "Jelovnik",
+    "contact": "Kontakt",
     "language": "Jezik",
     "navigation": "Navigacija",
+    "menuToggle": "Meni",
     "skip": "Preskoči na sadržaj"
   },
   "hero": {
     "name": ["Čakule", "iz Kužine"],
-    "lead": "Privatni kuhar u Istri. Kuham u vašem domu ili vili, za do šest gostiju. Sezona određuje meni.",
+    "lead": "Više od običnog privatnog kuhara. Vaš dom ili vilu pretvaram u ekskluzivni restoran za do šest gostiju. Jelovnik se prilagođava trenutnoj sezoni.",
     "primaryCta": "Provjerite dostupnost",
     "secondaryCta": "Pogledajte jelovnike",
+    "bookingNote": "Datum i rezervaciju odabirate na Take a Chef platformi — javim se unutar 24 sata.",
     "image": "istria-market",
     "imageCaption": "Tržnica u Puli, Istra."
   },
   "intro": {
     "title": "Lokalno i u sezoni.",
     "paragraphs": [
-      "Moje planiranje obroka počinje na tržnici. Kupujem kod lokalnih uzgajivača i od lokalnih ribara, a meso biram hrvatsko kad mogu.",
-      "Kuham s pažnjom kako bih unio restoransko kuhanje u vaš dom. Tanjuri su precizni, a posluživanje prati vaš ritam."
+      "Planiranje jelovnika započinje obilaskom tržnice. Kupujem kod lokalnih uzgajivača i od lokalnih ribara.",
+      "Kuham s pažnjom kako bih unio restoranske tehnike i preciznost u vaš dom. Tanjuri su pažljivo složeni, a posluživanje prati vaš ritam."
     ],
-    "link": "Kako izgleda večer",
+    "link": "Kako sve funkcionira",
+    "who": {
+      "name": "Ja sam Tin Lučić.",
+      "fact": "Odrastao sam u kuhinji svoje bake u Kužine — odatle i ime Čakule. Danas kuham po cijeloj Istri."
+    },
     "image": "istria-motovun",
     "imageCaption": "Motovun, Istra."
   },
   "how": {
-    "title": "Vi birate datum. Ja kuham.",
-    "lead": "Recite mi datum i broj gostiju. Dogovorimo jelovnik, ja kuham, dok vi uživate.",
+    "title": "Vi birate datum. Ostalo je na meni.",
+    "lead": "Odredimo datum i broj gostiju. Dogovorimo jelovnik, ja kuham, dok vi uživate.",
     "steps": [
       {
         "title": "Odaberite datum i mjesto",
@@ -39,7 +46,7 @@
       },
       {
         "title": "Složimo jelovnik",
-        "text": "Razgovaramo o ukusima, alergijama i povodu. Predlažem jelovnik, a vi ga potvrđujete."
+        "text": "Razgovaramo o preferencama, alergijama i povodu. Predlažem jelovnik, a vi ga potvrđujete."
       },
       {
         "title": "Ja kuham, vi uživate",
@@ -64,11 +71,11 @@
       },
       {
         "item": "Posluživanje jelo po jelo",
-        "detail": "Večera ide vašim ritmom."
+        "detail": "Večera prati vaš ritam."
       },
       {
         "item": "Jelovnik prilagođen alergijama i posebnoj prehrani",
-        "detail": "Dogovaramo prije večere."
+        "detail": "Prije večere dogovaramo sve."
       },
       {
         "item": "Pranje suđa i pospremanje kuhinje",
@@ -88,6 +95,7 @@
     "title": "Svaki jelovnik počinje dogovorom.",
     "lead": "Jelovnici se mijenjaju ovisno o sezoni. Ova tri su trenutni prijedlozi, a zajedno ih prilagođavamo.",
     "selectLabel": "Odaberite jelovnik",
+    "bookingNote": "Datum i rezervaciju odabirate na Take a Chef platformi — javim se unutar 24 sata.",
     "choiceNote": "Odaberite jedno jelo po slijedu.",
     "tastingNote": "Degustacijski jelovnik, bez odabira.",
     "or": "ili",
@@ -97,14 +105,14 @@
         "description": "Za ljubitelje mesa, svježe i lokalno.",
         "courses": [
           {
-            "name": "Starter",
+            "name": "Predjelo",
             "options": [
               "Mousse od kozjeg sira, povrće na tri načina",
               "Sezonska salata s pršutom"
             ]
           },
           {
-            "name": "Predjelo",
+            "name": "Prvo jelo",
             "options": [
               "Rižot od gljiva, hrskava panceta",
               "Ravioli s raguom od govedine, marinirane mrkve"
@@ -131,14 +139,14 @@
         "description": "Chefov izbor lokalnih delicija.",
         "courses": [
           {
-            "name": "Starter",
+            "name": "Predjelo",
             "options": [
               "Ceviche od svježe ribe",
               "Mousse od kozjeg sira, povrće na tri načina"
             ]
           },
           {
-            "name": "Predjelo",
+            "name": "Prvo jelo",
             "options": [
               "Kremasta juha od tikve",
               "Rižot od gljiva, hrskava panceta"
@@ -165,11 +173,11 @@
         "description": "Morski plodovi, lokalnog ulova.",
         "courses": [
           {
-            "name": "Starter",
+            "name": "Predjelo",
             "options": ["Ceviche od svježe ribe"]
           },
           {
-            "name": "Predjelo",
+            "name": "Prvo jelo",
             "options": ["Ragu od lignji, zapečeni poriluk, palenta"]
           },
           {
@@ -190,18 +198,18 @@
   "galleryTeaser": {
     "title": "Stol, tanjur, mjesto.",
     "lead": "Fotografije stola, tanjura i Istre.",
-    "note": "Fotografije jela i pripreme su privremene. Fotografije Istre su stvarne.",
+    "note": "Fotografije jela i pripreme su privremene. Fotografije Istre su prave.",
     "cta": "Cijela galerija",
     "images": ["gallery-charcuterie", "gallery-salmon", "gallery-olive-oil", "istria-vineyard"]
   },
   "statement": {
     "label": "Iz kuhinje",
-    "text": "Sezona određuje meni. Ono što je tog jutra najbolje na tržnici, toga će navečer biti na tanjuru.",
+    "text": "Sezona određuje jelovnik. Ono što je tog jutra najbolje na tržnici, toga će navečer biti na tanjuru.",
     "attribution": "Tin Lučić, kuhar"
   },
   "faq": {
     "title": "Dobro je znati prije rezervacije.",
-    "lead": "Za neodgovorena pitanja, pitajte me na Take a Chef profilu. Na upite odgovaram unutar 24 sata.",
+    "lead": "Za sve što ovdje nije odgovoreno, pitajte me na Take a Chef profilu. Na upite odgovaram unutar 24 sata.",
     "items": [
       {
         "q": "Za koliko gostiju kuhate?",
@@ -232,6 +240,33 @@
         "a": "Da. Operem suđe i pospremim kuhinju prije odlaska."
       }
     ]
+  },
+  "contact": {
+    "title": "Imate li još pitanja? Pišite mi.",
+    "lead": "Za datume i rezervacije idite na moj Take a Chef profil. Za sve ostalo — pitanje, ideju, povod — pišite mi ovdje.",
+    "note": "Odgovaram unutar 24 sata.",
+    "formLabel": "Kontakt obrazac",
+    "subject": "Upit sa stranice Čakule iz Kužine",
+    "fields": {
+      "name": "Ime",
+      "surname": "Prezime",
+      "email": "E-pošta",
+      "message": "Poruka",
+      "submit": "Pošaljite poruku"
+    },
+    "hints": {
+      "name": "Obavezno polje.",
+      "surname": "Obavezno polje.",
+      "email": "Obavezno polje — unesite ispravnu adresu.",
+      "message": "Obavezno polje."
+    },
+    "status": "Vaša pošta bi se trebala otvoriti — ako nije, pišite mi izravno na adresu ispod.",
+    "fallback": {
+      "before": "Radije e-pošta? Pišite mi izravno na",
+      "after": "ili rezervirajte večeru na",
+      "booking": "Take a Chef profilu"
+    },
+    "privacy": "Ime, prezime, e-pošta i poruka koriste se samo za odgovor na vaš upit. Podaci se šalju izravno e-poštom i ne pohranjuju se na ovoj stranici."
   },
   "cta": {
     "title": "Vaša večera počinje jednim upitom.",

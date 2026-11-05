@@ -24,13 +24,13 @@ The brand name is used in the header, footer, page titles, 404, and structured d
 | 2.2 | Confirm the profile accepts bookings for up to 6 guests | Take a Chef dashboard | — | **required** |
 | 2.3 | Confirm service area matches the site | Take a Chef dashboard | Istria, Croatia | **required** |
 
-Every CTA on both pages — hero, menu panel, gallery CTA band, footer — reads `bookingUrl`. There is no contact form or on-site booking engine by design. If the profile URL is wrong, every button is wrong.
+Every CTA on both pages — hero, menu panel, gallery CTA band, footer — reads `bookingUrl`. Reservations still go through Take a Chef; the home page also carries a contact panel (see §10) for questions and custom ideas. If the profile URL is wrong, every button is wrong.
 
 ## 3. Copy
 
 | # | Item | Where | Notes | Status |
 | --- | --- | --- | --- | --- |
-| 3.1 | Croatian copy review | `src/data/site/hr.json` | Written as a first draft; have the chef read it aloud and adjust to their voice. | **required** |
+| 3.1 | Croatian copy review | `src/data/site/hr.json` | Written as a first draft; have the chef read it aloud and adjust to their voice. The intro byline fact (`intro.who.fact` — the grandmother's kitchen in Kužine) is a **drafted placeholder story, not confirmed biography** — Tin must confirm or rewrite it in his own words. | **required** |
 | 3.2 | English copy review | `src/data/site/en.json` | Mirrors the Croatian structure key for key. If you add or remove a menu/item in one file, do the same in the other. | **required** |
 | 3.3 | Service area wording | `src/config.ts` → `serviceArea`; both site JSON files (`hero.lead`, `faq`, `footer`) | Currently Istria / Istra. Decide whether nearby areas (Kvarner, Trieste, Ljubljana) should be mentioned. | recommended |
 | 3.4 | Menu names, courses, and dishes | `hr.json` / `en.json` → `menus.items[].courses[].options` | Three sample menus: Ljubitelji mesa / Svježe i lokalno / Plodovi Jadrana. Each course holds one or two options: one option renders as a tasting course, two render as a choice. | **required** |
@@ -49,6 +49,8 @@ The current design has no reviews section, so there is nothing to replace or pub
 
 ## 6. Photography
 
+> **Development status (2026-11-05):** stock photography is intentional while the site is in development. Do not treat it as a launch defect or replace it until Tin says the real shoot is ready. The `chef-portrait` / `gallery-plating` duplicate is deferred with it; resolve that with the real portrait, not another stock frame. Future critique runs should honour `.impeccable/critique/ignore.md`.
+
 | # | Item | Where | Current placeholder | Status |
 | --- | --- | --- | --- | --- |
 | 6.1 | Replace all Unsplash photos with real work | `src/data/images.json` | Temporary hotlinked Unsplash images | **required** |
@@ -56,7 +58,7 @@ The current design has no reviews section, so there is nothing to replace or pub
 | 6.3 | Set real dimensions | `src/data/images.json` → `width`, `height` | Unsplash dimensions | **required** |
 | 6.4 | Rewrite alt text in both languages | `src/data/images.json` → `alt.hr`, `alt.en` | Descriptive, but describes stock photos | **required** |
 | 6.5 | Update gallery captions | `src/data/gallery.json` | Generic dish descriptions | recommended |
-| 6.6 | Keep the hero and intro free of identifiable strangers | `images.json` → `hero`, `intro` | Intro is a hands-only photo on purpose | recommended |
+| 6.6 | Replace the byline portrait with the chef's real photo | `images.json` → `chef-portrait` | The intro byline ships a hands-only stock placeholder. Swap in a real portrait of Tin (hands-and-face welcome); keep the hero and any other slot free of identifiable strangers. One entry: `src`, `full`, `width`, `height`, both `alt` texts. | **required** |
 
 How to swap an image (four steps) is in `docs/development.md` → "Replacing an Unsplash image with a real photo". Keep the aspect ratio close to the slot it fills: hero and intro are 4:5, gallery images vary.
 
@@ -79,11 +81,21 @@ Vercel settings: framework Astro, build command `npm run build`, output director
 
 | # | Item | Where | Status |
 | --- | --- | --- | --- |
-| 8.1 | Privacy notice if analytics, embedded maps, or a contact form are ever added | New page or footer link | optional |
+| 8.1 | Privacy notice for the contact form | `src/components/ContactPanel.astro` → `.contact-form__privacy` | **done** — short note beside the form; a full policy page remains optional |
 | 8.2 | Business/sole-trader details (name, address, VAT ID) if required for Croatian e-commerce/consumer law | Footer | recommended — confirm with an accountant |
 | 8.3 | Cookie banner only if non-essential cookies are introduced | — | not needed today: the site sets no cookies and loads no analytics |
 
 The current build loads no third-party scripts, fonts from Google, or analytics. Fonts are bundled from `@fontsource`, so there is no third-party request beyond the Unsplash images — and those disappear when real local photos replace them.
+
+## 10. Contact form
+
+| # | Item | Where | Current placeholder | Status |
+| --- | --- | --- | --- | --- |
+| 10.1 | Contact email address | `src/config.ts` → `contactEmail` | `tin.lucic172@gmail.com` — real address supplied by Tin | **done** |
+| 10.2 | Privacy notice | `src/components/ContactPanel.astro` → `.contact-form__privacy` | Short note near the form names the four fields and states the data is sent by email and not stored on the site (GDPR art. 5/6). A full policy page is still optional | **done** |
+| 10.3 | Form delivery | `src/components/ContactPanel.astro` | The form composes a `mailto:` from the visitor's fields — nothing is stored server-side. If you prefer invisible backend delivery, sign up for a form service and switch the submit handler to `fetch`; the mailto path works without one | recommended |
+
+The form is delivered only by the visitor's own mail client, so no data leaves the site before they send the email.
 
 ## 9. Final pre-launch pass
 

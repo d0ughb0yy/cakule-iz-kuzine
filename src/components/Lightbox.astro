@@ -27,7 +27,6 @@ const { labels } = Astro.props;
         <button class="lightbox__btn lightbox__nav lightbox__nav--next" type="button" data-next aria-label={labels.next}>
           <Icon name="chevron-right" size={22} />
         </button>
-        <img class="lightbox__img" src="" alt="" />
       </div>
 
       <figcaption class="lightbox__bar">
@@ -47,10 +46,18 @@ const { labels } = Astro.props;
     const dialog = document.getElementById('lightbox');
     if (!dialog) return;
 
+    // The photo element is created here so the closed dialog never ships an
+    // img with a meaningless src; src and alt are set the moment it opens.
+    const stage = dialog.querySelector('.lightbox__stage');
+    if (!stage) return;
+
+    const image = document.createElement('img');
+    image.className = 'lightbox__img';
+    stage.appendChild(image);
+
     const triggers = Array.from(document.querySelectorAll('[data-lightbox]'));
     if (!triggers.length) return;
 
-    const image = dialog.querySelector('.lightbox__img');
     const meta = dialog.querySelector('.lightbox__meta');
     const caption = dialog.querySelector('.lightbox__caption');
     const currentLabel = dialog.querySelector('[data-current]');
@@ -121,7 +128,7 @@ const { labels } = Astro.props;
           meta.classList.add('is-changing');
           image.style.setProperty('--shift', `${direction * -10}px`);
 
-          await wait(150);
+          await wait(200);
           if (myToken !== token) return;
 
           image.src = item.src;
@@ -176,7 +183,7 @@ const { labels } = Astro.props;
 
       closeTimer = window.setTimeout(
         () => dialog.close(),
-        reduceMotion.matches ? 0 : 240
+        reduceMotion.matches ? 0 : 300
       );
     };
 

@@ -7,31 +7,38 @@
     "home": "Home",
     "gallery": "Gallery",
     "menu": "Menu",
+    "contact": "Contact",
     "language": "Language",
     "navigation": "Navigation",
+    "menuToggle": "Menu",
     "skip": "Skip to content"
   },
   "hero": {
     "name": ["Čakule", "iz Kužine"],
-    "lead": "A private chef in Istria. I cook in your home or villa, for up to six guests. The season sets the menu.",
+    "lead": "More than just a private chef. I turn your home or villa into an exclusive restaurant for up to six guests. The menus change with the seasons.",
     "primaryCta": "Check availability",
     "secondaryCta": "See the menus",
+    "bookingNote": "You'll pick a date on Take a Chef — I reply within 24 hours.",
     "image": "istria-market",
     "imageCaption": "Pula market hall, Istria."
   },
   "intro": {
     "title": "Local, in season.",
     "paragraphs": [
-      "My meal planning starts at the market. I buy from local growers and from the fishmonger, and I choose Croatian meat when I can.",
-      "I cook with care to bring restaurant-level preparation into your home. The plates are precise and the service follows your pace."
+      "Menu development always starts at the local market. I buy from local farmers and fishermen.",
+      "I cook with care to bring restaurant-level precision and techniques into your home. The plates are carefully plated and the service follows your pace."
     ],
-    "link": "What the evening looks like",
+    "link": "How it works",
+    "who": {
+      "name": "I'm Tin Lučić.",
+      "fact": "I grew up in my grandmother's kitchen in Kužine — the name Čakule comes from there. Today I cook across Istria."
+    },
     "image": "istria-motovun",
     "imageCaption": "Motovun, Istria."
   },
   "how": {
-    "title": "You choose the date. I cook.",
-    "lead": "Tell me the date and the number of guests. We agree a menu, and I do the rest.",
+    "title": "You choose the date, and leave the rest to me.",
+    "lead": "We set the date and the number of guests. We agree on a menu, I cook while you enjoy.",
     "steps": [
       {
         "title": "Choose a date and a place",
@@ -39,7 +46,7 @@
       },
       {
         "title": "We plan the menu",
-        "text": "We talk about what you like, allergies, and the occasion. I suggest a menu, and you confirm it."
+        "text": "We talk about preferences, allergies, and the occasion. I suggest a menu, and you confirm it."
       },
       {
         "title": "I cook, you enjoy",
@@ -88,6 +95,7 @@
     "title": "Every menu starts with a conversation.",
     "lead": "The menus change with the season. These three are the current proposals; we adjust them together.",
     "selectLabel": "Choose a menu",
+    "bookingNote": "You'll pick a date on Take a Chef — I reply within 24 hours.",
     "choiceNote": "Choose one dish per course.",
     "tastingNote": "A set tasting menu, no choices.",
     "or": "or",
@@ -201,7 +209,7 @@
   },
   "faq": {
     "title": "Good to know before you book.",
-    "lead": "For unanswered questions, ask me on Take a Chef. I respond within 24 hours.",
+    "lead": "If something isn't answered here, ask me on my Take a Chef profile. I respond within 24 hours.",
     "items": [
       {
         "q": "How many guests do you cook for?",
@@ -232,6 +240,33 @@
         "a": "Yes. I wash up and clean the kitchen before I go."
       }
     ]
+  },
+  "contact": {
+    "title": "Still have a question? Write to me.",
+    "lead": "For dates and bookings, go to my Take a Chef profile. For everything else — a question, an idea, an occasion — write to me here.",
+    "note": "I reply within 24 hours.",
+    "formLabel": "Contact form",
+    "subject": "Enquiry from the Čakule iz Kužine website",
+    "fields": {
+      "name": "First name",
+      "surname": "Last name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send message"
+    },
+    "hints": {
+      "name": "This field is required.",
+      "surname": "This field is required.",
+      "email": "Required — enter a valid email address.",
+      "message": "This field is required."
+    },
+    "status": "Your mail app should have opened — if it didn't, write to me directly at the address below.",
+    "fallback": {
+      "before": "Prefer email? Write to me directly at",
+      "after": "or book your dinner on my",
+      "booking": "Take a Chef profile"
+    },
+    "privacy": "Your first name, last name, email, and message are used only to reply to your enquiry. The data is sent directly by email and is not stored on this site."
   },
   "cta": {
     "title": "Your dinner starts with one enquiry.",

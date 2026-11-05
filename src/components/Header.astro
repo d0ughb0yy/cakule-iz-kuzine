@@ -1,6 +1,7 @@
 ---
 import { routes, site } from '../config';
 import { getContent } from '../lib/content';
+import Icon from './Icon.astro';
 
 interface Props {
   lang: 'hr' | 'en';
@@ -10,6 +11,7 @@ interface Props {
 const { lang, current } = Astro.props;
 const t = getContent(lang);
 const menuHref = `${routes.home[lang]}#jelovnici`;
+const contactHref = `${routes.home[lang]}#kontakt`;
 ---
 
 <header class="site-header">
@@ -18,42 +20,105 @@ const menuHref = `${routes.home[lang]}#jelovnici`;
       {site.name}
     </a>
 
-    <nav
-      class="header__nav"
-      aria-label={t.nav.navigation}
-      data-reveal
-      style="--reveal-delay: 60ms"
-    >
-      <a class="header__link" href={menuHref}>{t.nav.menu}</a>
-      <a
-        class="header__link"
-        href={routes.gallery[lang]}
-        aria-current={current === 'gallery' ? 'page' : undefined}
-      >
-        {t.nav.gallery}
-      </a>
+    <div class="header__panel" data-header-panel>
+      <nav class="header__nav" id="site-menu" aria-label={t.nav.navigation}>
+        <a class="header__link" href={menuHref}>{t.nav.menu}</a>
+        <a class="header__link" href={contactHref}>{t.nav.contact}</a>
+        <a
+          class="header__link"
+          href={routes.gallery[lang]}
+          aria-current={current === 'gallery' ? 'page' : undefined}
+        >
+          {t.nav.gallery}
+        </a>
+      </nav>
+    </div>
 
-      <div class="lang" aria-label={t.nav.language}>
-        <a
-          class="lang__item"
-          href={routes[current]['hr']}
-          hreflang="hr"
-          lang="hr"
-          aria-current={lang === 'hr' ? 'page' : undefined}
-        >
-          HR
-        </a>
-        <span class="lang__sep" aria-hidden="true">/</span>
-        <a
-          class="lang__item"
-          href={routes[current]['en']}
-          hreflang="en"
-          lang="en"
-          aria-current={lang === 'en' ? 'page' : undefined}
-        >
-          EN
-        </a>
-      </div>
-    </nav>
+    <div class="lang" aria-label={t.nav.language} data-reveal style="--reveal-delay: 120ms">
+      <a
+        class="lang__item"
+        href={routes[current]['hr']}
+        hreflang="hr"
+        lang="hr"
+        aria-current={lang === 'hr' ? 'page' : undefined}
+      >
+        HR
+      </a>
+      <span class="lang__sep" aria-hidden="true">/</span>
+      <a
+        class="lang__item"
+        href={routes[current]['en']}
+        hreflang="en"
+        lang="en"
+        aria-current={lang === 'en' ? 'page' : undefined}
+      >
+        EN
+      </a>
+    </div>
+
+    <button
+      class="header__toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-menu"
+      aria-label={t.nav.menuToggle}
+      data-menu-toggle
+    >
+      <Icon name="menu" size={22} class="header__icon header__icon--open" />
+      <Icon name="close" size={22} class="header__icon header__icon--close" />
+    </button>
   </div>
 </header>
+
+<script is:inline>
+  (() => {
+    const toggle = document.querySelector('[data-menu-toggle]');
+    // Scoped away from the menu-explorer panels, which use data-menu-panel.
+    const panel = document.querySelector('[data-header-panel]');
+    if (!toggle || !panel) return;
+
+    const desktop = window.matchMedia('(min-width: 681px)');
+
+    const isOpen = () => toggle.getAttribute('aria-expanded') === 'true';
+
+    const setOpen = (open) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      panel.classList.toggle('is-open', open);
+    };
+
+    toggle.addEventListener('click', () => {
+      const open = !isOpen();
+      setOpen(open);
+      if (open) {
+        const first = panel.querySelector('a');
+        if (first) first.focus({ preventScroll: true });
+      }
+    });
+
+    // A link inside the panel closes it; anchors then scroll with the
+    // closed-state header height.
+    panel.addEventListener('click', (event) => {
+      if (event.target.closest('a')) setOpen(false);
+    });
+
+    // Esc closes and returns focus to the toggle.
+    document.addEventListener('keydown', (event) => {
+      if ((event.key === 'Escape' || event.key === 'Esc') && isOpen()) {
+        setOpen(false);
+        toggle.focus({ preventScroll: true });
+      }
+    });
+
+    // A click outside the header closes the panel.
+    document.addEventListener('click', (event) => {
+      if (!isOpen()) return;
+      if (toggle.contains(event.target) || panel.contains(event.target)) return;
+      setOpen(false);
+    });
+
+    // Growing past the breakpoint restores the inline nav.
+    desktop.addEventListener('change', (event) => {
+      if (event.matches) setOpen(false);
+    });
+  })();
+</script>

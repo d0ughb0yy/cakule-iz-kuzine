@@ -1,6 +1,6 @@
 # Development guide
 
-Technical notes for maintaining and deploying the site. For the business description, see `README.md`, and for the pre-launch checklist, see `CONTENT.md`.
+Technical notes for maintaining and deploying the site. For the business description, see `README.md`, for the pre-launch checklist, see `CONTENT.md`, and for the visual system of record — colors, type, components, guardrails — see `DESIGN.md` at the project root.
 
 ## Stack
 
@@ -24,7 +24,7 @@ npm run preview   # preview the production build
 
 | File | What lives there |
 | --- | --- |
-| `src/config.ts` | Brand name, Take a Chef URL, site URL, service area, active palette |
+| `src/config.ts` | Brand name, Take a Chef URL, contact email, site URL, service area, active palette |
 | `src/data/site/hr.json` | All Croatian copy: hero, intro, process, included, menus, statement, FAQ, CTA, footer, gallery |
 | `src/data/site/en.json` | All English copy |
 | `src/data/images.json` | Every image URL, dimensions, and bilingual alt text |
@@ -67,6 +67,8 @@ A `<noscript>` rule reveals every panel when JavaScript is unavailable.
 
 Gallery entries reference image keys, so you only edit `images.json` — not the gallery order.
 
+**Responsive images note:** remote (Unsplash) entries automatically get a `srcset` derived from their URL crop parameters (see `srcsetFor` in `src/lib/content.ts`); local single-resolution files intentionally do not. If you want local photos to stay responsive, either keep them remote until launch or commit a small width series (e.g. `-480`, `-800`, `-1200` variants) and extend `images.json` accordingly — the layout and markup do not change either way.
+
 ### Switching palettes
 
 Change one line in `src/config.ts`:
@@ -97,14 +99,16 @@ After connecting a custom domain, update the URL in `astro.config.mjs` (`site:`)
 
 ```
 src/
-  components/        Header, Footer, HomePage, GalleryPage, GalleryGrid, CtaBand, Icon
+  components/        Header, Footer, HomePage, GalleryPage, GalleryGrid, ContactPanel, CtaBand, Icon, Lightbox
   data/              Bilingual copy, image registry, gallery order
   layouts/           BaseLayout (head, fonts, SEO, motion setup)
-  lib/content.ts     Typed access to copy and images
+  lib/content.ts     Typed access to copy and images (incl. srcset derivation)
   pages/             HR home + gallery, EN home + gallery, 404
   styles/            Palette tokens and global CSS
 public/              Favicon, robots.txt, local images
 docs/                Development guide and design spec
+DESIGN.md            Visual system of record (colors, type, components, rules)
+CONTENT.md           Launch checklist of every placeholder
 ```
 
 ## Notes

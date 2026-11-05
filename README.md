@@ -25,7 +25,7 @@ Every menu adapts to allergies, intolerances, and dietary needs.
 
 ## Booking
 
-All reservations go through the chef's profile on [Take a Chef](https://www.takeachef.com/en-hr/chef/tin-lu-i). There is no booking form on the site by design; every call-to-action leads to the profile.
+All reservations go through the chef's profile on [Take a Chef](https://www.takeachef.com/en-hr/chef/tin-lu-i); this is unchanged. The home page additionally has a contact panel where visitors can write directly — it composes an email from the buyer's mail client (no backend); the address to receive it is a placeholder in `src/config.ts`.
 
 ## The website
 
@@ -38,6 +38,6 @@ The home page answers the practical questions up front: how it works, what is in
 
 ## Project notes
 
-The copy, photos, and chef name are being finalised; `CONTENT.md` is the checklist of what to replace before going live. Prices are quoted by Take a Chef rather than shown on the site. Design and palette rationale lives in `docs/superpowers/specs/2026-10-27-private-chef-site-design.md`.
+The copy, photos, and chef name are being finalised; `CONTENT.md` is the checklist of what to replace before going live. The visual system of record is `DESIGN.md` at the project root; the original build rationale and palette contrast audit live in `docs/superpowers/specs/2026-10-27-private-chef-site-design.md` (partially superseded — see its status banner).
 
 For anything technical (running the site locally, deploying to Vercel, editing text and images, switching palettes), see `docs/development.md`.

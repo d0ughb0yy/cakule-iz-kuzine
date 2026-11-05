@@ -33,9 +33,11 @@ const { items, labels } = Astro.props;
         >
           <img
             src={item.src}
+            srcset={item.srcset}
+            sizes="(max-width: 680px) 100vw, 38rem"
             width={item.width}
             height={item.height}
-            alt={item.alt}
+            alt=""
             loading={index < 2 ? 'eager' : 'lazy'}
             decoding="async"
           />

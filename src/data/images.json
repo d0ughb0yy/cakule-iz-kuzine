@@ -9,16 +9,6 @@
       "en": "Salmon fillet with vegetables and sauce on a white plate"
     }
   },
-  "intro": {
-    "src": "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1000&h=1250&q=80",
-    "full": "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1400&h=1750&q=85",
-    "width": 1000,
-    "height": 1250,
-    "alt": {
-      "hr": "Ruke kuhara kako pripremaju svježe bilje",
-      "en": "A chef's hands preparing fresh herbs"
-    }
-  },
   "gallery-restaurant": {
     "src": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&h=1125&q=80",
     "full": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&h=2000&q=85",
@@ -169,6 +159,16 @@
       "en": "A colourful bowl of seasonal salad"
     }
   },
+  "chef-portrait": {
+    "src": "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=400&h=400&q=80",
+    "full": "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=800&h=800&q=85",
+    "width": 400,
+    "height": 400,
+    "alt": {
+      "hr": "Ruke kuhara kako režu svježe bilje",
+      "en": "A chef's hands chopping fresh herbs"
+    }
+  },
   "istria-market": {
     "src": "/images/pula-market-hall-istria.jpg",
     "full": "/images/pula-market-hall-istria.jpg",
@@ -182,8 +182,8 @@
   "istria-motovun": {
     "src": "/images/motovun-istria.jpg",
     "full": "/images/motovun-istria.jpg",
-    "width": 1920,
-    "height": 1248,
+    "width": 1600,
+    "height": 1040,
     "alt": {
       "hr": "Motovun na brijegu iznad istarskih vinograda",
       "en": "Motovun on a hill above Istrian vineyards"

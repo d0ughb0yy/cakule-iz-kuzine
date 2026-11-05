@@ -4,6 +4,8 @@
 export const site = {
   name: 'Čakule iz Kužine',
   bookingUrl: 'https://www.takeachef.com/en-hr/chef/tin-lu-i',
+  // Contact form address. The form composes a mailto; nothing is stored.
+  contactEmail: 'tin.lucic172@gmail.com',
   // Used for canonical URLs, sitemap and social cards. Update if the domain changes.
   url: 'https://cakule-iz-kuzine.vercel.app',
   serviceArea: 'Istria, Croatia',

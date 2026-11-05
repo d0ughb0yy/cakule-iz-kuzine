@@ -30,14 +30,15 @@ const heroImage = getImage('istria-motovun');
         data-lightbox={heroImage.full}
         data-lightbox-alt={heroImage.alt[lang]}
         data-lightbox-caption={heroImage.alt[lang]}
-        data-lightbox-group="gallery"
         aria-label={`${t.lightbox.open}: ${heroImage.alt[lang]}`}
       >
         <img
           src={heroImage.src}
+          srcset={heroImage.srcset}
+          sizes="(max-width: 960px) 100vw, 40rem"
           width={heroImage.width}
           height={heroImage.height}
-          alt={heroImage.alt[lang]}
+          alt=""
           loading="eager"
           decoding="async"
           fetchpriority="high"

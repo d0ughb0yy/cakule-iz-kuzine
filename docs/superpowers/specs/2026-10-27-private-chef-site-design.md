@@ -4,6 +4,16 @@
 **Status:** Prototype complete; copy and photography pending
 **Stack:** Astro 7.4.2, static output, hand-written CSS, no UI framework, no CMS
 
+> **Superseded in part — read DESIGN.md first.** As of 5 November 2026, `DESIGN.md` at the project root is the visual system of record. This spec remains the build rationale and palette contrast audit, but the following sections are superseded by later decisions:
+>
+> - **§5.2 Typography** — Fraunces/Inter was never shipped; the deliberate system is **Barlow Condensed (display) + Barlow (body)**, documented in `DESIGN.md`. The November 2026 decision retired the "type drift" finding rather than rewiring fonts.
+> - **§5.4 Token names** — the shipped vocabulary is `ground / ink / ink-soft / accent / accent-deep / accent-soft / chartreuse / field / on-field / on-field-soft / line / muted` (`src/styles/palettes.css`), not `brand/ivory/paper` as drafted here.
+> - **§3 Home section order** — no testimonials section exists; the contact panel (`#kontakt`, spec §17) sits between FAQ and the CTA band.
+> - **§9 Mobile menu** — **restored 5 November 2026**: the collapsible menu is back below 680px (`aria-expanded`/`aria-controls`, Esc/outside-click/resize close, focus management), with the language switch deliberately kept outside the panel.
+> - **§16 Menu navigation** — the shipped menu explorer is simple `aria-pressed` tabs with `hidden` panels; the arrows/dots slideshow was not kept.
+>
+> Where this spec and `DESIGN.md` disagree, `DESIGN.md` wins.
+
 ---
 
 ## 1. Purpose
@@ -372,3 +382,11 @@ The menu section was rebuilt after the initial specification:
 - **Booking.** Every CTA points at `https://www.takeachef.com/en-hr/chef/tin-lu-i`.
 
 Maintenance details live in `docs/development.md` → "Editing the menus".
+
+## 17. Contact panel update (5 November 2026)
+
+- **What was added.** A contact panel section (`#kontakt`) on both home pages, between FAQ and the closing CTA band: heading, lead, a small reply note on the left; a name/surname/email/message form on a ground panel on the right. The header gained a `Contact` / `Kontakt` link that anchors to it.
+- **Booking is untouched.** Every booking CTA still points at the Take a Chef profile. The panel's lead says so explicitly; reservations do not flow through the form.
+- **Delivery.** The form composes a `mailto:` in the visitor's mail client — subject from the page language, body with all four fields. No backend, no third-party request, no stored data, so the site's static-and-private promises hold. The receiving address is `site.contactEmail` in `src/config.ts` (a placeholder that `CONTENT.md` §10 tracks; the chef's real address must replace it before launch). Without JavaScript the panel shows the address and the booking link instead.
+- **System fidelity.** Accent-soft band with a ground form panel mirrors the menus section; fields use hairline underlines only (`--line`, whose declared job is table and form lines); native validation carries the error voice, with a 2px deep-accent underline via `:user-invalid` once a field has truly been edited and is wrong; caret and focus use the system tokens (`caret-color: var(--accent)`, global chartreuse `:focus-visible` outline).
+- **Response expectation.** The panel keeps the FAQ's promise: answers within 24 hours (`contact.note`).

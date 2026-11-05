@@ -19,10 +19,12 @@ interface Props {
   ogImage?: string;
 }
 
-const { lang, current, title, description, ogImage = 'istria-market' } = Astro.props;
+const { lang, current, title, description, ogImage = 'istria-market', faq } = Astro.props;
 const t = getContent(lang);
 const canonical = new URL(Astro.url.pathname, site.url);
 const image = getImage(ogImage);
+// Scrapers resolve og:image against the page URL, so it must be absolute.
+const imageUrl = new URL(image.src, site.url).href;
 
 const schema = {
   '@context': 'https://schema.org',
@@ -30,7 +32,7 @@ const schema = {
   name: site.name,
   description,
   url: site.url,
-  image: image.src,
+  image: imageUrl,
   areaServed: {
     '@type': 'AdministrativeArea',
     name: site.serviceArea,
@@ -38,6 +40,19 @@ const schema = {
   priceRange: '€€€',
   sameAs: [site.bookingUrl],
 };
+
+const faqSchema =
+  faq && faq.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faq.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: { '@type': 'Answer', text: item.a },
+        })),
+      }
+    : null;
 ---
 
 <!doctype html>
@@ -58,7 +73,7 @@ const schema = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical.href} />
-    <meta property="og:image" content={image.src} />
+    <meta property="og:image" content={imageUrl} />
     <meta property="og:image:alt" content={image.alt[lang]} />
     <meta property="og:locale" content={lang === 'hr' ? 'hr_HR' : 'en_US'} />
     <meta property="og:locale:alternate" content={lang === 'hr' ? 'en_US' : 'hr_HR'} />
@@ -66,12 +81,13 @@ const schema = {
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image.src} />
+    <meta name="twitter:image" content={imageUrl} />
 
-    <meta name="theme-color" content="#f0f1ea" />
+    <meta name="theme-color" content="#eff2e9" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
     <script is:inline>
       document.documentElement.classList.add('js');
     </script>

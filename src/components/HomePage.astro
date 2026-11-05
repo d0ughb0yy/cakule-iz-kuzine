@@ -1,6 +1,7 @@
 ---
 import Icon from './Icon.astro';
 import CtaBand from './CtaBand.astro';
+import ContactPanel from './ContactPanel.astro';
 import { routes, site } from '../config';
 import { getContent, getGallery, getImage, type Lang } from '../lib/content';
 
@@ -13,19 +14,24 @@ const t = getContent(lang);
 
 const heroImage = getImage(t.hero.image);
 const introImage = getImage(t.intro.image);
+const whoImage = getImage('chef-portrait');
 const allGallery = getGallery(lang);
-const teaserItems = t.galleryTeaser.images
-  .map((key) => allGallery.find((item) => item.imageKey === key))
-  .filter((item): item is NonNullable<typeof item> => Boolean(item));
+// A renamed or missing teaser key must fail the build, not silently render
+// a broken three-in-four grid.
+const teaserItems = t.galleryTeaser.images.map((key) => {
+  const item = allGallery.find((galleryItem) => galleryItem.imageKey === key);
+  if (!item) throw new Error(`Unknown image key in galleryTeaser: ${key}`);
+  return item;
+});
 ---
 
 <section class="hero" aria-labelledby="hero-name-top hero-name-bottom">
 
   <div class="wrap hero__inner">
-    <div class="hero__lines">
-      <h1 class="hero__line hero__line--top" id="hero-name-top">{t.hero.name[0]}</h1>
-      <h1 class="hero__line hero__line--bottom" id="hero-name-bottom">{t.hero.name[1]}</h1>
-    </div>
+    <h1 class="hero__lines" id="hero-name">
+      <span class="hero__line hero__line--top" id="hero-name-top">{t.hero.name[0]}</span>
+      <span class="hero__line hero__line--bottom" id="hero-name-bottom">{t.hero.name[1]}</span>
+    </h1>
 
     <div class="hero__body" data-reveal>
       <p class="hero__lead">{t.hero.lead}</p>
@@ -42,6 +48,8 @@ const teaserItems = t.galleryTeaser.images
         </a>
         <a class="link-arrow" href="#jelovnici">{t.hero.secondaryCta}</a>
       </div>
+
+      <p class="hero__note">{t.hero.bookingNote}</p>
     </div>
 
     <figure class="hero__figure" data-reveal style="--reveal-delay: 120ms">
@@ -56,9 +64,11 @@ const teaserItems = t.galleryTeaser.images
         >
           <img
             src={heroImage.src}
+            srcset={heroImage.srcset}
+            sizes="(max-width: 680px) 100vw, 34rem"
             width={heroImage.width}
             height={heroImage.height}
-            alt={heroImage.alt[lang]}
+            alt=""
             loading="eager"
             decoding="async"
             fetchpriority="high"
@@ -79,6 +89,23 @@ const teaserItems = t.galleryTeaser.images
         {t.intro.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
       </div>
 
+      <div class="intro__who" data-reveal style="--reveal-delay: 120ms">
+        <img
+          src={whoImage.src}
+          srcset={whoImage.srcset}
+          sizes="4.5rem"
+          width={whoImage.width}
+          height={whoImage.height}
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
+        <div>
+          <p class="intro__who-name">{t.intro.who.name}</p>
+          <p class="intro__who-fact">{t.intro.who.fact}</p>
+        </div>
+      </div>
+
       <a class="link-arrow intro__link" href="#tijek" data-reveal style="--reveal-delay: 160ms">
         {t.intro.link}
         <Icon name="arrow-right" />
@@ -96,9 +123,11 @@ const teaserItems = t.galleryTeaser.images
       >
         <img
           src={introImage.src}
+          srcset={introImage.srcset}
+          sizes="(max-width: 960px) 100vw, 44rem"
           width={introImage.width}
           height={introImage.height}
-          alt={introImage.alt[lang]}
+          alt=""
           loading="lazy"
           decoding="async"
         />
@@ -227,6 +256,8 @@ const teaserItems = t.galleryTeaser.images
                 {t.menus.cta}
                 <Icon name="arrow-right" />
               </a>
+
+              <p class="menu-explorer__note">{t.menus.bookingNote}</p>
             </div>
           ))
         }
@@ -236,7 +267,7 @@ const teaserItems = t.galleryTeaser.images
 
   <noscript>
     <style>
-      [data-menu-panel][hidden] {
+      .menu-panel[data-menu-panel][hidden] {
         display: block !important;
       }
     </style>
@@ -268,9 +299,11 @@ const teaserItems = t.galleryTeaser.images
             >
               <img
                 src={item.src}
+                srcset={item.srcset}
+                sizes="(max-width: 680px) 100vw, 45rem"
                 width={item.width}
                 height={item.height}
-                alt={item.alt}
+                alt=""
                 loading={index === 0 ? 'eager' : 'lazy'}
                 decoding="async"
               />
@@ -320,6 +353,8 @@ const teaserItems = t.galleryTeaser.images
   </div>
 </section>
 
+<ContactPanel lang={lang} />
+
 <CtaBand
   title={t.cta.title}
   lead={t.cta.lead}
@@ -329,8 +364,8 @@ const teaserItems = t.galleryTeaser.images
 
 <script is:inline>
   (() => {
-    const tabs = Array.from(document.querySelectorAll('[data-menu-tab]'));
-    const panels = Array.from(document.querySelectorAll('[data-menu-panel]'));
+    const tabs = Array.from(document.querySelectorAll('.menu-tab[data-menu-tab]'));
+    const panels = Array.from(document.querySelectorAll('.menu-panel[data-menu-panel]'));
 
     if (!tabs.length || tabs.length !== panels.length) return;
 
